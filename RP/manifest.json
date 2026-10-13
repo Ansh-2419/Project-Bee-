@@ -1,0 +1,39 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "Project Bee v1.0 RP",
+		"description": "Dorios Studio",
+		"min_engine_version": [
+			1,
+			21,
+			50
+		],
+		"uuid": "f35f66ac-7319-46f4-8538-d1479259a111",
+		"version": [
+			0,
+			1,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "ba0539bf-050c-4298-bdd9-d5c455595111",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "e93789d5-fdcc-4c60-b68b-1dc206976111",
+			"version": [
+				1,
+				0,
+				7
+			]
+		}
+	]
+}

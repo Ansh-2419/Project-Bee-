@@ -1,0 +1,17 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:item": {
+        "description": {
+            "identifier": "utilitycraft:speed_upgrade",
+            "menu_category": {
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:icon": "utilitycraft:speed_upgrade",
+            "minecraft:max_stack_size": 4,
+            "minecraft:hover_text_color": "aqua",
+            "utilitycraft:speed_upgrade": {}
+        }
+    }
+}

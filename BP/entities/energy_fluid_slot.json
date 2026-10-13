@@ -1,0 +1,114 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "utilitycraft:energy_fluid_slot",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "properties": {
+        "utilitycraft:block_type": {
+          "client_sync": true,
+          "values": [
+            "full_block",
+            "slab"
+          ],
+          "type": "enum",
+          "default": "full_block"
+        }
+      }
+    },
+    "components": {
+      "minecraft:timer": {
+        "looping": true,
+        "time": [
+          0.1,
+          0.1
+        ],
+        "time_down_event": {
+          "target": "self",
+          "event": "utilitycraft:block_type"
+        }
+      },
+      "minecraft:inventory": {
+          "inventory_size": 25,
+          "container_type": "container"
+        },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "deals_damage": false,
+          "cause": "all"
+        }
+      },
+      "minecraft:physics": {
+        "has_collision": false,
+        "has_gravity": false
+      }
+    },
+    "component_groups": {
+      "utilitycraft:full_block": {
+        "minecraft:inventory": {
+          "inventory_size": 25,
+          "container_type": "container"
+        },
+        "minecraft:collision_box": {
+          "height": 0.5,
+          "width": 1.0
+        }
+      },
+      "utilitycraft:slab": {
+        "minecraft:inventory": {
+          "container_type": "container",
+          "inventory_size": 6
+        },
+        "minecraft:collision_box": {
+          "height": 1.0,
+          "width": 0.3
+        }
+      }
+    },
+    "events": {
+      "utilitycraft:block_type": {
+        "sequence": [
+          {
+            "filters": {
+              "operator": "==",
+              "subject": "self",
+              "test": "enum_property",
+              "domain": "utilitycraft:block_type",
+              "value": "full_block"
+            },
+            "add": {
+              "component_groups": [
+                "utilitycraft:full_block"
+              ]
+            },
+            "remove": {
+              "component_groups": [
+                "utilitycraft:slab"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "operator": "==",
+              "subject": "self",
+              "test": "enum_property",
+              "domain": "utilitycraft:block_type",
+              "value": "slab"
+            },
+            "add": {
+              "component_groups": [
+                "utilitycraft:slab"
+              ]
+            },
+            "remove": {
+              "component_groups": [
+                "utilitycraft:full_block"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

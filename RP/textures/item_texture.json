@@ -1,0 +1,129 @@
+{
+  "resource_pack_name": "projectbee",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "utilitycraft:bio_fragment": {
+      "textures": "textures/items/bio_fragment"
+    },
+    "utilitycraft:bee_cage_filled": {
+      "textures": "textures/items/bee_cage/bee_cage_filled"
+    },
+    "utilitycraft:sturdy_bee_cage": {
+      "textures": "textures/items/bee_cage/sturdy_bee_cage"
+    },
+    "utilitycraft:bee_cage": {
+      "textures": "textures/items/bee_cage/bee_cage"
+    },
+    "utilitycraft:iron_comb": {
+      "textures": "textures/items/honeycombs/iron"
+    },
+    "utilitycraft:bone_comb": {
+      "textures": "textures/items/honeycombs/bone"
+    },
+    "utilitycraft:obsidian_comb": {
+      "textures": "textures/items/honeycombs/obsidian"
+    },
+    "utilitycraft:biomass_comb": {
+      "textures": "textures/items/honeycombs/biomass"
+    },
+    "utilitycraft:slime_comb": {
+      "textures": "textures/items/honeycombs/slime"
+    },
+    "utilitycraft:amethyst_comb": {
+      "textures": "textures/items/honeycombs/amethyst"
+    },
+    "utilitycraft:echo_comb": {
+      "textures": "textures/items/honeycombs/echo"
+    },
+    "utilitycraft:bee_guid_book": {
+      "textures": "textures/items/Bee_Guid_Book"
+    },
+    "utilitycraft:coal_comb": {
+      "textures": "textures/items/honeycombs/coal"
+    },
+    "utilitycraft:magmatic_comb": {
+      "textures": "textures/items/honeycombs/magmatic"
+    },
+    "utilitycraft:gold_comb": {
+      "textures": "textures/items/honeycombs/gold"
+    },
+    "utilitycraft:emerald_comb": {
+      "textures": "textures/items/honeycombs/emerald"
+    },
+    "utilitycraft:ender_comb": {
+      "textures": "textures/items/honeycombs/ender"
+    },
+    "utilitycraft:copper_comb": {
+      "textures": "textures/items/honeycombs/copper"
+    },
+    "utilitycraft:diamond_comb": {
+      "textures": "textures/items/honeycombs/diamond"
+    },
+    "utilitycraft:redstone_comb": {
+      "textures": "textures/items/honeycombs/redstone"
+    },
+    "utilitycraft:netherite_comb": {
+      "textures": "textures/items/honeycombs/netherite"
+    },
+    "utilitycraft:lapis_comb": {
+      "textures": "textures/items/honeycombs/lapis"
+    },
+    "utilitycraft:glowing_comb": {
+      "textures": "textures/items/honeycombs/glowing"
+    },
+    "utilitycraft:quartz_comb": {
+      "textures": "textures/items/honeycombs/quartz"
+    },
+    "utilitycraft:wax": {
+      "textures": "textures/items/wax"
+    },
+    "utilitycraft:honey_treat": {
+      "textures": "textures/items/honey_treat"
+    },
+    "utilitycraft:simulator_upgrade": {
+      "textures": "textures/items/upgrades/simulator"
+    },
+    "utilitycraft:speed_upgrade": {
+      "textures": "textures/items/upgrades/speed"
+    },
+    "utilitycraft:upgrade_base": {
+      "textures": "textures/items/upgrades/base"
+    },
+    "utilitycraft:sturdy_bee_cage_filled": {
+      "textures": "textures/items/bee_cage/sturdy_bee_cage_filled"
+    },
+    "utilitycraft:simulation_upgrade": {
+      "textures": "textures/items/upgrades/simulator"
+    },
+    "projectbee:heart_bar_0": {
+      "textures": "textures/ui/progress_heart/0_bar"
+    },
+    "projectbee:heart_bar_1": {
+      "textures": "textures/ui/progress_heart/1_bar"
+    },
+    "projectbee:heart_bar_2": {
+      "textures": "textures/ui/progress_heart/2_bar"
+    },
+    "projectbee:heart_bar_3": {
+      "textures": "textures/ui/progress_heart/3_bar"
+    },
+    "projectbee:heart_bar_4": {
+      "textures": "textures/ui/progress_heart/4_bar"
+    },
+    "projectbee:heart_bar_5": {
+      "textures": "textures/ui/progress_heart/5_bar"
+    },
+    "projectbee:heart_bar_6": {
+      "textures": "textures/ui/progress_heart/6_bar"
+    },
+    "projectbee:heart_bar_7": {
+      "textures": "textures/ui/progress_heart/7_bar"
+    },
+    "projectbee:heart_bar_8": {
+      "textures": "textures/ui/progress_heart/8_bar"
+    },
+    "projectbee:heart_bar_9": {
+      "textures": "textures/ui/progress_heart/9_bar"
+    }
+  }
+}

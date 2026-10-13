@@ -1,0 +1,107 @@
+{
+  "resource_pack_name": "projectbee",
+  "texture_name": "atlas.terrain",
+  "padding": 8,
+  "num_mip_levels": 4,
+  "texture_data": {
+    "oak_beehive_end": {
+      "textures": "textures/blocks/ab/oak_beehive_end"
+    },
+    "oak_beehive_front": {
+      "textures": "textures/blocks/ab/oak_beehive_front"
+    },
+    "oak_beehive_front_honey": {
+      "textures": "textures/blocks/ab/oak_beehive_front_honey"
+    },
+    "oak_beehive_side": {
+      "textures": "textures/blocks/ab/oak_beehive_side"
+    },
+    "utilitycraft:bee": {
+      "textures": "textures/entity/bee/bee"
+    },
+    "utilitycraft:amethyst_bee": {
+      "textures": "textures/entity/bee/amethyst/bee"
+    },
+    "utilitycraft:biomass_bee": {
+      "textures": "textures/entity/bee/biomass/bee"
+    },
+    "utilitycraft:blue_banded_bee": {
+      "textures": "textures/entity/bee/blue_banded/bee"
+    },
+    "utilitycraft:blue_mason_bee": {
+      "textures": "textures/entity/bee/blue_mason/bee"
+    },
+    "utilitycraft:bone_bee": {
+      "textures": "textures/entity/bee/bone/bee"
+    },
+    "utilitycraft:bumble_bee": {
+      "textures": "textures/entity/bee/bumble/bee"
+    },
+    "utilitycraft:coal_bee": {
+      "textures": "textures/entity/bee/coal/bee"
+    },
+    "utilitycraft:copper_bee": {
+      "textures": "textures/entity/bee/copper/bee"
+    },
+    "utilitycraft:diamond_bee": {
+      "textures": "textures/entity/bee/diamond/bee"
+    },
+    "utilitycraft:dirt_bee": {
+      "textures": "textures/entity/bee/dirt/bee"
+    },
+    "utilitycraft:echo_bee": {
+      "textures": "textures/entity/bee/echo/bee"
+    },
+    "utilitycraft:emerald_bee": {
+      "textures": "textures/entity/bee/emerald/bee"
+    },
+    "utilitycraft:ender_bee": {
+      "textures": "textures/entity/bee/ender/bee"
+    },
+    "utilitycraft:glowing_bee": {
+      "textures": "textures/entity/bee/glowing/bee"
+    },
+    "utilitycraft:gold_bee": {
+      "textures": "textures/entity/bee/gold/bee"
+    },
+    "utilitycraft:iron_bee": {
+      "textures": "textures/entity/bee/iron/bee"
+    },
+    "utilitycraft:lapis_bee": {
+      "textures": "textures/entity/bee/lapis/bee"
+    },
+    "utilitycraft:leaf_cutter_bee": {
+      "textures": "textures/entity/bee/leaf_cutter/bee"
+    },
+    "utilitycraft:magnetic_bee": {
+      "textures": "textures/entity/bee/magmatic/bee"
+    },
+    "utilitycraft:mining_bee": {
+      "textures": "textures/entity/bee/mining/bee"
+    },
+    "utilitycraft:netherite_bee": {
+      "textures": "textures/entity/bee/netherite/bee"
+    },
+    "utilitycraft:obsidian_bee": {
+      "textures": "textures/entity/bee/obsidian/bee"
+    },
+    "utilitycraft:quartz_bee": {
+      "textures": "textures/entity/bee/quartz/bee"
+    },
+    "utilitycraft:redstone_bee": {
+      "textures": "textures/entity/bee/redstone/bee"
+    },
+    "utilitycraft:slime_bee": {
+      "textures": "textures/entity/bee/slime/bee"
+    },
+    "utilitycraft:centrifuge": {
+      "textures": "textures/blocks/centrifuge/centrifuge"
+    },
+    "utilitycraft:covered_centrifuge": {
+      "textures": "textures/blocks/centrifuge/covered_centrifuge"
+    },
+    "utilitycraft:breeding_chamber": {
+      "textures": "textures/blocks/breeding_chamber"
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"product_type": "addon",
+		"authors": [
+			"Unknown Mcpe"
+		]
+	},
+	"header": {
+		"name": "Project Bee v1.0 BP",
+		"description": "Dorios  Studio",
+		"min_engine_version": [
+			1,
+			21,
+			90
+		],
+		"uuid": "e93789d5-fdcc-4c60-b68b-1dc206976111",
+		"version": [
+			0,
+			1,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "b025b5cd-86a0-4dc0-83e9-b667035ae111",
+			"version": [
+				1,
+				0,
+				0
+			]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"uuid": "ebd32630-5d4e-4228-b2e7-c37b08ea9111",
+			"entry": "scripts/main.js",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "f35f66ac-7319-46f4-8538-d1479259a111",
+			"version": [
+				1,
+				0,
+				7
+			]
+		},
+		{
+			"module_name": "@minecraft/server",
+			"version": "2.8.0"
+		},
+		{
+			"version": "2.0.0",
+			"module_name": "@minecraft/server-ui"
+		}
+	]
+}
