@@ -124,4 +124,39 @@ item.spawn_egg.entity.utilitycraft:netherite_bee.name=Netherite Bee Spawn Egg
 item.spawn_egg.entity.utilitycraft:obsidian_bee.name=Obsidian Bee Spawn Egg
 item.spawn_egg.entity.utilitycraft:quartz_bee.name=Quartz Bee Spawn Egg
 item.spawn_egg.entity.utilitycraft:redstone_bee.name=Redstone Bee Spawn Egg
-item.spawn_egg.entity.utilitycraft:slime_bee.name=Slime Bee Spawn Egg
+item.spawn_egg.entity.utilitycraft:slime_bee.name=Slime Bee Spawn Egg## Breeding Chamber
+tile.projectbee:breeding_chamber.name=Breeding Chamber
+
+## Feeding Slab
+tile.projectbee:feeding_slab.name=Feeding Slab
+projectbee.feeding_slab.ui=Feeding Slab
+projectbee.feeding_slab_double.ui=Feeding Slab (Double)
+ui.projectbee:info.feeding_slab=§eFeeding Slab§r\nHolds food items for the Advanced Beehive\nwhen simulator upgrade is installed.\n\n§bSlots§r — Place food blocks/items\n\nRight-click with another Feeding Slab\nto double the storage capacity.
+ui.projectbee:info.feeding_slab_double=§eFeeding Slab (Double)§r\nExpanded feeding slab with 6 storage slots.\n\n§bSlots§r — Place food blocks/items
+
+## Heart bar items (UI only — no display name needed)
+item.projectbee:heart_bar_0=
+item.projectbee:heart_bar_1=
+item.projectbee:heart_bar_2=
+item.projectbee:heart_bar_3=
+item.projectbee:heart_bar_4=
+item.projectbee:heart_bar_5=
+item.projectbee:heart_bar_6=
+item.projectbee:heart_bar_7=
+item.projectbee:heart_bar_8=
+item.projectbee:heart_bar_9=
+
+## Nest blocks
+tile.projectbee:oak_nest.name=Oak Bee Nest
+tile.projectbee:birch_nest.name=Birch Bee Nest
+tile.projectbee:spruce_nest.name=Spruce Bee Nest
+tile.projectbee:jungle_nest.name=Jungle Bee Nest
+tile.projectbee:acacia_nest.name=Acacia Bee Nest
+tile.projectbee:dark_oak_nest.name=Dark Oak Bee Nest
+tile.projectbee:stone_nest.name=Stone Bee Nest
+tile.projectbee:coarse_dirt_nest.name=Coarse Dirt Bee Nest
+tile.projectbee:nether_brick_nest.name=Nether Brick Bee Nest
+tile.projectbee:nether_quartz_ore_nest.name=Nether Quartz Ore Bee Nest
+tile.projectbee:nether_gold_ore_nest.name=Nether Gold Ore Bee Nest
+tile.projectbee:glowstone_nest.name=Glowstone Bee Nest
+tile.projectbee:endstone_nest.name=End Stone Bee Nest

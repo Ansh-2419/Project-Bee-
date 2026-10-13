@@ -6,7 +6,7 @@ import { world, system, ItemStack } from "@minecraft/server";
 import * as DoriosLib from "DoriosLib/index.js";
 import * as Utils from "DoriosCore/utils/entity.js";
 import { InterfaceManager } from "DoriosCore/interfaces/index.js";
-import { breedingRecipes } from "../config/recipes/machinery/breeding_chamber.js";
+import { breedingRecipes } from "../config/recipes/breeding_chamber.js";
 import { beesIds, beeCageType , BEE_BABY_PROP, applyBeeCageLore } from "../data/data.js";
 
 const BLOCK_ID   = "projectbee:breeding_chamber";

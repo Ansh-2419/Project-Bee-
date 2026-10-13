@@ -1,0 +1,69 @@
+{ 
+  "format_version": "1.21.90",
+  "minecraft:block": { 
+    "description": {
+      "identifier": "utilitycraft:nether_brick_nest",
+                  "menu_category": {
+                "category": "construction" 
+            },
+            "traits": {
+        "minecraft:placement_direction": {
+            "enabled_states": ["minecraft:cardinal_direction"],
+                        "y_rotation_offset": 180
+        }
+    }
+    },
+    "components": {
+    "minecraft:geometry": "minecraft:geometry.full_block",
+  "utilitycraft:bee_nest": {},
+     "minecraft:tick": {
+	       "interval_range": [
+		        20,
+		         20
+	                 ]
+                      },
+     "minecraft:destructible_by_mining": {
+    "seconds_to_destroy": 1.0
+     },
+      "minecraft:material_instances": {
+    "*": {
+        "texture": "nether_brick",
+        "render_method": "blend" 
+    },
+    "north": {
+        "texture": "utilitycraft:nether_brick_nest_front",
+        "render_method": "blend" 
+    }
+}
+    },
+    "permutations": [
+    {
+    "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+    "components": {
+      "minecraft:transformation": { "rotation": [0, 0, 0] }
+    }
+  },
+  // Facing west
+  {
+    "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+    "components": {
+      "minecraft:transformation": { "rotation": [0, 90, 0] }
+    }
+  },
+  // Facing south
+  {
+    "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+    "components": {
+      "minecraft:transformation": { "rotation": [0, 180, 0] }
+    }
+  },
+  // Facing east
+  {
+    "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+    "components": {
+      "minecraft:transformation": { "rotation": [0, -90, 0] }
+    }
+  }
+]
+  }
+}

@@ -43,8 +43,8 @@ import { world, system, ItemStack } from "@minecraft/server";
 import * as DoriosLib from "DoriosLib/index.js";
 import * as Utils from "DoriosCore/utils/entity.js";
 import { InterfaceManager } from "DoriosCore/interfaces/index.js";
-import { feederBlocks } from "../config/recipes/machinery/feeder_recipe.js";
-import { advancedBeehive as combRecipes } from "../config/recipes/machinery/advance_beehive.js";
+import { feederBlocks } from "../config/recipes/feeder_recipe.js";
+import { advancedBeehive as combRecipes } from "../config/recipes/advance_beehive.js";
 import { beesIds, beeCageType , BEE_BABY_PROP, applyBeeCageLore } from "../data/data.js";
 
 
