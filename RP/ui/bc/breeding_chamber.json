@@ -51,7 +51,7 @@
       },
       {
         "heart_progress@uc.bar": {
-          "$collection_index": 2,
+          "collection_index": 2,
           "anchor_from": "center",
           "anchor_to": "center",
           "offset": [

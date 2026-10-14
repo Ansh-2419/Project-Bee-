@@ -1,0 +1,25 @@
+{ 
+  "format_version": "1.21.90",
+  "minecraft:block": { 
+    "description": { 
+      "identifier": "utilitycraft:diamond_comb_block",
+                  "menu_category": {
+                "category": "construction" 
+            }
+    },
+    "components": {
+    "minecraft:geometry": "minecraft:geometry.full_block",
+     "minecraft:destructible_by_mining": {
+    "seconds_to_destroy": 1.0
+     },
+      "minecraft:material_instances": {
+    "*": {
+        "texture": "utilitycraft:diamond_comb",
+        "render_method": "blend" 
+    }
+    
+    
+}
+    }
+  }
+}

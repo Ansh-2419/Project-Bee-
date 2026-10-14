@@ -8,7 +8,7 @@
         "components": {
             "minecraft:icon": "projectbee:heart_bar_7",
             "minecraft:max_stack_size": 1,
-            "tag:utilitycraft:ui_element": {}
+            "utilitycraft:ui_element": {}
         }
     }
 }
