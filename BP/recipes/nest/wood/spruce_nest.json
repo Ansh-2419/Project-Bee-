@@ -1,0 +1,23 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "projectbee:spruce_nest"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "ingredients": [
+            {
+                "item": "minecraft:wooden_sword"
+            },
+            {
+                "item": "minecraft:spruce_log"
+            }
+        ],
+        "result": {
+            "item": "utilitycraft:spruce_nest",
+            "count": 1
+        }
+    }
+}

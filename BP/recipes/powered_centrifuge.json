@@ -1,0 +1,28 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "projectbee:powered_centrifuge"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "I I",
+            "IGI",
+            "III"
+        ],
+        "key": {
+            "I": {
+                "item": "minecraft:iron_ingot"
+            },
+            "G": {
+                "item": "minecraft:grindstone"
+            }
+        },
+        "result": {
+            "item": "projectbee:powered_centrifuge",
+            "count": 1
+        }
+    }
+}

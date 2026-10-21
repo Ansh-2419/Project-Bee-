@@ -1,0 +1,31 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "projectbee:breeding_chamber"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "IFI",
+            "INI",
+            "III"
+        ],
+        "key": {
+            "I": {
+                "item": "minecraft:iron_ingot"
+            },
+            "F": {
+                "item": "minecraft:rose_bush"
+            },
+            "N": {
+                "item": "minecraft:bee_nest"
+            }
+        },
+        "result": {
+            "item": "projectbee:breeding_chamber",
+            "count": 1
+        }
+    }
+}

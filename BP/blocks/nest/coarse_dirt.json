@@ -1,69 +1,100 @@
-{ 
-  "format_version": "1.21.90",
-  "minecraft:block": { 
-    "description": {
-      "identifier": "utilitycraft:coarse_dirt_nest",
-                  "menu_category": {
-                "category": "construction" 
+{
+    "format_version": "1.21.90",
+    "minecraft:block": {
+        "description": {
+            "identifier": "utilitycraft:coarse_dirt_nest",
+            "menu_category": {
+                "category": "construction"
             },
             "traits": {
-        "minecraft:placement_direction": {
-            "enabled_states": ["minecraft:cardinal_direction"],
-                        "y_rotation_offset": 180
-        }
+                "minecraft:placement_direction": {
+                    "enabled_states": [
+                        "minecraft:cardinal_direction"
+                    ],
+                    "y_rotation_offset": 180
+                }
+            }
+        },
+        "components": {
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "coarse_dirt",
+                    "render_method": "alpha_test"
+                },
+                "north": {
+                    "texture": "utilitycraft:coarse_dirt_nest_front",
+                    "render_method": "alpha_test"
+                },
+                "up": {
+                    "texture": "coarse_dirt",
+                    "render_method": "alpha_test"
+                },
+                "down": {
+                    "texture": "coarse_dirt",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:tick": {
+                "interval_range": [
+                    20,
+                    20
+                ]
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 1.0
+            },
+            "projectbee:coarse_dirt_nest": {}
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            0,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            90,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            180,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            -90,
+                            0
+                        ]
+                    }
+                }
+            }
+        ]
     }
-    },
-    "components": {
-    "minecraft:geometry": "minecraft:geometry.full_block",
-  "utilitycraft:bee_nest": {},
-     "minecraft:tick": {
-	       "interval_range": [
-		         20,
-		         20
-	                 ]
-                      },
-     "minecraft:destructible_by_mining": {
-    "seconds_to_destroy": 1.0
-     },
-      "minecraft:material_instances": {
-    "*": {
-        "texture": "coarse_dirt",
-        "render_method": "blend" 
-    },
-    "north": {
-        "texture": "utilitycraft:coarse_dirt_nest_front",
-        "render_method": "blend" 
-    }
-}
-    },
-    "permutations": [
-    {
-    "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
-    "components": {
-      "minecraft:transformation": { "rotation": [0, 0, 0] }
-    }
-  },
-  // Facing west
-  {
-    "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
-    "components": {
-      "minecraft:transformation": { "rotation": [0, 90, 0] }
-    }
-  },
-  // Facing south
-  {
-    "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
-    "components": {
-      "minecraft:transformation": { "rotation": [0, 180, 0] }
-    }
-  },
-  // Facing east
-  {
-    "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
-    "components": {
-      "minecraft:transformation": { "rotation": [0, -90, 0] }
-    }
-  }
-]
-  }
 }

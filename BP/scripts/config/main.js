@@ -2,3 +2,4 @@
 // Project Bee — Config Entry
 // ============================================================
 import "./recipes/main.js";
+import "./upgrades.js";

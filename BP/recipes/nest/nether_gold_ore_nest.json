@@ -1,0 +1,23 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "projectbee:nether_gold_ore_nest"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "ingredients": [
+            {
+                "item": "minecraft:diamond_sword"
+            },
+            {
+                "item": "minecraft:nether_gold_ore"
+            }
+        ],
+        "result": {
+            "item": "utilitycraft:nether_gold_ore_nest",
+            "count": 1
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "projectbee:honey_treat"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "ingredients": [
+            {
+                "item": "minecraft:honeycomb"
+            },
+            {
+                "item": "minecraft:honey_bottle"
+            }
+        ],
+        "result": {
+            "item": "utilitycraft:honey_treat",
+            "count": 1
+        }
+    }
+}

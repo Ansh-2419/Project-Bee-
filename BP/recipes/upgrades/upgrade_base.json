@@ -1,0 +1,31 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "projectbee:upgrade_base"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "HCH",
+            "CPC",
+            "HCH"
+        ],
+        "key": {
+            "P": {
+                "item": "minecraft:paper"
+            },
+            "H": {
+                "item": "minecraft:honeycomb"
+            },
+            "C": {
+                "item": "minecraft:copper_ingot"
+            }
+        },
+        "result": {
+            "item": "utilitycraft:upgrade_base",
+            "count": 1
+        }
+    }
+}

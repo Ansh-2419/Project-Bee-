@@ -4,283 +4,335 @@
   "padding": 8,
   "num_mip_levels": 4,
   "texture_data": {
-  "utilitycraft:iron_comb":{
+    "utilitycraft:iron_comb": {
       "textures": {
-                "path": "textures/blocks/honeycomb/base",
-                "tint_color": "#848484" // iron
-            }
+        "path": "textures/blocks/honeycomb/base",
+        "tint_color": "#848484"
+      }
     },
-  "utilitycraft:slime_comb":{
+    "utilitycraft:slime_comb": {
       "textures": {
-                "path": "textures/blocks/honeycomb/base",
-                "tint_color": "#00b649"
-            }
+        "path": "textures/blocks/honeycomb/base",
+        "tint_color": "#00b649"
+      }
     },
-    "utilitycraft:gold_comb":{
+    "utilitycraft:gold_comb": {
       "textures": {
-                "path": "textures/blocks/honeycomb/base",
-                "tint_color": "#ffdd00" // iron
-
-            }
+        "path": "textures/blocks/honeycomb/base",
+        "tint_color": "#ffdd00"
+      }
     },
-    "utilitycraft:diamond_comb":{
+    "utilitycraft:diamond_comb": {
       "textures": {
-                "path": "textures/blocks/honeycomb/base",
-
-               "tint_color": "#00a7b6" 
-
-            }
+        "path": "textures/blocks/honeycomb/base",
+        "tint_color": "#00a7b6"
+      }
     },
-    "utilitycraft:redstone_comb":{
+    "utilitycraft:redstone_comb": {
       "textures": {
-                "path": "textures/blocks/honeycomb/base",
-               "tint_color": "#ff0000" // redstone
-            }
+        "path": "textures/blocks/honeycomb/base",
+        "tint_color": "#ff0000"
+      }
     },
-    "utilitycraft:copper_comb":{
+    "utilitycraft:copper_comb": {
       "textures": {
-                "path": "textures/blocks/honeycomb/base",
-                "tint_color": "#B87333" // iron
-
-            }
+        "path": "textures/blocks/honeycomb/base",
+        "tint_color": "#B87333"
+      }
     },
-    "utilitycraft:netherite_comb":{
+    "utilitycraft:netherite_comb": {
       "textures": {
-                "path": "textures/blocks/honeycomb/base",
-                "tint_color": "#31292a" // iron
-            }
+        "path": "textures/blocks/honeycomb/base",
+        "tint_color": "#31292a"
+      }
     },
-    "utilitycraft:lapis_comb":{
+    "utilitycraft:lapis_comb": {
       "textures": {
-                "path": "textures/blocks/honeycomb/base",
-                "tint_color": "#003ba5" // iron
-
-            }
+        "path": "textures/blocks/honeycomb/base",
+        "tint_color": "#003ba5"
+      }
     },
-    "utilitycraft:quartz_comb":{
+    "utilitycraft:quartz_comb": {
       "textures": {
-                "path": "textures/blocks/honeycomb/base",
-                "tint_color": "#eaeaea" // iron
-
-            }
+        "path": "textures/blocks/honeycomb/base",
+        "tint_color": "#eaeaea"
+      }
     },
-    "utilitycraft:glowing_comb":{
+    "utilitycraft:glowing_comb": {
       "textures": {
-                "path": "textures/blocks/honeycomb/base",
-                "tint_color": "#967109" // iron
-
-            }
+        "path": "textures/blocks/honeycomb/base",
+        "tint_color": "#967109"
+      }
     },
-    "utilitycraft:ender_comb":{
+    "utilitycraft:ender_comb": {
       "textures": {
-                "path": "textures/blocks/honeycomb/base",
-                "tint_color": "#5923b8" // iron
-
-            }
+        "path": "textures/blocks/honeycomb/base",
+        "tint_color": "#5923b8"
+      }
     },
-    "utilitycraft:emerald_comb":{
+    "utilitycraft:emerald_comb": {
       "textures": {
-                "path": "textures/blocks/honeycomb/base",
-                "tint_color": "#23b83e" // iron
-
-            }
+        "path": "textures/blocks/honeycomb/base",
+        "tint_color": "#23b83e"
+      }
     },
-    "utilitycraft:coal_comb":{
+    "utilitycraft:coal_comb": {
       "textures": {
-                "path": "textures/blocks/honeycomb/base",
-                "tint_color": "#1f1f1f" // iron
-
-            }
+        "path": "textures/blocks/honeycomb/base",
+        "tint_color": "#1f1f1f"
+      }
     },
-    "utilitycraft:amethyst_comb":{
+    "utilitycraft:amethyst_comb": {
       "textures": {
-                "path": "textures/blocks/honeycomb/base",
-                "tint_color": "#9966CC"
-
-            }
+        "path": "textures/blocks/honeycomb/base",
+        "tint_color": "#9966CC"
+      }
     },
-    "utilitycraft:biomass_comb":{
+    "utilitycraft:biomass_comb": {
       "textures": {
-                "path": "textures/blocks/honeycomb/base",
-                "tint_color": "#0d9d00"
-
-            }
+        "path": "textures/blocks/honeycomb/base",
+        "tint_color": "#0d9d00"
+      }
     },
-    "utilitycraft:magmatic_comb":{
+    "utilitycraft:magmatic_comb": {
       "textures": "textures/blocks/honeycomb/magmatic"
     },
-    "utilitycraft:echo_comb":{
+    "utilitycraft:echo_comb": {
       "textures": "textures/blocks/honeycomb/echo"
     },
-  "utilitycraft:iron_bee":{
-      "textures":"textures/entity/bee/iron/bee"
+    "utilitycraft:iron_bee": {
+      "textures": "textures/entity/bee/iron/bee"
     },
-  "utilitycraft:bone_bee":{
-      "textures":"textures/entity/bee/bone/bee"
+    "utilitycraft:bone_bee": {
+      "textures": "textures/entity/bee/bone/bee"
     },
-  "utilitycraft:obsidian_bee":{
-      "textures":"textures/entity/bee/obsidian/bee"
+    "utilitycraft:obsidian_bee": {
+      "textures": "textures/entity/bee/obsidian/bee"
     },
-  "utilitycraft:biomass_bee":{
-      "textures":"textures/entity/bee/biomass/bee"
+    "utilitycraft:biomass_bee": {
+      "textures": "textures/entity/bee/biomass/bee"
     },
-  "utilitycraft:echo_bee":{
-      "textures":"textures/entity/bee/echo/bee"
+    "utilitycraft:echo_bee": {
+      "textures": "textures/entity/bee/echo/bee"
     },
-  "utilitycraft:amethyst_bee":{
-      "textures":"textures/entity/bee/amethyst/bee"
+    "utilitycraft:amethyst_bee": {
+      "textures": "textures/entity/bee/amethyst/bee"
     },
-  "utilitycraft:dirt_bee":{
-      "textures":"textures/entity/bee/dirt/bee"
+    "utilitycraft:dirt_bee": {
+      "textures": "textures/entity/bee/dirt/bee"
     },
-    "utilitycraft:magnetic_bee":{
-      "textures":"textures/entity/bee/magnetic/bee"
+    "utilitycraft:magnetic_bee": {
+      "textures": "textures/entity/bee/magnetic/bee"
     },
-    "utilitycraft:bumble_bee":{
-      "textures":"textures/entity/bee/bumble/bee"
+    "utilitycraft:bumble_bee": {
+      "textures": "textures/entity/bee/bumble/bee"
     },
-    "utilitycraft:slime_bee":{
-      "textures":"textures/entity/bee/slime/bee"
+    "utilitycraft:slime_bee": {
+      "textures": "textures/entity/bee/slime/bee"
     },
-    "utilitycraft:blue_mason_bee":{
-      "textures":"textures/entity/bee/blue_mason/bee"
+    "utilitycraft:blue_mason_bee": {
+      "textures": "textures/entity/bee/blue_mason/bee"
     },
-    "utilitycraft:coal_bee":{
-      "textures":"textures/entity/bee/coal/bee"
+    "utilitycraft:coal_bee": {
+      "textures": "textures/entity/bee/coal/bee"
     },
-    "utilitycraft:emerald_bee":{
-      "textures":"textures/entity/bee/emerald/bee"
+    "utilitycraft:emerald_bee": {
+      "textures": "textures/entity/bee/emerald/bee"
     },
-    "utilitycraft:ender_bee":{
-      "textures":"textures/entity/bee/ender/bee"
+    "utilitycraft:ender_bee": {
+      "textures": "textures/entity/bee/ender/bee"
     },
-    "utilitycraft:leaf_cutter_bee":{
-      "textures":"textures/entity/bee/leaf_cutter/bee"
+    "utilitycraft:leaf_cutter_bee": {
+      "textures": "textures/entity/bee/leaf_cutter/bee"
     },
-    //nest
-    "utilitycraft:oak_nest_front":{
-      "textures":"textures/blocks/nest/wood/oak"
+    "utilitycraft:oak_nest_front": {
+      "textures": "textures/blocks/nest/wood/oak"
     },
-    "utilitycraft:spruce_nest_front":{
-      "textures":"textures/blocks/nest/wood/spruce"
+    "utilitycraft:spruce_nest_front": {
+      "textures": "textures/blocks/nest/wood/spruce"
     },
-    "utilitycraft:log_spruce_top":{
-      "textures":"textures/blocks/log_spruce_top"
+    "utilitycraft:log_spruce_top": {
+      "textures": "textures/blocks/log_spruce_top"
     },
-    "utilitycraft:log_spruce":{
-      "textures":"textures/blocks/log_spruce"
+    "utilitycraft:log_spruce": {
+      "textures": "textures/blocks/log_spruce"
     },
-    "utilitycraft:jungle_nest_front":{
-      "textures":"textures/blocks/nest/wood/jungle"
+    "utilitycraft:jungle_nest_front": {
+      "textures": "textures/blocks/nest/wood/jungle"
     },
-    "utilitycraft:log_jungle_top":{
-      "textures":"textures/blocks/log_jungle_top"
+    "utilitycraft:log_jungle_top": {
+      "textures": "textures/blocks/log_jungle_top"
     },
-    "utilitycraft:log_jungle":{
-      "textures":"textures/blocks/log_jungle"
+    "utilitycraft:log_jungle": {
+      "textures": "textures/blocks/log_jungle"
     },
-    "utilitycraft:dark_oak_nest_front":{
-      "textures":"textures/blocks/nest/wood/dark_oak"
+    "utilitycraft:dark_oak_nest_front": {
+      "textures": "textures/blocks/nest/wood/dark_oak"
     },
-    "utilitycraft:log_dark_oak_top":{
-      "textures":"textures/blocks/log_big_oak_top"
+    "utilitycraft:log_dark_oak_top": {
+      "textures": "textures/blocks/log_big_oak_top"
     },
-    "utilitycraft:log_dark_oak":{
-      "textures":"textures/blocks/log_big_oak"
+    "utilitycraft:log_dark_oak": {
+      "textures": "textures/blocks/log_big_oak"
     },
-    "utilitycraft:birch_nest_front":{
-      "textures":"textures/blocks/nest/wood/birch"
+    "utilitycraft:birch_nest_front": {
+      "textures": "textures/blocks/nest/wood/birch"
     },
-    "utilitycraft:log_birch_top":{
-      "textures":"textures/blocks/log_birch_top"
+    "utilitycraft:log_birch_top": {
+      "textures": "textures/blocks/log_birch_top"
     },
-    "utilitycraft:log_birch":{
-      "textures":"textures/blocks/log_birch"
+    "utilitycraft:log_birch": {
+      "textures": "textures/blocks/log_birch"
     },
-    "utilitycraft:acacia_nest_front":{
-      "textures":"textures/blocks/nest/wood/acacia"
+    "utilitycraft:acacia_nest_front": {
+      "textures": "textures/blocks/nest/wood/acacia"
     },
-    "utilitycraft:log_acacia_top":{
-      "textures":"textures/blocks/log_acacia_top"
+    "utilitycraft:log_acacia_top": {
+      "textures": "textures/blocks/log_acacia_top"
     },
-    "utilitycraft:log_acacia":{
-      "textures":"textures/blocks/log_acacia"
+    "utilitycraft:log_acacia": {
+      "textures": "textures/blocks/log_acacia"
     },
-    "utilitycraft:stone_nest_front":{
-      "textures":"textures/blocks/nest/stone"
+    "utilitycraft:stone_nest_front": {
+      "textures": "textures/blocks/nest/stone"
     },
-    "utilitycraft:endstone_nest_front":{
-      "textures":"textures/blocks/nest/end_stone"
+    "utilitycraft:endstone_nest_front": {
+      "textures": "textures/blocks/nest/end_stone"
     },
-    "utilitycraft:glowstone_nest_front":{
-      "textures":"textures/blocks/nest/glowstone"
+    "utilitycraft:glowstone_nest_front": {
+      "textures": "textures/blocks/nest/glowstone"
     },
-    "utilitycraft:nether_brick_nest_front":{
-      "textures":"textures/blocks/nest/nether_bricks"
+    "utilitycraft:nether_brick_nest_front": {
+      "textures": "textures/blocks/nest/nether_bricks"
     },
-    "utilitycraft:coarse_dirt_nest_front":{
-      "textures":"textures/blocks/nest/coarse_dirt"
+    "utilitycraft:coarse_dirt_nest_front": {
+      "textures": "textures/blocks/nest/coarse_dirt"
     },
-    "utilitycraft:nether_gold_ore_nest_front":{
-      "textures":"textures/blocks/nest/nether_gold_ore"
+    "utilitycraft:nether_gold_ore_nest_front": {
+      "textures": "textures/blocks/nest/nether_gold_ore"
     },
-    "utilitycraft:nether_quartz_ore_nest_front":{
-      "textures":"textures/blocks/nest/nether_quartz_ore"
+    "utilitycraft:nether_quartz_ore_nest_front": {
+      "textures": "textures/blocks/nest/nether_quartz_ore"
     },
-    //
-      "utilitycraft:glowing_bee":{
-      "textures":"textures/entity/bee/glowing/bee"
+    "utilitycraft:glowing_bee": {
+      "textures": "textures/entity/bee/glowing/bee"
     },
-    "utilitycraft:redstone_bee":{
-      "textures":"textures/entity/bee/redstone/bee"
+    "utilitycraft:redstone_bee": {
+      "textures": "textures/entity/bee/redstone/bee"
     },
-    "utilitycraft:blue_banded_bee":{
-      "textures":"textures/entity/bee/blue_banded/bee"
+    "utilitycraft:blue_banded_bee": {
+      "textures": "textures/entity/bee/blue_banded/bee"
     },
-    "utilitycraft:lapis_bee":{
-      "textures":"textures/entity/bee/lapis/bee"
+    "utilitycraft:lapis_bee": {
+      "textures": "textures/entity/bee/lapis/bee"
     },
-    "utilitycraft:bee":{
-      "textures":"textures/entity/bee/bee"
+    "utilitycraft:bee": {
+      "textures": "textures/entity/bee/bee"
     },
-    "utilitycraft:gold_bee":{
-      "textures":"textures/entity/bee/gold/bee"
+    "utilitycraft:gold_bee": {
+      "textures": "textures/entity/bee/gold/bee"
     },
-    "utilitycraft:mining_bee":{
-      "textures":"textures/entity/bee/mining/bee"
+    "utilitycraft:mining_bee": {
+      "textures": "textures/entity/bee/mining/bee"
     },
-    "utilitycraft:quartz_bee":{
-      "textures":"textures/entity/bee/quartz/bee"
+    "utilitycraft:quartz_bee": {
+      "textures": "textures/entity/bee/quartz/bee"
     },
-    "utilitycraft:diamond_bee":{
-      "textures":"textures/entity/bee/diamond/bee"
+    "utilitycraft:diamond_bee": {
+      "textures": "textures/entity/bee/diamond/bee"
     },
-    "utilitycraft:copper_bee":{
-      "textures":"textures/entity/bee/copper/bee"
+    "utilitycraft:copper_bee": {
+      "textures": "textures/entity/bee/copper/bee"
     },
-    "utilitycraft:netherite_bee":{
-      "textures":"textures/entity/bee/netherite/bee"
+    "utilitycraft:netherite_bee": {
+      "textures": "textures/entity/bee/netherite/bee"
     },
-    "utilitycraft:centrifuge":{
-      "textures":"textures/blocks/centrifuge/centrifuge"
+    "utilitycraft:centrifuge": {
+      "textures": "textures/blocks/centrifuge/centrifuge"
     },
-    "utilitycraft:covered_centrifuge":{
-      "textures":"textures/blocks/centrifuge/covered_centrifuge"
+    "utilitycraft:covered_centrifuge": {
+      "textures": "textures/blocks/centrifuge/covered_centrifuge"
     },
-     "utilitycraft:breeding_chamber":{
-      "textures":"textures/blocks/breeding_chamber"
+    "utilitycraft:breeding_chamber": {
+      "textures": "textures/blocks/breeding_chamber"
     },
-    "oak_beehive_end":{
-      "textures":"textures/blocks/ab/oak_beehive_end"
+    "utilitycraft:bee_incubator": {
+      "textures": "textures/blocks/bee_incubator"
     },
-    "oak_beehive_front":{
-      "textures":"textures/blocks/ab/oak_beehive_front"
+    "oak_beehive_end": {
+      "textures": "textures/blocks/ab/oak_beehive_end"
     },
-    "oak_beehive_front_honey":{
-      "textures":"textures/blocks/ab/oak_beehive_front_honey"
+    "oak_beehive_front": {
+      "textures": "textures/blocks/ab/oak_beehive_front"
     },
-    "oak_beehive_side":{
-      "textures":"textures/blocks/ab/oak_beehive_side"
+    "oak_beehive_front_honey": {
+      "textures": "textures/blocks/ab/oak_beehive_front_honey"
+    },
+    "oak_beehive_side": {
+      "textures": "textures/blocks/ab/oak_beehive_side"
+    },
+    "utilitycraft:oak": {
+      "textures": "textures/blocks/nest/wood/oak"
+    },
+    "utilitycraft:acacia": {
+      "textures": "textures/blocks/nest/wood/acacia"
+    },
+    "log_side": {
+      "textures": "textures/blocks/log_oak"
+    },
+    "log_top": {
+      "textures": "textures/blocks/log_oak_top"
+    },
+    "log_birch": {
+      "textures": "textures/blocks/log_birch"
+    },
+    "log_birch_top": {
+      "textures": "textures/blocks/log_birch_top"
+    },
+    "log_spruce": {
+      "textures": "textures/blocks/log_spruce"
+    },
+    "log_spruce_top": {
+      "textures": "textures/blocks/log_spruce_top"
+    },
+    "log_jungle": {
+      "textures": "textures/blocks/log_jungle"
+    },
+    "log_jungle_top": {
+      "textures": "textures/blocks/log_jungle_top"
+    },
+    "log_acacia": {
+      "textures": "textures/blocks/log_acacia"
+    },
+    "log_acacia_top": {
+      "textures": "textures/blocks/log_acacia_top"
+    },
+    "log_big_oak": {
+      "textures": "textures/blocks/log_big_oak"
+    },
+    "log_big_oak_top": {
+      "textures": "textures/blocks/log_big_oak_top"
+    },
+    "stone": {
+      "textures": "textures/blocks/stone"
+    },
+    "coarse_dirt": {
+      "textures": "textures/blocks/coarse_dirt"
+    },
+    "nether_brick": {
+      "textures": "textures/blocks/nether_brick"
+    },
+    "quartz_ore": {
+      "textures": "textures/blocks/quartz_ore"
+    },
+    "nether_gold_ore": {
+      "textures": "textures/blocks/nether_gold_ore"
+    },
+    "glowstone": {
+      "textures": "textures/blocks/glowstone"
+    },
+    "end_stone": {
+      "textures": "textures/blocks/end_stone"
     }
   }
 }

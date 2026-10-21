@@ -1,0 +1,23 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "projectbee:oak_nest"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "ingredients": [
+            {
+                "item": "minecraft:wooden_sword"
+            },
+            {
+                "item": "minecraft:oak_log"
+            }
+        ],
+        "result": {
+            "item": "utilitycraft:oak_nest",
+            "count": 1
+        }
+    }
+}

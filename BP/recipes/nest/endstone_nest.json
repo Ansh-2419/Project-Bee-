@@ -1,0 +1,23 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "projectbee:endstone_nest"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "ingredients": [
+            {
+                "item": "minecraft:iron_sword"
+            },
+            {
+                "item": "minecraft:end_stone"
+            }
+        ],
+        "result": {
+            "item": "utilitycraft:endstone_nest",
+            "count": 1
+        }
+    }
+}

@@ -84,7 +84,7 @@
       "textures": "textures/items/upgrades/simulator"
     },
     "utilitycraft:speed_upgrade": {
-      "textures": "textures/items/upgrades/speed"
+      "textures": "textures/items/upgrades/speed1"
     },
     "utilitycraft:upgrade_base": {
       "textures": "textures/items/upgrades/base"
@@ -124,6 +124,21 @@
     },
     "projectbee:heart_bar_9": {
       "textures": "textures/ui/progress_heart/9_bar"
+    },
+    "projectbee:speed_upgrade_1": {
+      "textures": "textures/items/upgrades/speed1"
+    },
+    "projectbee:speed_upgrade_2": {
+      "textures": "textures/items/upgrades/speed2"
+    },
+    "projectbee:speed_upgrade_3": {
+      "textures": "textures/items/upgrades/speed3"
+    },
+    "projectbee:speed_upgrade_4": {
+      "textures": "textures/items/upgrades/speed4"
+    },
+    "projectbee:speed_upgrade_5": {
+      "textures": "textures/items/upgrades/speed5"
     }
   }
 }

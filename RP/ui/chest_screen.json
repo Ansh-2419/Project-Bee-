@@ -1,9 +1,7 @@
 {
     "namespace": "chest",
-
     "small_chest_screen": {
         "$temp_container_title|default": "$container_title",
-
         "modifications": [
             {
                 "array_name": "variables",
@@ -37,6 +35,11 @@
                     {
                         "requires": "($temp_container_title = 'projectbee.breeding_chamber.ui')",
                         "$screen_content": "breeding_chamber.utility_panel",
+                        "$screen_bg_content": "common.screen_background"
+                    },
+                    {
+                        "requires": "($temp_container_title = 'projectbee.bee_incubator.ui')",
+                        "$screen_content": "bee_incubator.utility_panel",
                         "$screen_bg_content": "common.screen_background"
                     }
                 ]

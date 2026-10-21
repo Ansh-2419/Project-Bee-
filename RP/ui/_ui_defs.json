@@ -5,6 +5,7 @@
         "ui/centrifuge/powered_centrifuge.json",
         "ui/fs/feeding_slab.json",
         "ui/fs/feeding_slab_double.json",
-        "ui/bc/breeding_chamber.json"
+        "ui/bc/breeding_chamber.json",
+        "ui/bi/bee_incubator.json"
     ]
 }

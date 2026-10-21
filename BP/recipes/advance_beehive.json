@@ -1,0 +1,37 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "projectbee:advance_beehive"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "WWW",
+            "CHC",
+            "FWS"
+        ],
+        "key": {
+            "S": {
+                "item": "minecraft:shears"
+            },
+            "F": {
+                "item": "minecraft:campfire"
+            },
+            "W": {
+                "tag": "minecraft:planks"
+            },
+            "H": {
+                "item": "minecraft:beehive"
+            },
+            "C": {
+                "item": "minecraft:honeycomb"
+            }
+        },
+        "result": {
+            "item": "projectbee:advance_beehive",
+            "count": 1
+        }
+    }
+}
