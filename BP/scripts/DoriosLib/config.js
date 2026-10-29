@@ -9,8 +9,8 @@ export const ADDON_METADATA = {
   dependencies: {
     utilitycraft: {
       name: "UtilityCraft",
-      version: "3.5.0",
-      warning: "Project bee requires UtilityCraft 3.5.0 or newer.",
+      version: "3.6.1",
+      warning: "Project bee requires UtilityCraft 3.6.1 or newer.",
     },
   },
 };

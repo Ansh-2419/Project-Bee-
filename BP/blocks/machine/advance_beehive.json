@@ -15,6 +15,7 @@
         }
       },
       "states": {
+        "utilitycraft:has_selection": [true, false],
         "projectbee:on": [
           false,
           true
@@ -164,7 +165,8 @@
             ]
           }
         }
-      }
+      },
+      {"condition":"!q.block_state('utilitycraft:has_selection')","components":{"minecraft:selection_box":false}}
     ]
   }
 }

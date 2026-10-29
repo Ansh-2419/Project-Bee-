@@ -1,3 +1,4 @@
+import { getBlockEntity, getEntityBlock } from "./containerEntity.js";
 // ============================================================
 // Project Bee — Feeding Slab
 //
@@ -31,15 +32,6 @@ const DOUBLE_SIZE  = 6;
 
 // ── Helpers ───────────────────────────────────────────────────
 
-function getBlockEntity(block) {
-    if (!block?.isValid) return undefined;
-    return block.dimension
-        .getEntitiesAtBlockLocation(block.location)
-        .find(e =>
-            e.typeId !== "utilitycraft:machine_area_outline" &&
-            e.typeId !== "minecraft:player"
-        );
-}
 
 function getInventory(entity) {
     return entity?.getComponent("minecraft:inventory")?.container;
@@ -85,74 +77,7 @@ DoriosLib.registry.blockComponent(BLOCK_ID, {
     },
 
     onPlayerInteract(event) {
-        const block  = event.block;
-        const player = event.player;
-        if (!block?.isValid || !player?.isValid) return;
-
-        // Already double — open normally, nothing to upgrade
-        if (isDouble(block)) return;
-
-        // Player must be holding another feeding slab
-        const playerInv = player.getComponent("minecraft:inventory")?.container;
-        if (!playerInv) return;
-        const handItem = playerInv.getItem(player.selectedSlotIndex);
-        if (!handItem || handItem.typeId !== BLOCK_ID) return;
-
-        // Snapshot existing items from the single inventory
-        const oldEntity = getBlockEntity(block);
-        const savedItems = [];
-        if (oldEntity?.isValid) {
-            const inv = getInventory(oldEntity);
-            if (inv) {
-                for (let i = 0; i < SINGLE_SIZE; i++) {
-                    savedItems[i] = inv.getItem(i) ?? null;
-                }
-            }
-            // Kill old entity — will be replaced with a 6-slot one
-            try { oldEntity.kill(); } catch { }
-        }
-
-        // Consume one slab from hand
-        if (handItem.amount > 1) {
-            handItem.amount--;
-            playerInv.getSlot(player.selectedSlotIndex).setItem(handItem);
-        } else {
-            playerInv.getSlot(player.selectedSlotIndex).setItem(undefined);
-        }
-
-        // Set block state to double
-        block.setPermutation(block.permutation.withState(DOUBLE_STATE, true));
-
-        // Spawn new 6-slot entity and restore items
-        system.run(() => {
-            try {
-                const entity = Utils.spawnEntity(block, {
-                    entity: { type: "container", inventory_size: DOUBLE_SIZE }
-                });
-
-                if (!entity?.isValid) {
-                    console.warn("[Project Bee] Feeding Slab double entity spawn failed.");
-                    return;
-                }
-
-                entity.nameTag = DOUBLE_TITLE;
-
-                // Restore saved items into the new inventory
-                const inv = getInventory(entity);
-                if (inv) {
-                    for (let i = 0; i < savedItems.length; i++) {
-                        if (savedItems[i]) inv.getSlot(i).setItem(savedItems[i]);
-                    }
-                }
-
-                system.run(() => {
-                    if (!entity?.isValid) return;
-                    try { InterfaceManager.ensureEntityInterfaces(entity); } catch { }
-                });
-            } catch (err) {
-                console.warn(`[Project Bee] Feeding Slab double upgrade error: ${err}`);
-            }
-        });
+        upgradeFeedingSlab(event.block, event.player);
     },
 
     onTick(event) {
@@ -195,5 +120,87 @@ world.beforeEvents.playerBreakBlock.subscribe(e => {
             e.block.dimension.spawnItem(item, e.block.location);
         }
         try { entity.kill(); } catch { }
+    });
+});
+// Share the existing conversion between block and inventory-entity interaction.
+function upgradeFeedingSlab(block, player) {
+    if (!block?.isValid || block.typeId !== BLOCK_ID || !player?.isValid) return;
+
+    // Already double — open normally, nothing to upgrade
+    if (isDouble(block)) return;
+
+    // Player must be holding another feeding slab
+    const playerInv = player.getComponent("minecraft:inventory")?.container;
+    if (!playerInv) return;
+    const handItem = playerInv.getItem(player.selectedSlotIndex);
+    if (!handItem || handItem.typeId !== BLOCK_ID) return;
+
+    // Snapshot existing items from the single inventory
+    const oldEntity = getBlockEntity(block);
+    const savedItems = [];
+    if (oldEntity?.isValid) {
+        const inv = getInventory(oldEntity);
+        if (inv) {
+            for (let i = 0; i < SINGLE_SIZE; i++) {
+                savedItems[i] = inv.getItem(i) ?? null;
+            }
+        }
+        // Kill old entity — will be replaced with a 6-slot one
+        try { oldEntity.kill(); } catch { }
+    }
+
+    // Consume one slab from hand
+    if (handItem.amount > 1) {
+        handItem.amount--;
+        playerInv.getSlot(player.selectedSlotIndex).setItem(handItem);
+    } else {
+        playerInv.getSlot(player.selectedSlotIndex).setItem(undefined);
+    }
+
+    // Set block state to double
+    block.setPermutation(block.permutation.withState(DOUBLE_STATE, true));
+
+    // Spawn new 6-slot entity and restore items
+    system.run(() => {
+        try {
+            const entity = Utils.spawnEntity(block, {
+                entity: { type: "container", inventory_size: DOUBLE_SIZE }
+            });
+
+            if (!entity?.isValid) {
+                console.warn("[Project Bee] Feeding Slab double entity spawn failed.");
+                return;
+            }
+
+            entity.nameTag = DOUBLE_TITLE;
+
+            // Restore saved items into the new inventory
+            const inv = getInventory(entity);
+            if (inv) {
+                for (let i = 0; i < savedItems.length; i++) {
+                    if (savedItems[i]) inv.getSlot(i).setItem(savedItems[i]);
+                }
+            }
+
+            system.run(() => {
+                if (!entity?.isValid) return;
+                try { InterfaceManager.ensureEntityInterfaces(entity); } catch { }
+            });
+        } catch (err) {
+            console.warn(`[Project Bee] Feeding Slab double upgrade error: ${err}`);
+        }
+    });
+}
+
+world.beforeEvents.playerInteractWithEntity.subscribe(event => {
+    const { player, target, itemStack } = event;
+    if (itemStack?.typeId !== BLOCK_ID) return;
+    const block = getEntityBlock(target);
+    if (block?.typeId !== BLOCK_ID || isDouble(block)) return;
+    event.cancel = true;
+    system.run(() => {
+        if (!player.isValid || !target.isValid) return;
+        // Re-read both the block and held item after leaving the read-only event.
+        upgradeFeedingSlab(getEntityBlock(target), player);
     });
 });

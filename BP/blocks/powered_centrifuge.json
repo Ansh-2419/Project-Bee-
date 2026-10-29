@@ -13,6 +13,7 @@
                 }
             },
             "states": {
+                "utilitycraft:has_selection": [true, false],
                 "utilitycraft:on": [false, true]
             }
         },
@@ -63,7 +64,8 @@
             {
                 "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
                 "components": { "minecraft:transformation": { "rotation": [0, 90, 0] } }
-            }
+            },
+            {"condition":"!q.block_state('utilitycraft:has_selection')","components":{"minecraft:selection_box":false}}
         ]
     }
 }

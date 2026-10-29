@@ -7,6 +7,7 @@
                 "category": "construction"
             },
             "states": {
+                "utilitycraft:has_selection": [true, false],
                 "projectbee:double": [
                     false,
                     true
@@ -115,7 +116,8 @@
                         ]
                     }
                 }
-            }
+            },
+            {"condition":"!q.block_state('utilitycraft:has_selection')","components":{"minecraft:selection_box":false}}
         ]
     }
 }

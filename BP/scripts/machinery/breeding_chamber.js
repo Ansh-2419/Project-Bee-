@@ -1,3 +1,4 @@
+import { getBlockEntity } from "./containerEntity.js";
 // ============================================================
 // Project Bee — Breeding Chamber
 //
@@ -57,14 +58,6 @@ function getState(key) {
 
 // ── Helpers ───────────────────────────────────────────────────
 
-function getBlockEntity(block) {
-    return block.dimension
-        .getEntitiesAtBlockLocation(block.location)
-        .find(e =>
-            e.typeId !== "utilitycraft:machine_area_outline" &&
-            e.typeId !== "minecraft:player"
-        );
-}
 
 function getInventory(entity) {
     return entity?.getComponent("minecraft:inventory")?.container;

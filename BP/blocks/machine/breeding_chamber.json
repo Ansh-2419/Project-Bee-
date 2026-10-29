@@ -3,6 +3,7 @@
   "minecraft:block": {
     "description": {
       "identifier": "projectbee:breeding_chamber",
+      "states": { "utilitycraft:has_selection": [true, false] },
       "menu_category": {
         "category": "construction"
       },
@@ -95,7 +96,8 @@
             ]
           }
         }
-      }
+      },
+      {"condition":"!q.block_state('utilitycraft:has_selection')","components":{"minecraft:selection_box":false}}
     ]
   }
 }

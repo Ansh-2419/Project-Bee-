@@ -1,3 +1,4 @@
+import { getBlockEntity } from "./containerEntity.js";
 // ============================================================
 // Project Bee — Advanced Beehive
 //
@@ -116,14 +117,6 @@ function getState(key) {
 
 // ── Shared helpers ────────────────────────────────────────────
 
-function getBlockEntity(block) {
-    return block.dimension
-        .getEntitiesAtBlockLocation(block.location)
-        .find(e =>
-            e.typeId !== "utilitycraft:machine_area_outline" &&
-            e.typeId !== "minecraft:player"
-        );
-}
 
 function getInventory(entity) {
     return entity?.getComponent("minecraft:inventory")?.container;
@@ -176,12 +169,7 @@ function getFeederAllowedBees(block) {
             const allowed = [];
 
             if (feederBlock.typeId === FEEDING_SLAB_ID) {
-                const feederEntity = feederBlock.dimension
-                    .getEntitiesAtBlockLocation(feederBlock.location)
-                    .find(e =>
-                        e.typeId !== "utilitycraft:machine_area_outline" &&
-                        e.typeId !== "minecraft:player"
-                    );
+                const feederEntity = getBlockEntity(feederBlock);
                 if (!feederEntity?.isValid) continue;
                 const inv = getInventory(feederEntity);
                 if (!inv) continue;
