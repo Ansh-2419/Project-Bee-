@@ -29,6 +29,11 @@
         "result": {
             "item": "utilitycraft:simulator_upgrade",
             "count": 1
-        }
+        },
+        "unlock": [
+            {
+                "item": "utilitycraft:upgrade_base"
+            }
+        ]
     }
 }

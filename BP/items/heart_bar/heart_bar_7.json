@@ -1,14 +1,19 @@
 {
-    "format_version": "1.21.90",
-    "minecraft:item": {
-        "description": {
-            "identifier": "projectbee:heart_bar_7",
-            "menu_category": { "category": "none" }
-        },
-        "components": {
-            "minecraft:icon": "projectbee:heart_bar_7",
-            "minecraft:max_stack_size": 1,
-            "utilitycraft:ui_element": {}
-        }
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "projectbee:heart_bar_7",
+      "menu_category": {
+        "category": "none"
+      },
+      "custom_components": [
+        "utilitycraft:ui_element"
+      ]
+    },
+    "components": {
+      "minecraft:icon": "projectbee:heart_bar_7",
+      "minecraft:max_stack_size": 1,
+      "utilitycraft:ui_element": {}
     }
+  }
 }

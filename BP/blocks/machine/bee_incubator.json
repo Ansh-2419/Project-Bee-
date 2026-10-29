@@ -1,53 +1,119 @@
 {
-    "format_version": "1.21.90",
-    "minecraft:block": {
-        "description": {
-            "identifier": "projectbee:bee_incubator",
-            "menu_category": { "category": "construction" },
-            "traits": {
-                "minecraft:placement_direction": {
-                    "enabled_states": ["minecraft:cardinal_direction"],
-                    "y_rotation_offset": 180
-                }
-            },
-            "states": {
-                "utilitycraft:on": [false, true]
-            }
-        },
-        "components": {
-            "minecraft:geometry": "geometry.um_centrifuge",
-            "minecraft:material_instances": {
-                "*": { "texture": "utilitycraft:bee_incubator", "render_method": "alpha_test" }
-            },
-            "minecraft:tick": { "interval_range": [1, 1] },
-            "minecraft:destructible_by_mining": { "seconds_to_destroy": 2.0 },
-            "minecraft:destructible_by_explosion": false,
-            "minecraft:light_dampening": 0,
-            "tag:dorios:machine": {},
-            "tag:dorios:energy": {},
-            "tag:dorios:item": {},
-            "tag:minecraft:is_pickaxe_item_destructible": {},
-            "projectbee:bee_incubator": {
-                "entity": {
-                    "type": "machine",
-                    "inventory_size": 12
-                },
-                "machine": {
-                    "energy_cap": 10000,
-                    "energy_cost": 2000,
-                    "rate_speed_base": 20
-                }
-            }
-        },
-        "permutations": [
-            {
-                "condition": "q.block_state('utilitycraft:on') == true",
-                "components": { "minecraft:light_emission": 7 }
-            },
-            { "condition": "q.block_state('minecraft:cardinal_direction') == 'north'", "components": { "minecraft:transformation": { "rotation": [0, 0, 0] } } },
-            { "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",  "components": { "minecraft:transformation": { "rotation": [0, 90, 0] } } },
-            { "condition": "q.block_state('minecraft:cardinal_direction') == 'south'", "components": { "minecraft:transformation": { "rotation": [0, 180, 0] } } },
-            { "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",  "components": { "minecraft:transformation": { "rotation": [0, -90, 0] } } }
+  "format_version": "1.21.90",
+  "minecraft:block": {
+    "description": {
+      "identifier": "projectbee:bee_incubator",
+      "menu_category": {
+        "category": "construction"
+      },
+      "traits": {
+        "minecraft:placement_direction": {
+          "enabled_states": [
+            "minecraft:cardinal_direction"
+          ],
+          "y_rotation_offset": 180
+        }
+      },
+      "states": {
+        "utilitycraft:on": [
+          false,
+          true
         ]
-    }
+      },
+      "custom_components": [
+        "projectbee:bee_incubator"
+      ]
+    },
+    "components": {
+      "minecraft:geometry": "geometry.um_centrifuge",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "utilitycraft:bee_incubator",
+          "render_method": "alpha_test"
+        }
+      },
+      "minecraft:tick": {
+        "interval_range": [
+          1,
+          1
+        ]
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 2.0
+      },
+      "minecraft:destructible_by_explosion": false,
+      "minecraft:light_dampening": 0,
+      "tag:dorios:machine": {},
+      "tag:dorios:energy": {},
+      "tag:dorios:item": {},
+      "tag:minecraft:is_pickaxe_item_destructible": {},
+      "projectbee:bee_incubator": {
+        "entity": {
+          "type": "machine",
+          "inventory_size": 12
+        },
+        "machine": {
+          "energy_cap": 10000,
+          "energy_cost": 2000,
+          "rate_speed_base": 20
+        }
+      }
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('utilitycraft:on') == true",
+        "components": {
+          "minecraft:light_emission": 7
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          }
+        }
+      }
+    ]
+  }
 }

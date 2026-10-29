@@ -1,27 +1,30 @@
-{ 
+{
   "format_version": "1.21.90",
   "minecraft:block": {
     "description": {
-      "identifier": "utilitycraft:echo_bee"
+      "identifier": "utilitycraft:echo_bee",
+      "custom_components": [
+        "utilitycraft:bee_block"
+      ]
     },
     "components": {
-    "minecraft:geometry": "geometry.um_bee",
-   "utilitycraft:bee_block": {},
-     "minecraft:tick": {
-	       "interval_range": [
-		         20,
-		         20
-	                 ]
-                      },
-     "minecraft:destructible_by_mining": {
-    "seconds_to_destroy": 1.0
-     },
+      "minecraft:geometry": "geometry.um_bee",
+      "utilitycraft:bee_block": {},
+      "minecraft:tick": {
+        "interval_range": [
+          20,
+          20
+        ]
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1.0
+      },
       "minecraft:material_instances": {
-    "*": {
-        "texture": "utilitycraft:echo_bee",
-        "render_method": "blend" 
-    }
-}
+        "*": {
+          "texture": "utilitycraft:echo_bee",
+          "render_method": "blend"
+        }
+      }
     }
   }
 }

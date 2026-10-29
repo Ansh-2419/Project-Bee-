@@ -23,6 +23,11 @@
         "result": {
             "item": "utilitycraft:extension_box",
             "count": 1
-        }
+        },
+        "unlock": [
+            {
+                "item": "minecraft:honeycomb"
+            }
+        ]
     }
 }

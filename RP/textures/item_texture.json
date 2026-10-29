@@ -139,6 +139,9 @@
     },
     "projectbee:speed_upgrade_5": {
       "textures": "textures/items/upgrades/speed5"
+    },
+    "projectbee:bee_egg": {
+      "textures": "textures/items/bee_egg/bee_egg"
     }
   }
 }

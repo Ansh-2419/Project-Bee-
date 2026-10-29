@@ -50,7 +50,7 @@
         }
       },
       {
-        "heart_progress@uc.bar": {
+        "heart_progress@uc.item_display_medium": {
           "$collection_index": 2,
           "anchor_from": "center",
           "anchor_to": "center",

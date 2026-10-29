@@ -18,6 +18,11 @@
         "result": {
             "item": "utilitycraft:oak_nest",
             "count": 1
-        }
+        },
+        "unlock": [
+            {
+                "item": "minecraft:oak_log"
+            }
+        ]
     }
 }

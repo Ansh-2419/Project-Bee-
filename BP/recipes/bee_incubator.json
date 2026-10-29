@@ -26,6 +26,11 @@
         "result": {
             "item": "projectbee:bee_incubator",
             "count": 1
-        }
+        },
+        "unlock": [
+            {
+                "item": "minecraft:bee_nest"
+            }
+        ]
     }
 }

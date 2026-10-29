@@ -18,6 +18,11 @@
         "result": {
             "item": "utilitycraft:honey_treat",
             "count": 1
-        }
+        },
+        "unlock": [
+            {
+                "item": "minecraft:honey_bottle"
+            }
+        ]
     }
 }

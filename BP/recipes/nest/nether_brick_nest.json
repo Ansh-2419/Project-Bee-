@@ -18,6 +18,11 @@
         "result": {
             "item": "utilitycraft:nether_brick_nest",
             "count": 1
-        }
+        },
+        "unlock": [
+            {
+                "item": "minecraft:nether_brick"
+            }
+        ]
     }
 }

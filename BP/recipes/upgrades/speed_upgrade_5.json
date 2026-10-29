@@ -26,6 +26,11 @@
         "result": {
             "item": "projectbee:speed_upgrade_5",
             "count": 1
-        }
+        },
+        "unlock": [
+            {
+                "item": "utilitycraft:upgrade_base"
+            }
+        ]
     }
 }

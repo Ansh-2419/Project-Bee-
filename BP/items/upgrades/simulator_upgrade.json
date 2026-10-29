@@ -1,17 +1,20 @@
 {
-    "format_version": "1.21.90",
-    "minecraft:item": {
-        "description": {
-            "identifier": "utilitycraft:simulator_upgrade",
-            "menu_category": {
-                "category": "items"
-            }
-        },
-        "components": {
-            "minecraft:icon": "utilitycraft:simulation_upgrade",
-            "minecraft:max_stack_size": 1,
-            "minecraft:hover_text_color": "gold",
-            "utilitycraft:simulator_upgrade": {}
-        }
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "utilitycraft:simulator_upgrade",
+      "menu_category": {
+        "category": "items"
+      },
+      "custom_components": [
+        "utilitycraft:simulator_upgrade"
+      ]
+    },
+    "components": {
+      "minecraft:icon": "utilitycraft:simulation_upgrade",
+      "minecraft:max_stack_size": 1,
+      "minecraft:hover_text_color": "gold",
+      "utilitycraft:simulator_upgrade": {}
     }
+  }
 }

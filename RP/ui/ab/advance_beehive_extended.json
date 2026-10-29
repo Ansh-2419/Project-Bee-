@@ -197,13 +197,13 @@
           "texture": "textures/ui/bottle_overaly",
           "anchor_from": "top_middle",
           "anchor_to": "top_middle",
-          "offset": [16, 10],
-          "size": [17, 53],
+          "offset": [17, 53],
+          "size": [16, 16],
           "layer": 5
         }
       },
       {
-        "progress@uc.bar": {
+        "progress@uc.item_display_medium": {
           "$collection_index": 2
         }
       },

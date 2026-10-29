@@ -18,6 +18,11 @@
         "result": {
             "item": "utilitycraft:coarse_dirt_nest",
             "count": 1
-        }
+        },
+        "unlock": [
+            {
+                "item": "minecraft:stone"
+            }
+        ]
     }
 }

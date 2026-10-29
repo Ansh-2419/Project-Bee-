@@ -222,7 +222,7 @@
         }
       },
       {
-        "progress@uc.bar": {
+        "progress@uc.item_display_medium": {
           "$collection_index": 2
         }
       },

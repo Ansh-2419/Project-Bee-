@@ -23,6 +23,11 @@
         "result": {
             "item": "projectbee:powered_centrifuge",
             "count": 1
-        }
+        },
+        "unlock": [
+            {
+                "item": "minecraft:honeycomb"
+            }
+        ]
     }
 }

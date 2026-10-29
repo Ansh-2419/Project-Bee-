@@ -9,36 +9,51 @@
  *
  * flowerTypes: items accepted in the two flower input slots.
  * Both flower slots must have a valid flower from this list.
+ *
+ * Use ALL_FLOWERS when any flower should be accepted.
  */
+
+// ── All usable flowers ─────────────────────────────────────────
+export const ALL_FLOWERS = [
+    "minecraft:dandelion",
+    "minecraft:poppy",
+    "minecraft:blue_orchid",
+    "minecraft:allium",
+    "minecraft:azure_bluet",
+    "minecraft:red_tulip",
+    "minecraft:orange_tulip",
+    "minecraft:white_tulip",
+    "minecraft:pink_tulip",
+    "minecraft:oxeye_daisy",
+    "minecraft:cornflower",
+    "minecraft:lily_of_the_valley",
+    "minecraft:yellow_flower",
+    "minecraft:wither_rose",
+    "minecraft:sunflower",
+    "minecraft:lilac",
+    "minecraft:rose_bush",
+    "minecraft:peony",
+    "minecraft:flowering_azalea",
+    "minecraft:azalea_leaves_flowered",
+    "minecraft:mangrove_propagule",
+    "minecraft:pitcher_plant",
+    "minecraft:torchflower",
+    "minecraft:cherry_leaves",
+    "minecraft:pink_petals",
+];
+
 export const breedingRecipes = [
     // ── Natural bee crosses ───────────────────────────────────
     {
         parent1: "minecraft:bee",
         parent2: "minecraft:bee",
-        flowerTypes: [
-            "minecraft:dandelion",
-            "minecraft:poppy",
-            "minecraft:blue_orchid",
-            "minecraft:allium",
-            "minecraft:azure_bluet",
-            "minecraft:red_tulip",
-            "minecraft:orange_tulip",
-            "minecraft:white_tulip",
-            "minecraft:pink_tulip",
-            "minecraft:oxeye_daisy",
-            "minecraft:cornflower",
-            "minecraft:lily_of_the_valley",
-            "minecraft:sunflower",
-            "minecraft:lilac",
-            "minecraft:rose_bush",
-            "minecraft:peony"
-        ],
+        flowerTypes: ALL_FLOWERS,
         outputs: [
-            { beeId: "utilitycraft:bumble_bee",    weight: 30 },
-            { beeId: "utilitycraft:blue_mason_bee", weight: 20 },
+            { beeId: "utilitycraft:bumble_bee",      weight: 30 },
+            { beeId: "utilitycraft:blue_mason_bee",  weight: 20 },
             { beeId: "utilitycraft:leaf_cutter_bee", weight: 20 },
             { beeId: "utilitycraft:blue_banded_bee", weight: 15 },
-            { beeId: "utilitycraft:dirt_bee",       weight: 15 },
+            { beeId: "utilitycraft:dirt_bee",        weight: 15 },
         ]
     },
 
@@ -46,7 +61,7 @@ export const breedingRecipes = [
     {
         parent1: "utilitycraft:iron_bee",
         parent2: "utilitycraft:copper_bee",
-        flowerTypes: [ "minecraft:dandelion", "minecraft:poppy" ],
+        flowerTypes: ALL_FLOWERS,
         outputs: [
             { beeId: "utilitycraft:gold_bee", weight: 50 },
             { beeId: "utilitycraft:coal_bee", weight: 50 },
@@ -55,7 +70,7 @@ export const breedingRecipes = [
     {
         parent1: "utilitycraft:iron_bee",
         parent2: "utilitycraft:gold_bee",
-        flowerTypes: [ "minecraft:sunflower", "minecraft:dandelion" ],
+        flowerTypes: ALL_FLOWERS,
         outputs: [
             { beeId: "utilitycraft:diamond_bee", weight: 40 },
             { beeId: "utilitycraft:copper_bee",  weight: 60 },
@@ -64,7 +79,7 @@ export const breedingRecipes = [
     {
         parent1: "utilitycraft:gold_bee",
         parent2: "utilitycraft:diamond_bee",
-        flowerTypes: [ "minecraft:cornflower", "minecraft:blue_orchid" ],
+        flowerTypes: ALL_FLOWERS,
         outputs: [
             { beeId: "utilitycraft:netherite_bee", weight: 30 },
             { beeId: "utilitycraft:lapis_bee",     weight: 70 },
@@ -115,8 +130,39 @@ export const breedingRecipes = [
         parent2: "utilitycraft:leaf_cutter_bee",
         flowerTypes: [ "minecraft:sunflower", "minecraft:lilac" ],
         outputs: [
-            { beeId: "utilitycraft:mining_bee",     weight: 50 },
-            { beeId: "utilitycraft:magnetic_bee",   weight: 50 },
+            { beeId: "utilitycraft:mining_bee",   weight: 50 },
+            { beeId: "utilitycraft:magnetic_bee", weight: 50 },
+        ]
+    },
+
+    // ── Alloy bees ────────────────────────────────────────────
+    // Iron Bee + Coal Bee → 45 % Steel Bee, 55 % Coal Bee
+    {
+        parent1: "utilitycraft:iron_bee",
+        parent2: "utilitycraft:coal_bee",
+        flowerTypes: [ "minecraft:poppy", "minecraft:red_tulip" ],
+        outputs: [
+            { beeId: "utilitycraft:steel_bee", weight: 45 },
+            { beeId: "utilitycraft:coal_bee",  weight: 55 },
+        ]
+    },
+    // Steel Bee + Quartz Bee → 45 % Duranium Bee, 55 % Steel Bee
+    {
+        parent1: "utilitycraft:steel_bee",
+        parent2: "utilitycraft:quartz_bee",
+        flowerTypes: ALL_FLOWERS,
+        outputs: [
+            { beeId: "utilitycraft:duranium_bee", weight: 45 },
+            { beeId: "utilitycraft:steel_bee",    weight: 55 },
+        ]
+    },
+    // Iron Bee + Redstone Bee → Energized Iron Bee (any flower)
+    {
+        parent1: "utilitycraft:iron_bee",
+        parent2: "utilitycraft:redstone_bee",
+        flowerTypes: ALL_FLOWERS,
+        outputs: [
+            { beeId: "utilitycraft:energized_iron_bee", weight: 100 },
         ]
     },
 ];

@@ -1,15 +1,20 @@
 {
-    "format_version": "1.21.90",
-    "minecraft:item": {
-        "description": {
-            "identifier": "projectbee:speed_upgrade_4",
-            "menu_category": { "category": "items" }
-        },
-        "components": {
-            "minecraft:icon": "projectbee:speed_upgrade_4",
-            "minecraft:max_stack_size": 4,
-            "minecraft:hover_text_color": "aqua",
-            "projectbee:speed_upgrade_4": {}
-        }
+  "format_version": "1.21.90",
+  "minecraft:item": {
+    "description": {
+      "identifier": "projectbee:speed_upgrade_4",
+      "menu_category": {
+        "category": "items"
+      },
+      "custom_components": [
+        "projectbee:speed_upgrade_4"
+      ]
+    },
+    "components": {
+      "minecraft:icon": "projectbee:speed_upgrade_4",
+      "minecraft:max_stack_size": 4,
+      "minecraft:hover_text_color": "aqua",
+      "projectbee:speed_upgrade_4": {}
     }
+  }
 }

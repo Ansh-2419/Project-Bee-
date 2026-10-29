@@ -32,6 +32,11 @@
         "result": {
             "item": "projectbee:advance_beehive",
             "count": 1
-        }
+        },
+        "unlock": [
+            {
+                "item": "minecraft:beehive"
+            }
+        ]
     }
 }

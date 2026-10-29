@@ -26,6 +26,11 @@
         "result": {
             "item": "projectbee:breeding_chamber",
             "count": 1
-        }
+        },
+        "unlock": [
+            {
+                "item": "minecraft:honeycomb"
+            }
+        ]
     }
 }

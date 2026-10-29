@@ -1,118 +1,158 @@
 {
-    "format_version": "1.21.60",
-    "minecraft:crafting_items_catalog": {
-        "categories": [
-            {
-                "category_name": "construction",
-                "groups": [
-                    {
-                        "group_identifier": {
-                            "icon": "utilitycraft:diamond_comb_block",
-                            "name": "projectbee:itemGroup.name.comb_blocks"
-                        },
-                        "items": [
-                            "utilitycraft:biomass_comb_block",
-                            "utilitycraft:glowing_comb_block",
-                            "utilitycraft:redstone_comb_block",
-                            "utilitycraft:diamond_comb_block",
-                            "utilitycraft:emerald_comb_block",
-                            "utilitycraft:lapis_comb_block",
-                            "utilitycraft:quartz_comb_block",
-                            "utilitycraft:ender_comb_block",
-                            "utilitycraft:magmatic_comb_block",
-                            "utilitycraft:coal_comb_block",
-                            "utilitycraft:copper_comb_block",
-                            "utilitycraft:gold_comb_block",
-                            "utilitycraft:iron_comb_block",
-                            "utilitycraft:netherite_comb_block",
-                            "utilitycraft:amethyst_comb_block",
-                            "utilitycraft:echo_comb_block"
-                        ]
-                    },
-                    {
-                        "group_identifier": {
-                            "icon": "utilitycraft:endstone_nest",
-                            "name": "projectbee:itemGroup.name.nests"
-                        },
-                        "items": [
-                            "utilitycraft:coarse_dirt_nest",
-                            "utilitycraft:endstone_nest",
-                            "utilitycraft:glowstone_nest",
-                            "utilitycraft:nether_brick_nest",
-                            "utilitycraft:nether_gold_ore_nest",
-                            "utilitycraft:nether_quartz_ore_nest",
-                            "utilitycraft:stone_nest",
-                            "utilitycraft:acacia_nest",
-                            "utilitycraft:birch_nest",
-                            "utilitycraft:dark_oak_nest",
-                            "utilitycraft:jungle_nest",
-                            "utilitycraft:oak_nest",
-                            "utilitycraft:spruce_nest"
-                        ]
-                    },
-                    {
-                        "group_identifier": {
-                            "icon": "projectbee:powered_centrifuge",
-                            "name": "projectbee:itemGroup.name.machines"
-                        },
-                        "items": [
-                            "projectbee:advance_beehive",
-                            "projectbee:bee_incubator",
-                            "projectbee:breeding_chamber",
-                            "projectbee:powered_centrifuge",
-                            "utilitycraft:extension_box",
-                            "projectbee:feeding_slab"
-                        ]
-                    }
-                ]
+  "format_version": "1.21.60",
+  "minecraft:crafting_items_catalog": {
+    "categories": [
+      {
+        "category_name": "construction",
+        "groups": [
+          {
+            "group_identifier": {
+              "icon": "utilitycraft:diamond_comb_block",
+              "name": "projectbee:itemGroup.name.comb_blocks"
             },
-            {
-                "category_name": "items",
-                "groups": [
-                    {
-                        "group_identifier": {
-                            "icon": "projectbee:simulator_upgrade",
-                            "name": "projectbee:itemGroup.name.beeupgrades"
-                        },
-                        "items": [
-                            "utilitycraft:upgrade_base",
-                            "utilitycraft:simulator_upgrade",
-                            "projectbee:speed_upgrade_1",
-                            "projectbee:speed_upgrade_2",
-                            "projectbee:speed_upgrade_3",
-                            "projectbee:speed_upgrade_4",
-                            "projectbee:speed_upgrade_5"
-                        ]
-                    },
-                    {
-                        "group_identifier": {
-                            "icon": "utilitycraft:diamond_comb",
-                            "name": "projectbee:itemGroup.name.combs"
-                        },
-                        "items": [
-                            "utilitycraft:biomass_comb",
-                            "utilitycraft:glowing_comb",
-                            "utilitycraft:redstone_comb",
-                            "utilitycraft:diamond_comb",
-                            "utilitycraft:emerald_comb",
-                            "utilitycraft:lapis_comb",
-                            "utilitycraft:quartz_comb",
-                            "utilitycraft:bone_comb",
-                            "utilitycraft:ender_comb",
-                            "utilitycraft:magmatic_comb",
-                            "utilitycraft:obsidian_comb",
-                            "utilitycraft:slime_comb",
-                            "utilitycraft:coal_comb",
-                            "utilitycraft:copper_comb",
-                            "utilitycraft:gold_comb",
-                            "utilitycraft:iron_comb",
-                            "utilitycraft:netherite_comb",
-                            "utilitycraft:amethyst_comb",
-                            "utilitycraft:echo_comb"
-                        ]
-                    }
-                ]
-            }
+            "items": [
+              "utilitycraft:biomass_comb_block",
+              "utilitycraft:glowing_comb_block",
+              "utilitycraft:redstone_comb_block",
+              "utilitycraft:diamond_comb_block",
+              "utilitycraft:emerald_comb_block",
+              "utilitycraft:lapis_comb_block",
+              "utilitycraft:quartz_comb_block",
+              "utilitycraft:ender_comb_block",
+              "utilitycraft:magmatic_comb_block",
+              "utilitycraft:coal_comb_block",
+              "utilitycraft:copper_comb_block",
+              "utilitycraft:gold_comb_block",
+              "utilitycraft:iron_comb_block",
+              "utilitycraft:netherite_comb_block",
+              "utilitycraft:amethyst_comb_block",
+              "utilitycraft:echo_comb_block"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "utilitycraft:endstone_nest",
+              "name": "projectbee:itemGroup.name.nests"
+            },
+            "items": [
+              "utilitycraft:coarse_dirt_nest",
+              "utilitycraft:endstone_nest",
+              "utilitycraft:glowstone_nest",
+              "utilitycraft:nether_brick_nest",
+              "utilitycraft:nether_gold_ore_nest",
+              "utilitycraft:nether_quartz_ore_nest",
+              "utilitycraft:stone_nest",
+              "utilitycraft:acacia_nest",
+              "utilitycraft:birch_nest",
+              "utilitycraft:dark_oak_nest",
+              "utilitycraft:jungle_nest",
+              "utilitycraft:oak_nest",
+              "utilitycraft:spruce_nest"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "projectbee:powered_centrifuge",
+              "name": "projectbee:itemGroup.name.machines"
+            },
+            "items": [
+              "projectbee:advance_beehive",
+              "projectbee:bee_incubator",
+              "projectbee:breeding_chamber",
+              "projectbee:powered_centrifuge",
+              "utilitycraft:extension_box",
+              "projectbee:feeding_slab"
+            ]
+          }
         ]
-    }
+      },
+      {
+        "category_name": "items",
+        "groups": [
+          {
+            "group_identifier": {
+              "icon": "utilitycraft:simulator_upgrade",
+              "name": "projectbee:itemGroup.name.beeupgrades"
+            },
+            "items": [
+              "utilitycraft:upgrade_base",
+              "utilitycraft:simulator_upgrade",
+              "projectbee:speed_upgrade_1",
+              "projectbee:speed_upgrade_2",
+              "projectbee:speed_upgrade_3",
+              "projectbee:speed_upgrade_4",
+              "projectbee:speed_upgrade_5"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "utilitycraft:diamond_comb",
+              "name": "projectbee:itemGroup.name.combs"
+            },
+            "items": [
+              "utilitycraft:biomass_comb",
+              "utilitycraft:glowing_comb",
+              "utilitycraft:redstone_comb",
+              "utilitycraft:diamond_comb",
+              "utilitycraft:emerald_comb",
+              "utilitycraft:lapis_comb",
+              "utilitycraft:quartz_comb",
+              "utilitycraft:bone_comb",
+              "utilitycraft:ender_comb",
+              "utilitycraft:magmatic_comb",
+              "utilitycraft:obsidian_comb",
+              "utilitycraft:slime_comb",
+              "utilitycraft:coal_comb",
+              "utilitycraft:copper_comb",
+              "utilitycraft:gold_comb",
+              "utilitycraft:iron_comb",
+              "utilitycraft:netherite_comb",
+              "utilitycraft:amethyst_comb",
+              "utilitycraft:echo_comb"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "projectbee:bee_egg",
+              "name": "projectbee:itemGroup.name.bee_eggs"
+            },
+            "items": [
+              "projectbee:bee_egg",
+              "projectbee:iron_bee_egg",
+              "projectbee:diamond_bee_egg",
+              "projectbee:gold_bee_egg",
+              "projectbee:netherite_bee_egg",
+              "projectbee:copper_bee_egg",
+              "projectbee:lapis_bee_egg",
+              "projectbee:redstone_bee_egg",
+              "projectbee:mining_bee_egg",
+              "projectbee:quartz_bee_egg",
+              "projectbee:blue_banded_bee_egg",
+              "projectbee:leaf_cutter_bee_egg",
+              "projectbee:ender_bee_egg",
+              "projectbee:coal_bee_egg",
+              "projectbee:emerald_bee_egg",
+              "projectbee:glowing_bee_egg",
+              "projectbee:blue_mason_bee_egg",
+              "projectbee:magmatic_bee_egg",
+              "projectbee:bumble_bee_egg",
+              "projectbee:amethyst_bee_egg",
+              "projectbee:dirt_bee_egg",
+              "projectbee:echo_bee_egg",
+              "projectbee:biomass_bee_egg",
+              "projectbee:slime_bee_egg",
+              "projectbee:obsidian_bee_egg",
+              "projectbee:bone_bee_egg",
+              "projectbee:magnetic_bee_egg",
+              "projectbee:steel_bee_egg",
+              "projectbee:energized_iron_bee_egg",
+              "projectbee:duranium_bee_egg",
+              "projectbee:voltanium_bee_egg",
+              "projectbee:adamant_bee_egg"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

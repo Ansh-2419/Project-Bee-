@@ -18,6 +18,11 @@
         "result": {
             "item": "utilitycraft:dark_oak_nest",
             "count": 1
-        }
+        },
+        "unlock": [
+            {
+                "item": "minecraft:dark_oak_log"
+            }
+        ]
     }
 }

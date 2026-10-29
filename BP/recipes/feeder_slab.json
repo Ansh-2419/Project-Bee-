@@ -22,6 +22,11 @@
         "result": {
             "item": "projectbee:feeder_slab",
             "count": 1
-        }
+        },
+        "unlock": [
+            {
+                "item": "minecraft:honeycomb"
+            }
+        ]
     }
 }

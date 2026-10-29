@@ -26,6 +26,11 @@
         "result": {
             "item": "utilitycraft:upgrade_base",
             "count": 1
-        }
+        },
+        "unlock": [
+            {
+                "item": "minecraft:honeycomb"
+            }
+        ]
     }
 }

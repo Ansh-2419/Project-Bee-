@@ -18,6 +18,11 @@
         "result": {
             "item": "utilitycraft:acacia_nest",
             "count": 1
-        }
+        },
+        "unlock": [
+            {
+                "item": "minecraft:acacia_log"
+            }
+        ]
     }
 }

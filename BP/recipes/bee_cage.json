@@ -21,6 +21,11 @@
         "result": {
             "item": "utilitycraft:bee_cage",
             "count": 1
-        }
+        },
+        "unlock": [
+            {
+                "item": "minecraft:honey_bottle"
+            }
+        ]
     }
 }

@@ -14,6 +14,16 @@ const BEE_CONVERSIONS = {
         itemId: "minecraft:netherite_block",
         result: "utilitycraft:netherite_bee",
     },
+    // Duranium Bee + Voltanium Block → Voltanium Bee
+    "utilitycraft:duranium_bee": {
+        itemId: "utilitycraft:voltanium_block",
+        result: "utilitycraft:voltanium_bee",
+    },
+    // Voltanium Bee + Adamant Block → Adamant Bee
+    "utilitycraft:voltanium_bee": {
+        itemId: "utilitycraft:adamant_block",
+        result: "utilitycraft:adamant_bee",
+    },
 };
 
 // ── Helpers ────────────────────────────────────────────────────
@@ -147,8 +157,10 @@ world.afterEvents.entityHitEntity.subscribe(e => {
 
 // ── Bee conversion ─────────────────────────────────────────────
 // Right-click a live bee entity with the catalyst item to convert it.
+// Uses beforeEvents so the interaction is caught reliably before
+// any other handler can consume the click.
 
-world.afterEvents.playerInteractWithEntity.subscribe(e => {
+world.beforeEvents.playerInteractWithEntity.subscribe(e => {
     const { player, target: bee } = e;
     if (!player || !bee) return;
     if (!beesIds.includes(bee.typeId)) return;
@@ -161,18 +173,31 @@ world.afterEvents.playerInteractWithEntity.subscribe(e => {
     const held = inv.getItem(player.selectedSlotIndex);
     if (held?.typeId !== conv.itemId) return;
 
+    // Prevent any default interaction
+    e.cancel = true;
+
     const now = system.currentTick;
     const key = `conv_${player.id}`;
     if ((lastUseTick.get(key) ?? 0) + CAGE_USE_COOLDOWN > now) return;
     lastUseTick.set(key, now);
 
     const slot = inv.getSlot(player.selectedSlotIndex);
-    if (held.amount > 1) { held.amount--; slot.setItem(held); }
-    else slot.setItem(undefined);
 
     const { location: loc, dimension: dim } = bee;
-    bee.remove();
     system.run(() => {
-        try { dim.spawnEntity(conv.result, loc); } catch {}
+        try {
+            // Consume item
+            const currentItem = slot.getItem();
+            if (currentItem?.typeId === conv.itemId) {
+                if (currentItem.amount > 1) { currentItem.amount--; slot.setItem(currentItem); }
+                else slot.setItem(undefined);
+            }
+            // Remove bee and spawn result
+            if (bee.isValid()) bee.remove();
+            dim.spawnEntity(conv.result, loc);
+            player.sendMessage(`§aConversion successful! §e${conv.result.split(":")[1].replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase())}§a spawned.`);
+        } catch (err) {
+            console.warn(`[Project Bee] Bee conversion error: ${err}`);
+        }
     });
 });

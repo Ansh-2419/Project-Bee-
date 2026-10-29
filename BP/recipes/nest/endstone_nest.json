@@ -18,6 +18,11 @@
         "result": {
             "item": "utilitycraft:endstone_nest",
             "count": 1
-        }
+        },
+        "unlock": [
+            {
+                "item": "minecraft:end_stone"
+            }
+        ]
     }
 }
