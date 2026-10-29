@@ -1,0 +1,24 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Bedrock-OSS/regolith-schemas/main/config/unified.json",
+  "name": "Project Bee",
+  "author": "Dorios Studios",
+  "packs": {
+    "behaviorPack": "./BP",
+    "resourcePack": "./RP"
+  },
+  "regolith": {
+    "dataPath": "./data",
+    "filterDefinitions": {},
+    "formatVersion": "1.8.0",
+    "profiles": {
+      "default": {
+        "export": {
+          "build": "standard",
+          "readOnly": false,
+          "target": "development"
+        },
+        "filters": []
+      }
+    }
+  }
+}

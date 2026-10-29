@@ -86,6 +86,8 @@
       -10,
       -40
     ],
+    "$right_machine_tabs_name|default": "right_machine_tabs",
+    "$upgrade_toggle_control_name|default": "upgrade_toggle_button",
     "$io_toggle_control_name|default": "io_toggle_button",
     "$io_config_tabs_name|default": "io_config_tabs",
     "$io_items_toggle_control_name|default": "io_items_toggle_button",
@@ -223,7 +225,10 @@
       },
       {
         "progress@uc.item_display_medium": {
-          "$collection_index": 2
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "offset": [3.5, 4.5],
+          "collection_index": 2
         }
       },
       {

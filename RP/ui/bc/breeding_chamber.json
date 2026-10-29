@@ -36,6 +36,7 @@
       -10,
       -40
     ],
+    "$right_machine_tabs_name|default": "right_machine_tabs",
     "$io_toggle_control_name|default": "io_toggle_button",
     "$io_config_tabs_name|default": "io_config_tabs",
     "$io_items_toggle_control_name|default": "io_items_toggle_button",
@@ -51,11 +52,11 @@
       },
       {
         "heart_progress@uc.item_display_medium": {
-          "$collection_index": 2,
+          "collection_index": 2,
           "anchor_from": "center",
           "anchor_to": "center",
           "offset": [
-            20,
+            25.5,
             -2
           ],
           "layer": 2
