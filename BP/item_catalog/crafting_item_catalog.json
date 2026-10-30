@@ -122,46 +122,6 @@
               "utilitycraft:voltanium_comb",
               "utilitycraft:adamant_comb"
             ]
-          },
-          {
-            "group_identifier": {
-              "icon": "projectbee:bee_egg",
-              "name": "projectbee:itemGroup.name.bee_eggs"
-            },
-            "items": [
-              "projectbee:bee_egg",
-              "projectbee:iron_bee_egg",
-              "projectbee:diamond_bee_egg",
-              "projectbee:gold_bee_egg",
-              "projectbee:netherite_bee_egg",
-              "projectbee:copper_bee_egg",
-              "projectbee:lapis_bee_egg",
-              "projectbee:redstone_bee_egg",
-              "projectbee:mining_bee_egg",
-              "projectbee:quartz_bee_egg",
-              "projectbee:blue_banded_bee_egg",
-              "projectbee:leaf_cutter_bee_egg",
-              "projectbee:ender_bee_egg",
-              "projectbee:coal_bee_egg",
-              "projectbee:emerald_bee_egg",
-              "projectbee:glowing_bee_egg",
-              "projectbee:blue_mason_bee_egg",
-              "projectbee:magmatic_bee_egg",
-              "projectbee:bumble_bee_egg",
-              "projectbee:amethyst_bee_egg",
-              "projectbee:dirt_bee_egg",
-              "projectbee:echo_bee_egg",
-              "projectbee:biomass_bee_egg",
-              "projectbee:slime_bee_egg",
-              "projectbee:obsidian_bee_egg",
-              "projectbee:bone_bee_egg",
-              "projectbee:magnetic_bee_egg",
-              "projectbee:steel_bee_egg",
-              "projectbee:energized_iron_bee_egg",
-              "projectbee:duranium_bee_egg",
-              "projectbee:voltanium_bee_egg",
-              "projectbee:adamant_bee_egg"
-            ]
           }
         ]
       }

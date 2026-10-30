@@ -84,7 +84,7 @@ export const advancedBeehive = [
     {
         input: { itemId: "utilitycraft:biomass_bee" },
         output: { itemId: "utilitycraft:biomass_comb", count: 3, chance: 99 }
-    }
+    },
     {
         input: { itemId: "utilitycraft:mining_bee" },
         output: { itemId: "utilitycraft:mining_comb", count: 3, chance: 99 }
@@ -132,7 +132,7 @@ export const advancedBeehive = [
     {
         input: { itemId: "utilitycraft:adamant_bee" },
         output: { itemId: "utilitycraft:adamant_comb", count: 3, chance: 99 }
-    },
+    }
 ];
 
 export default advancedBeehive;

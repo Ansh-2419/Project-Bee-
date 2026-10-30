@@ -21,7 +21,7 @@
         },
         "unlock": [
             {
-                "item": "minecraft:nether_quartz_ore"
+                "item": "minecraft:quartz_ore"
             }
         ]
     }
