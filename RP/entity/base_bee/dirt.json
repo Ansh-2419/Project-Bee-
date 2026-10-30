@@ -1,9 +1,11 @@
 {
   "format_version": "1.10.0",
-  "minecraft:client_entity": { 
+  "minecraft:client_entity": {
     "description": {
-      "identifier": "utilitycraft:dirt_bee", 
-      "materials": { "default": "bee" },
+      "identifier": "utilitycraft:dirt_bee",
+      "materials": {
+        "default": "bee"
+      },
       "textures": {
         "default": "textures/entity/bee/dirt/bee",
         "angry": "textures/entity/bee/dirt/bee_angry",
@@ -21,20 +23,24 @@
         "bee_no_stinger": "animation.bee.no_stinger",
         "bee_fly_bobbing": "animation.bee.fly.bobbing",
         "bee_root_controller": "controller.animation.bee.root"
-      },      
+      },
       "particle_effects": {
         "nectar_dripping": "minecraft:nectar_drip_particle"
       },
       "scripts": {
         "animate": [
           "bee_root_controller",
-          { "bee_no_stinger": "query.mark_variant == 1" }
+          {
+            "bee_no_stinger": "query.mark_variant == 1"
+          }
         ]
       },
-      "render_controllers": [ "controller.render.my_bee" ],
+      "render_controllers": [
+        "controller.render.my_bee"
+      ],
       "spawn_egg": {
-        "overlay_color": "#43241B",
-        "base_color": "#EDC343"
+        "overlay_color": "#3E2723",
+        "base_color": "#795548"
       }
     }
   }

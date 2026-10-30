@@ -108,7 +108,19 @@
               "utilitycraft:iron_comb",
               "utilitycraft:netherite_comb",
               "utilitycraft:amethyst_comb",
-              "utilitycraft:echo_comb"
+              "utilitycraft:echo_comb",
+              "utilitycraft:mining_comb",
+              "utilitycraft:blue_banded_comb",
+              "utilitycraft:blue_mason_comb",
+              "utilitycraft:leaf_cutter_comb",
+              "utilitycraft:dirt_comb",
+              "utilitycraft:magnetic_comb",
+              "utilitycraft:bumble_comb",
+              "utilitycraft:steel_comb",
+              "utilitycraft:energized_iron_comb",
+              "utilitycraft:duranium_comb",
+              "utilitycraft:voltanium_comb",
+              "utilitycraft:adamant_comb"
             ]
           },
           {

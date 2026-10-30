@@ -14,9 +14,7 @@
         },
         "geometry": "Geometry.default",
         "materials": [ { "*": "Material.default" } ],
-        "textures": [ "array.skins[query.property('utilitycraft:has_nectar') 
-        ? query.is_angry ? 3 : 1
-        : query.is_angry ? 2 : 0]" ]
+        "textures": [ "array.skins[query.property('utilitycraft:has_nectar') ? query.is_angry ? 3 : 1 : query.is_angry ? 2 : 0]" ]
       }
     }
   }

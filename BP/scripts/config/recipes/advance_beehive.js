@@ -85,6 +85,54 @@ export const advancedBeehive = [
         input: { itemId: "utilitycraft:biomass_bee" },
         output: { itemId: "utilitycraft:biomass_comb", count: 3, chance: 99 }
     }
+    {
+        input: { itemId: "utilitycraft:mining_bee" },
+        output: { itemId: "utilitycraft:mining_comb", count: 3, chance: 99 }
+    },
+    {
+        input: { itemId: "utilitycraft:blue_banded_bee" },
+        output: { itemId: "utilitycraft:blue_banded_comb", count: 3, chance: 99 }
+    },
+    {
+        input: { itemId: "utilitycraft:blue_mason_bee" },
+        output: { itemId: "utilitycraft:blue_mason_comb", count: 3, chance: 99 }
+    },
+    {
+        input: { itemId: "utilitycraft:leaf_cutter_bee" },
+        output: { itemId: "utilitycraft:leaf_cutter_comb", count: 3, chance: 99 }
+    },
+    {
+        input: { itemId: "utilitycraft:dirt_bee" },
+        output: { itemId: "utilitycraft:dirt_comb", count: 3, chance: 99 }
+    },
+    {
+        input: { itemId: "utilitycraft:magnetic_bee" },
+        output: { itemId: "utilitycraft:magnetic_comb", count: 3, chance: 99 }
+    },
+    {
+        input: { itemId: "utilitycraft:bumble_bee" },
+        output: { itemId: "utilitycraft:bumble_comb", count: 3, chance: 99 }
+    },
+    {
+        input: { itemId: "utilitycraft:steel_bee" },
+        output: { itemId: "utilitycraft:steel_comb", count: 3, chance: 99 }
+    },
+    {
+        input: { itemId: "utilitycraft:energized_iron_bee" },
+        output: { itemId: "utilitycraft:energized_iron_comb", count: 3, chance: 99 }
+    },
+    {
+        input: { itemId: "utilitycraft:duranium_bee" },
+        output: { itemId: "utilitycraft:duranium_comb", count: 3, chance: 99 }
+    },
+    {
+        input: { itemId: "utilitycraft:voltanium_bee" },
+        output: { itemId: "utilitycraft:voltanium_comb", count: 3, chance: 99 }
+    },
+    {
+        input: { itemId: "utilitycraft:adamant_bee" },
+        output: { itemId: "utilitycraft:adamant_comb", count: 3, chance: 99 }
+    },
 ];
 
 export default advancedBeehive;

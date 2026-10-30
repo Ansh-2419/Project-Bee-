@@ -142,6 +142,42 @@
     },
     "projectbee:bee_egg": {
       "textures": "textures/items/bee_egg/bee_egg"
+    },
+    "utilitycraft:mining_comb": {
+      "textures": "textures/items/honeycombs/mining"
+    },
+    "utilitycraft:blue_banded_comb": {
+      "textures": "textures/items/honeycombs/blue_banded"
+    },
+    "utilitycraft:blue_mason_comb": {
+      "textures": "textures/items/honeycombs/blue_mason"
+    },
+    "utilitycraft:leaf_cutter_comb": {
+      "textures": "textures/items/honeycombs/leaf_cutter"
+    },
+    "utilitycraft:dirt_comb": {
+      "textures": "textures/items/honeycombs/dirt"
+    },
+    "utilitycraft:magnetic_comb": {
+      "textures": "textures/items/honeycombs/magnetic"
+    },
+    "utilitycraft:bumble_comb": {
+      "textures": "textures/items/honeycombs/bumble"
+    },
+    "utilitycraft:steel_comb": {
+      "textures": "textures/items/honeycombs/steel"
+    },
+    "utilitycraft:energized_iron_comb": {
+      "textures": "textures/items/honeycombs/energized_iron"
+    },
+    "utilitycraft:duranium_comb": {
+      "textures": "textures/items/honeycombs/duranium"
+    },
+    "utilitycraft:voltanium_comb": {
+      "textures": "textures/items/honeycombs/voltanium"
+    },
+    "utilitycraft:adamant_comb": {
+      "textures": "textures/items/honeycombs/adamant"
     }
   }
 }

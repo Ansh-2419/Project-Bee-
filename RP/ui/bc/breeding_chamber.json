@@ -2,7 +2,7 @@
   "namespace": "breeding_chamber",
   "output_slot": {
     "type": "input_panel",
-    "$slot_background_texture|default": "textures/ui/slots/output_slot",
+    "$slot_background_texture|default": "textures/ui/slots/bee_output_slot",
     "size": [18, 18],
     "controls": [
       {

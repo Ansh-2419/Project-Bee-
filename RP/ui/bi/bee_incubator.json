@@ -6,7 +6,7 @@
     "size": [18, 18],
     "controls": [
       { "item@common.container_item": { "$cell_image_size": [18, 18], "layer": 1 } },
-      { "slot_bg": { "type": "image", "texture": "textures/ui/slots/output_slot", "size": [18, 18], "layer": 4 } }
+      { "slot_bg": { "type": "image", "texture": "textures/ui/slots/bee_output_slot", "size": [18, 18], "layer": 4 } }
     ]
   },
 

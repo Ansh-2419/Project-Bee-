@@ -249,12 +249,143 @@ export const centrifugeRecipes = [
     input: { itemId: "utilitycraft:glowing_comb", amount: 1 },
     output: {
       items: [
-        { itemId: "utilitycraft:wax", count: 1, chance: 99 }
+        { itemId: "utilitycraft:wax", count: 1, chance: 99 },
+        { itemId: "minecraft:glowstone_dust", count: 4, chance: 40 }
       ]
     },
     energyCost: 8000,
     seconds: 4
-  }
+  },
+
+  {
+    input: { itemId: "utilitycraft:mining_comb", amount: 1 },
+    output: {
+      items: [
+            {
+                "itemId": "minecraft:cobblestone",
+                "count": 4,
+                "chance": 60
+            },
+            {
+                "itemId": "utilitycraft:wax",
+                "count": 1,
+                "chance": 99
+            }
+        ]
+    },
+    energyCost: 8000,
+    seconds: 4
+  },
+
+  {
+    input: { itemId: "utilitycraft:leaf_cutter_comb", amount: 1 },
+    output: {
+      items: [
+            {
+                "itemId": "minecraft:oak_leaves",
+                "count": 2,
+                "chance": 60
+            },
+            {
+                "itemId": "minecraft:oak_log",
+                "count": 2,
+                "chance": 40
+            },
+            {
+                "itemId": "utilitycraft:wax",
+                "count": 1,
+                "chance": 99
+            }
+        ]
+    },
+    energyCost: 8000,
+    seconds: 4
+  },
+
+  {
+    input: { itemId: "utilitycraft:dirt_comb", amount: 1 },
+    output: {
+      items: [
+            {
+                "itemId": "minecraft:dirt",
+                "count": 4,
+                "chance": 70
+            },
+            {
+                "itemId": "minecraft:gravel",
+                "count": 2,
+                "chance": 40
+            },
+            {
+                "itemId": "utilitycraft:wax",
+                "count": 1,
+                "chance": 99
+            }
+        ]
+    },
+    energyCost: 8000,
+    seconds: 4
+  },
+
+  {
+    input: { itemId: "utilitycraft:steel_comb", amount: 1 },
+    output: {
+      items: [
+        { itemId: "utilitycraft:steel_ingot",  count: 1, chance: 50 },
+        { itemId: "utilitycraft:wax",          count: 1, chance: 99 }
+      ]
+    },
+    energyCost: 10000,
+    seconds: 6
+  },
+
+  {
+    input: { itemId: "utilitycraft:energized_iron_comb", amount: 1 },
+    output: {
+      items: [
+        { itemId: "utilitycraft:energized_iron_ingot", count: 1, chance: 50 },
+        { itemId: "utilitycraft:wax",                  count: 1, chance: 99 }
+      ]
+    },
+    energyCost: 12000,
+    seconds: 6
+  },
+
+  {
+    input: { itemId: "utilitycraft:duranium_comb", amount: 1 },
+    output: {
+      items: [
+        { itemId: "utilitycraft:duranium_ingot", count: 1, chance: 50 },
+        { itemId: "utilitycraft:wax",            count: 1, chance: 99 }
+      ]
+    },
+    energyCost: 16000,
+    seconds: 8
+  },
+
+  {
+    input: { itemId: "utilitycraft:voltanium_comb", amount: 1 },
+    output: {
+      items: [
+        { itemId: "utilitycraft:voltanium_ingot", count: 1, chance: 50 },
+        { itemId: "utilitycraft:wax",             count: 1, chance: 99 }
+      ]
+    },
+    energyCost: 20000,
+    seconds: 10
+  },
+
+  {
+    input: { itemId: "utilitycraft:adamant_comb", amount: 1 },
+    output: {
+      items: [
+        { itemId: "utilitycraft:adamant_ingot", count: 1, chance: 50 },
+        { itemId: "utilitycraft:wax",           count: 1, chance: 99 }
+      ]
+    },
+    energyCost: 24000,
+    seconds: 12
+  },
 ];
 
 export function getCentrifugeRecipes() {

@@ -163,4 +163,63 @@ export const feederBlocks = [
             "minecraft:peony"
         ]
     },
+    {
+        beeId: "utilitycraft:mining_bee",
+        feederBlocks: [
+            "minecraft:stone",
+            "minecraft:cobblestone",
+            "minecraft:deepslate",
+            "minecraft:cobbled_deepslate"
+        ]
+    },
+    {
+        beeId: "utilitycraft:leaf_cutter_bee",
+        feederBlocks: [
+            "minecraft:oak_leaves",
+            "minecraft:birch_leaves",
+            "minecraft:spruce_leaves",
+            "minecraft:jungle_leaves",
+            "minecraft:acacia_leaves",
+            "minecraft:dark_oak_leaves"
+        ]
+    },
+    {
+        beeId: "utilitycraft:dirt_bee",
+        feederBlocks: [
+            "minecraft:dirt",
+            "minecraft:grass_block",
+            "minecraft:coarse_dirt",
+            "minecraft:rooted_dirt"
+        ]
+    },
+    {
+        beeId: "utilitycraft:steel_bee",
+        feederBlocks: [
+            "utilitycraft:steel_block"
+        ]
+    },
+    {
+        beeId: "utilitycraft:energized_iron_bee",
+        feederBlocks: [
+            "utilitycraft:energized_iron_block"
+        ]
+    },
+    {
+        beeId: "utilitycraft:duranium_bee",
+        feederBlocks: [
+            "utilitycraft:duranium_block"
+        ]
+    },
+    {
+        beeId: "utilitycraft:voltanium_bee",
+        feederBlocks: [
+            "utilitycraft:voltanium_block"
+        ]
+    },
+    {
+        beeId: "utilitycraft:adamant_bee",
+        feederBlocks: [
+            "utilitycraft:adamant_block"
+        ]
+    },
 ];

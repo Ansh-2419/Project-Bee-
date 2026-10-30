@@ -220,7 +220,7 @@
             61,
             13
           ],
-          "$slot_outline_texture": "textures/ui/slots/output_slot",
+          "$slot_outline_texture": "textures/ui/slots/bee_output_slot",
           "$collection_index_1": 12,
           "$collection_index_2": 13,
           "$collection_index_3": 14,
