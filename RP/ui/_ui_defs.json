@@ -1,5 +1,6 @@
 {
     "ui_defs": [
+        "ui/how_to_play_screen.json",
         "ui/ab/advance_beehive.json",
         "ui/ab/advance_beehive_extended.json",
         "ui/centrifuge/powered_centrifuge.json",

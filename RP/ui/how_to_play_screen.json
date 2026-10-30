@@ -1,0 +1,312 @@
+{
+    "namespace": "how_to_play",
+
+    "how_to_play_selector_stack_panel/how_to_play_selector_pane": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "padding_pb_00": {
+                            "type": "panel",
+                            "size": [ 0, 6 ]
+                        }
+                    },
+                    {
+                        "pb_category@how_to_play_common.topic_category": {
+                            "$category": "project_bee"
+                        }
+                    },
+                    {
+                        "pb:introduction_button@how_to_play.pb:introduction_button": {
+                            "$toggle_group_forced_index": 501
+                        }
+                    },
+                    {
+                        "pb:bees_button@how_to_play.pb:bees_button": {
+                            "$toggle_group_forced_index": 502
+                        }
+                    },
+                    {
+                        "pb:machines_button@how_to_play.pb:machines_button": {
+                            "$toggle_group_forced_index": 503
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+
+    "how_to_play_section_content_panels/general_tips_sections": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "pb:introduction_section@how_to_play.pb:introduction_section": {}
+                    },
+                    {
+                        "pb:bees_section@how_to_play.pb:bees_section": {}
+                    },
+                    {
+                        "pb:machines_section@how_to_play.pb:machines_section": {}
+                    }
+                ]
+            }
+        ]
+    },
+
+    "pb_img_machine@how_to_play_common.image": {
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "size": [ "150px", "150px" ]
+    },
+
+    "pb:introduction_button@how_to_play_common.section_toggle_button": {
+        "$section_topic": "pb:introduction"
+    },
+    "pb:bees_button@how_to_play_common.section_toggle_button": {
+        "$section_topic": "pb:bees"
+    },
+    "pb:machines_button@how_to_play_common.section_toggle_button": {
+        "$section_topic": "pb:machines"
+    },
+
+    "pb:introduction_section@how_to_play_common.main_sections": {
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_control_name": "pb:introduction_button_toggle",
+                "source_property_name": "#toggle_state",
+                "target_property_name": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "p1@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.pb.introduction.p1"
+                }
+            },
+            {
+                "h1@how_to_play_common.header": {
+                    "$text": "howtoplay.pb.introduction.h1"
+                }
+            },
+            {
+                "p2@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.pb.introduction.p2"
+                }
+            },
+            {
+                "h2@how_to_play_common.header": {
+                    "$text": "howtoplay.pb.introduction.h2"
+                }
+            },
+            {
+                "p3@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.pb.introduction.p3"
+                }
+            },
+            {
+                "h3@how_to_play_common.header": {
+                    "$text": "howtoplay.pb.introduction.h3"
+                }
+            },
+            {
+                "p4@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.pb.introduction.p4"
+                }
+            }
+        ]
+    },
+
+    "pb:bees_section@how_to_play_common.main_sections": {
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_control_name": "pb:bees_button_toggle",
+                "source_property_name": "#toggle_state",
+                "target_property_name": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "p_intro@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.pb.bees.intro"
+                }
+            },
+            {
+                "pad0@how_to_play_common.padding": {}
+            },
+            {
+                "h_uc@how_to_play_common.header": {
+                    "$text": "howtoplay.pb.bees.h_uc_bees"
+                }
+            },
+            {
+                "p_uc@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.pb.bees.p_uc_bees"
+                }
+            },
+            {
+                "pad1@how_to_play_common.padding": {}
+            },
+            {
+                "h_mc@how_to_play_common.header": {
+                    "$text": "howtoplay.pb.bees.h_mc_bees"
+                }
+            },
+            {
+                "p_mc@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.pb.bees.p_mc_bees"
+                }
+            }
+        ]
+    },
+
+    "pb:machines_section@how_to_play_common.main_sections": {
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_control_name": "pb:machines_button_toggle",
+                "source_property_name": "#toggle_state",
+                "target_property_name": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "p_intro@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.pb.machines.intro"
+                }
+            },
+            {
+                "pad0@how_to_play_common.padding": {}
+            },
+            {
+                "h_hive@how_to_play_common.header": {
+                    "$text": "howtoplay.pb.machines.h_advance_beehive"
+                }
+            },
+            {
+                "img_hive@how_to_play.pb_img_machine": {
+                    "texture": "textures/ui/wiki/pb/guide/advance_beehive"
+                }
+            },
+            {
+                "p_hive@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.pb.machines.p_advance_beehive"
+                }
+            },
+            {
+                "pad1@how_to_play_common.padding": {}
+            },
+            {
+                "h_bc@how_to_play_common.header": {
+                    "$text": "howtoplay.pb.machines.h_breeding_chamber"
+                }
+            },
+            {
+                "img_bc@how_to_play.pb_img_machine": {
+                    "texture": "textures/ui/wiki/pb/guide/breeding_chamber"
+                }
+            },
+            {
+                "p_bc@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.pb.machines.p_breeding_chamber"
+                }
+            },
+            {
+                "pad2@how_to_play_common.padding": {}
+            },
+            {
+                "h_bi@how_to_play_common.header": {
+                    "$text": "howtoplay.pb.machines.h_bee_incubator"
+                }
+            },
+            {
+                "img_bi@how_to_play.pb_img_machine": {
+                    "texture": "textures/ui/wiki/pb/guide/bee_incubator"
+                }
+            },
+            {
+                "p_bi@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.pb.machines.p_bee_incubator"
+                }
+            },
+            {
+                "pad3@how_to_play_common.padding": {}
+            },
+            {
+                "h_cent@how_to_play_common.header": {
+                    "$text": "howtoplay.pb.machines.h_centrifuge"
+                }
+            },
+            {
+                "img_cent@how_to_play.pb_img_machine": {
+                    "texture": "textures/ui/wiki/pb/guide/centrifuge"
+                }
+            },
+            {
+                "p_cent@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.pb.machines.p_centrifuge"
+                }
+            },
+            {
+                "pad4@how_to_play_common.padding": {}
+            },
+            {
+                "h_pcent@how_to_play_common.header": {
+                    "$text": "howtoplay.pb.machines.h_powered_centrifuge"
+                }
+            },
+            {
+                "img_pcent@how_to_play.pb_img_machine": {
+                    "texture": "textures/ui/wiki/pb/guide/powered_centrifuge"
+                }
+            },
+            {
+                "p_pcent@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.pb.machines.p_powered_centrifuge"
+                }
+            },
+            {
+                "pad5@how_to_play_common.padding": {}
+            },
+            {
+                "h_fs@how_to_play_common.header": {
+                    "$text": "howtoplay.pb.machines.h_feeding_slab"
+                }
+            },
+            {
+                "img_fs@how_to_play.pb_img_machine": {
+                    "texture": "textures/ui/wiki/pb/guide/feeding_slab"
+                }
+            },
+            {
+                "p_fs@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.pb.machines.p_feeding_slab"
+                }
+            },
+            {
+                "pad6@how_to_play_common.padding": {}
+            },
+            {
+                "h_ext@how_to_play_common.header": {
+                    "$text": "howtoplay.pb.machines.h_extension_box"
+                }
+            },
+            {
+                "img_ext@how_to_play.pb_img_machine": {
+                    "texture": "textures/ui/wiki/pb/guide/extension_box"
+                }
+            },
+            {
+                "p_ext@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.pb.machines.p_extension_box"
+                }
+            }
+        ]
+    }
+}

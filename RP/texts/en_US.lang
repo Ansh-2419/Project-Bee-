@@ -1,135 +1,176 @@
 ## ============================================================
 ## Project Bee — Language File (en_US)
-## Minecraft Bedrock Edition format — 1.21.x guidelines
-## Key format: namespace=Display Name
-## - Blocks: tile.<identifier>.name (legacy compat kept)
-## - Items:  item.<identifier>.name (legacy compat kept)
-## - Entities: entity.<identifier>.name
-## - Spawn eggs: item.spawn_egg.entity.<identifier>.name
+## Complete coverage: every block, item, entity, UI key
 ## ============================================================
 
 ## ──────────────────────────────────────────────────────────────
-## MACHINES
+## MACHINES  (projectbee namespace)
 ## ──────────────────────────────────────────────────────────────
 
 tile.projectbee:advance_beehive.name=Advanced Beehive
 tile.projectbee:bee_incubator.name=Bee Incubator
 tile.projectbee:breeding_chamber.name=Breeding Chamber
-tile.projectbee:extension_box.name=Extension Box
 tile.projectbee:feeding_slab.name=Feeding Slab
 tile.projectbee:powered_centrifuge.name=Powered Centrifuge
+
+## Centrifuge is script-only (no BP block JSON); tile key kept for safety
 tile.projectbee:centrifuge.name=Centrifuge
+
+## Extension Box (registered under utilitycraft namespace)
 tile.utilitycraft:extension_box.name=Extension Box
 
 ## ──────────────────────────────────────────────────────────────
-## BEE BLOCKS (placed item → spawns entity)
+## BEE BLOCKS  (utilitycraft namespace — placed block form)
 ## ──────────────────────────────────────────────────────────────
 
+## Minecraft-species bees
 tile.utilitycraft:bee.name=Bee
-tile.utilitycraft:adamant_bee.name=Adamant Bee
 tile.utilitycraft:amethyst_bee.name=Amethyst Bee
-tile.utilitycraft:biomass_bee.name=Biomass Bee
-tile.utilitycraft:blue_banded_bee.name=Blue Banded Bee
-tile.utilitycraft:blue_mason_bee.name=Blue Mason Bee
 tile.utilitycraft:bone_bee.name=Bone Bee
-tile.utilitycraft:bumble_bee.name=Bumble Bee
 tile.utilitycraft:coal_bee.name=Coal Bee
 tile.utilitycraft:copper_bee.name=Copper Bee
 tile.utilitycraft:diamond_bee.name=Diamond Bee
-tile.utilitycraft:dirt_bee.name=Dirt Bee
-tile.utilitycraft:duranium_bee.name=Duranium Bee
 tile.utilitycraft:echo_bee.name=Echo Bee
 tile.utilitycraft:emerald_bee.name=Emerald Bee
 tile.utilitycraft:ender_bee.name=Ender Bee
-tile.utilitycraft:energized_iron_bee.name=Energized Iron Bee
 tile.utilitycraft:glowing_bee.name=Glowing Bee
 tile.utilitycraft:gold_bee.name=Gold Bee
 tile.utilitycraft:iron_bee.name=Iron Bee
 tile.utilitycraft:lapis_bee.name=Lapis Bee
-tile.utilitycraft:leaf_cutter_bee.name=Leaf Cutter Bee
-tile.utilitycraft:magmatic_bee.name=Magmatic Bee
-tile.utilitycraft:magnetic_bee.name=Magnetic Bee
-tile.utilitycraft:mining_bee.name=Mining Bee
 tile.utilitycraft:netherite_bee.name=Netherite Bee
 tile.utilitycraft:obsidian_bee.name=Obsidian Bee
 tile.utilitycraft:quartz_bee.name=Quartz Bee
 tile.utilitycraft:redstone_bee.name=Redstone Bee
 tile.utilitycraft:slime_bee.name=Slime Bee
+
+## Base / nature bees
+tile.utilitycraft:biomass_bee.name=Biomass Bee
+tile.utilitycraft:blue_banded_bee.name=Blue Banded Bee
+tile.utilitycraft:blue_mason_bee.name=Blue Mason Bee
+tile.utilitycraft:bumble_bee.name=Bumble Bee
+tile.utilitycraft:dirt_bee.name=Dirt Bee
+tile.utilitycraft:leaf_cutter_bee.name=Leaf Cutter Bee
+tile.utilitycraft:magmatic_bee.name=Magmatic Bee
+tile.utilitycraft:magnetic_bee.name=Magnetic Bee
+tile.utilitycraft:mining_bee.name=Mining Bee
+
+## UC alloy bees
+tile.utilitycraft:adamant_bee.name=Adamant Bee
+tile.utilitycraft:duranium_bee.name=Duranium Bee
+tile.utilitycraft:energized_iron_bee.name=Energized Iron Bee
 tile.utilitycraft:steel_bee.name=Steel Bee
 tile.utilitycraft:voltanium_bee.name=Voltanium Bee
 
 ## ──────────────────────────────────────────────────────────────
-## NESTS
+## BEE NESTS  (utilitycraft namespace)
 ## ──────────────────────────────────────────────────────────────
 
+## Wood nests
 tile.utilitycraft:oak_nest.name=Oak Bee Nest
 tile.utilitycraft:birch_nest.name=Birch Bee Nest
 tile.utilitycraft:spruce_nest.name=Spruce Bee Nest
 tile.utilitycraft:jungle_nest.name=Jungle Bee Nest
 tile.utilitycraft:acacia_nest.name=Acacia Bee Nest
 tile.utilitycraft:dark_oak_nest.name=Dark Oak Bee Nest
+
+## Stone / terrain nests
 tile.utilitycraft:stone_nest.name=Stone Bee Nest
 tile.utilitycraft:coarse_dirt_nest.name=Coarse Dirt Bee Nest
+
+## Nether nests
 tile.utilitycraft:nether_brick_nest.name=Nether Brick Bee Nest
 tile.utilitycraft:nether_quartz_ore_nest.name=Nether Quartz Ore Bee Nest
 tile.utilitycraft:nether_gold_ore_nest.name=Nether Gold Ore Bee Nest
 tile.utilitycraft:glowstone_nest.name=Glowstone Bee Nest
+
+## End nests
 tile.utilitycraft:endstone_nest.name=End Stone Bee Nest
 
 ## ──────────────────────────────────────────────────────────────
-## COMB BLOCKS
+## COMB BLOCKS  (utilitycraft namespace — 9-comb compressed block)
 ## ──────────────────────────────────────────────────────────────
 
-tile.utilitycraft:amethyst_comb_block.name=Amethyst Comb Block
-tile.utilitycraft:biomass_comb_block.name=Biomass Comb Block
+## Raw material
 tile.utilitycraft:coal_comb_block.name=Coal Comb Block
 tile.utilitycraft:copper_comb_block.name=Copper Comb Block
-tile.utilitycraft:diamond_comb_block.name=Diamond Comb Block
-tile.utilitycraft:echo_comb_block.name=Echo Comb Block
-tile.utilitycraft:emerald_comb_block.name=Emerald Comb Block
-tile.utilitycraft:ender_comb_block.name=Ender Comb Block
-tile.utilitycraft:glowing_comb_block.name=Glowing Comb Block
 tile.utilitycraft:gold_comb_block.name=Gold Comb Block
 tile.utilitycraft:iron_comb_block.name=Iron Comb Block
-tile.utilitycraft:lapis_comb_block.name=Lapis Comb Block
-tile.utilitycraft:magmatic_comb_block.name=Magmatic Comb Block
 tile.utilitycraft:netherite_comb_block.name=Netherite Comb Block
+
+## Gems
+tile.utilitycraft:diamond_comb_block.name=Diamond Comb Block
+tile.utilitycraft:emerald_comb_block.name=Emerald Comb Block
+tile.utilitycraft:lapis_comb_block.name=Lapis Comb Block
 tile.utilitycraft:quartz_comb_block.name=Quartz Comb Block
+
+## Shards
+tile.utilitycraft:amethyst_comb_block.name=Amethyst Comb Block
+tile.utilitycraft:echo_comb_block.name=Echo Comb Block
+
+## Item / special
+tile.utilitycraft:ender_comb_block.name=Ender Comb Block
+tile.utilitycraft:magmatic_comb_block.name=Magmatic Comb Block
+
+## Dust / energy
+tile.utilitycraft:glowing_comb_block.name=Glowing Comb Block
 tile.utilitycraft:redstone_comb_block.name=Redstone Comb Block
+tile.utilitycraft:biomass_comb_block.name=Biomass Comb Block
 
 ## ──────────────────────────────────────────────────────────────
-## HONEYCOMBS (items)
+## HONEYCOMBS  (item form, utilitycraft namespace)
 ## ──────────────────────────────────────────────────────────────
 
-item.utilitycraft:iron_comb.name=Iron Comb
-item.utilitycraft:gold_comb.name=Gold Comb
-item.utilitycraft:diamond_comb.name=Diamond Comb
-item.utilitycraft:netherite_comb.name=Netherite Comb
+## Raw material combs
+item.utilitycraft:coal_comb.name=Coal Comb
 item.utilitycraft:copper_comb.name=Copper Comb
-item.utilitycraft:redstone_comb.name=Redstone Comb
+item.utilitycraft:gold_comb.name=Gold Comb
+item.utilitycraft:iron_comb.name=Iron Comb
+item.utilitycraft:netherite_comb.name=Netherite Comb
+
+## Gem combs
+item.utilitycraft:diamond_comb.name=Diamond Comb
+item.utilitycraft:emerald_comb.name=Emerald Comb
 item.utilitycraft:lapis_comb.name=Lapis Lazuli Comb
 item.utilitycraft:quartz_comb.name=Quartz Comb
-item.utilitycraft:ender_comb.name=Ender Comb
-item.utilitycraft:emerald_comb.name=Emerald Comb
-item.utilitycraft:coal_comb.name=Coal Comb
-item.utilitycraft:glowing_comb.name=Glowing Comb
-item.utilitycraft:magmatic_comb.name=Magmatic Comb
-item.utilitycraft:echo_comb.name=Echo Comb
+
+## Shard combs
 item.utilitycraft:amethyst_comb.name=Amethyst Comb
-item.utilitycraft:biomass_comb.name=Biomass Comb
-item.utilitycraft:slime_comb.name=Slime Comb
-item.utilitycraft:obsidian_comb.name=Obsidian Comb
+item.utilitycraft:echo_comb.name=Echo Comb
+
+## Item / special combs
 item.utilitycraft:bone_comb.name=Bone Comb
+item.utilitycraft:ender_comb.name=Ender Comb
+item.utilitycraft:magmatic_comb.name=Magmatic Comb
+item.utilitycraft:obsidian_comb.name=Obsidian Comb
+item.utilitycraft:slime_comb.name=Slime Comb
+
+## Dust / energy combs
+item.utilitycraft:glowing_comb.name=Glowing Comb
+item.utilitycraft:redstone_comb.name=Redstone Comb
+
+## Nature / base bee combs
+item.utilitycraft:biomass_comb.name=Biomass Comb
+item.utilitycraft:dirt_comb.name=Dirt Comb
+item.utilitycraft:leaf_cutter_comb.name=Leaf Cutter Comb
+item.utilitycraft:mining_comb.name=Mining Comb
+
+## UC alloy combs
+item.utilitycraft:adamant_comb.name=Adamant Comb
+item.utilitycraft:duranium_comb.name=Duranium Comb
+item.utilitycraft:energized_iron_comb.name=Energized Iron Comb
+item.utilitycraft:steel_comb.name=Steel Comb
+item.utilitycraft:voltanium_comb.name=Voltanium Comb
 
 ## ──────────────────────────────────────────────────────────────
-## MISC ITEMS
+## MISC ITEMS  (utilitycraft namespace)
 ## ──────────────────────────────────────────────────────────────
 
 item.utilitycraft:wax.name=Wax
 item.utilitycraft:honey_treat.name=Honey Treat
+item.utilitycraft:bio_fragment.name=Bio Fragment
 
 ## ──────────────────────────────────────────────────────────────
-## BEE CAGES
+## BEE CAGES  (utilitycraft namespace)
 ## ──────────────────────────────────────────────────────────────
 
 item.utilitycraft:bee_cage.name=Bee Cage
@@ -144,6 +185,7 @@ item.utilitycraft:sturdy_bee_cage_filled.name=Sturdy Bee Cage (Filled)
 item.utilitycraft:upgrade_base.name=Upgrade Base
 item.utilitycraft:speed_upgrade.name=Speed Upgrade
 item.utilitycraft:simulator_upgrade.name=Simulator Upgrade
+
 item.projectbee:speed_upgrade_1.name=Speed Upgrade I
 item.projectbee:speed_upgrade_2.name=Speed Upgrade II
 item.projectbee:speed_upgrade_3.name=Speed Upgrade III
@@ -151,7 +193,17 @@ item.projectbee:speed_upgrade_4.name=Speed Upgrade IV
 item.projectbee:speed_upgrade_5.name=Speed Upgrade V
 
 ## ──────────────────────────────────────────────────────────────
-## UI DISPLAY ITEMS (intentionally blank — hidden in inventory)
+## UC ALLOY INGOTS  (referenced as centrifuge outputs)
+## ──────────────────────────────────────────────────────────────
+
+item.utilitycraft:adamant_ingot.name=Adamant Ingot
+item.utilitycraft:duranium_ingot.name=Duranium Ingot
+item.utilitycraft:energized_iron_ingot.name=Energized Iron Ingot
+item.utilitycraft:steel_ingot.name=Steel Ingot
+item.utilitycraft:voltanium_ingot.name=Voltanium Ingot
+
+## ──────────────────────────────────────────────────────────────
+## UI DISPLAY ITEMS  (intentionally blank — internal HUD only)
 ## ──────────────────────────────────────────────────────────────
 
 item.projectbee:heart_bar_0.name=
@@ -166,123 +218,97 @@ item.projectbee:heart_bar_8.name=
 item.projectbee:heart_bar_9.name=
 
 ## ──────────────────────────────────────────────────────────────
-## BEE EGGS
+## ENTITY NAMES  (utilitycraft namespace)
 ## ──────────────────────────────────────────────────────────────
 
-item.projectbee:bee_egg.name=Bee Egg
-item.projectbee:adamant_bee_egg.name=Adamant Bee Egg
-item.projectbee:amethyst_bee_egg.name=Amethyst Bee Egg
-item.projectbee:biomass_bee_egg.name=Biomass Bee Egg
-item.projectbee:blue_banded_bee_egg.name=Blue Banded Bee Egg
-item.projectbee:blue_mason_bee_egg.name=Blue Mason Bee Egg
-item.projectbee:bone_bee_egg.name=Bone Bee Egg
-item.projectbee:bumble_bee_egg.name=Bumble Bee Egg
-item.projectbee:coal_bee_egg.name=Coal Bee Egg
-item.projectbee:copper_bee_egg.name=Copper Bee Egg
-item.projectbee:diamond_bee_egg.name=Diamond Bee Egg
-item.projectbee:dirt_bee_egg.name=Dirt Bee Egg
-item.projectbee:duranium_bee_egg.name=Duranium Bee Egg
-item.projectbee:echo_bee_egg.name=Echo Bee Egg
-item.projectbee:emerald_bee_egg.name=Emerald Bee Egg
-item.projectbee:ender_bee_egg.name=Ender Bee Egg
-item.projectbee:energized_iron_bee_egg.name=Energized Iron Bee Egg
-item.projectbee:glowing_bee_egg.name=Glowing Bee Egg
-item.projectbee:gold_bee_egg.name=Gold Bee Egg
-item.projectbee:iron_bee_egg.name=Iron Bee Egg
-item.projectbee:lapis_bee_egg.name=Lapis Bee Egg
-item.projectbee:leaf_cutter_bee_egg.name=Leaf Cutter Bee Egg
-item.projectbee:magmatic_bee_egg.name=Magmatic Bee Egg
-item.projectbee:magnetic_bee_egg.name=Magnetic Bee Egg
-item.projectbee:mining_bee_egg.name=Mining Bee Egg
-item.projectbee:netherite_bee_egg.name=Netherite Bee Egg
-item.projectbee:obsidian_bee_egg.name=Obsidian Bee Egg
-item.projectbee:quartz_bee_egg.name=Quartz Bee Egg
-item.projectbee:redstone_bee_egg.name=Redstone Bee Egg
-item.projectbee:slime_bee_egg.name=Slime Bee Egg
-item.projectbee:steel_bee_egg.name=Steel Bee Egg
-item.projectbee:voltanium_bee_egg.name=Voltanium Bee Egg
-
-## ──────────────────────────────────────────────────────────────
-## ENTITY NAMES
-## ──────────────────────────────────────────────────────────────
-
+## Minecraft-species bee entities
 entity.utilitycraft:bee.name=Bee
-entity.utilitycraft:adamant_bee.name=Adamant Bee
 entity.utilitycraft:amethyst_bee.name=Amethyst Bee
-entity.utilitycraft:biomass_bee.name=Biomass Bee
-entity.utilitycraft:blue_banded_bee.name=Blue Banded Bee
-entity.utilitycraft:blue_mason_bee.name=Blue Mason Bee
 entity.utilitycraft:bone_bee.name=Bone Bee
-entity.utilitycraft:bumble_bee.name=Bumble Bee
 entity.utilitycraft:coal_bee.name=Coal Bee
 entity.utilitycraft:copper_bee.name=Copper Bee
 entity.utilitycraft:diamond_bee.name=Diamond Bee
-entity.utilitycraft:dirt_bee.name=Dirt Bee
-entity.utilitycraft:duranium_bee.name=Duranium Bee
 entity.utilitycraft:echo_bee.name=Echo Bee
 entity.utilitycraft:emerald_bee.name=Emerald Bee
 entity.utilitycraft:ender_bee.name=Ender Bee
-entity.utilitycraft:energized_iron_bee.name=Energized Iron Bee
 entity.utilitycraft:glowing_bee.name=Glowing Bee
 entity.utilitycraft:gold_bee.name=Gold Bee
 entity.utilitycraft:iron_bee.name=Iron Bee
 entity.utilitycraft:lapis_bee.name=Lapis Bee
-entity.utilitycraft:leaf_cutter_bee.name=Leaf Cutter Bee
-entity.utilitycraft:magmatic_bee.name=Magmatic Bee
-entity.utilitycraft:magnetic_bee.name=Magnetic Bee
-entity.utilitycraft:mining_bee.name=Mining Bee
 entity.utilitycraft:netherite_bee.name=Netherite Bee
 entity.utilitycraft:obsidian_bee.name=Obsidian Bee
 entity.utilitycraft:quartz_bee.name=Quartz Bee
 entity.utilitycraft:redstone_bee.name=Redstone Bee
 entity.utilitycraft:slime_bee.name=Slime Bee
+
+## Base / nature bee entities
+entity.utilitycraft:biomass_bee.name=Biomass Bee
+entity.utilitycraft:blue_banded_bee.name=Blue Banded Bee
+entity.utilitycraft:blue_mason_bee.name=Blue Mason Bee
+entity.utilitycraft:bumble_bee.name=Bumble Bee
+entity.utilitycraft:dirt_bee.name=Dirt Bee
+entity.utilitycraft:leaf_cutter_bee.name=Leaf Cutter Bee
+entity.utilitycraft:magmatic_bee.name=Magmatic Bee
+entity.utilitycraft:magnetic_bee.name=Magnetic Bee
+entity.utilitycraft:mining_bee.name=Mining Bee
+
+## UC alloy bee entities
+entity.utilitycraft:adamant_bee.name=Adamant Bee
+entity.utilitycraft:duranium_bee.name=Duranium Bee
+entity.utilitycraft:energized_iron_bee.name=Energized Iron Bee
 entity.utilitycraft:steel_bee.name=Steel Bee
 entity.utilitycraft:voltanium_bee.name=Voltanium Bee
+
+## Internal entities (no display name needed)
 entity.utilitycraft:energy_fluid_slot.name=
 entity.utilitycraft:item.name=
 
 ## ──────────────────────────────────────────────────────────────
-## SPAWN EGG NAMES
+## SPAWN EGGS  (item.spawn_egg.entity.<id>.name)
 ## ──────────────────────────────────────────────────────────────
 
+## Minecraft-species
 item.spawn_egg.entity.utilitycraft:bee.name=Bee Spawn Egg
-item.spawn_egg.entity.utilitycraft:adamant_bee.name=Adamant Bee Spawn Egg
 item.spawn_egg.entity.utilitycraft:amethyst_bee.name=Amethyst Bee Spawn Egg
-item.spawn_egg.entity.utilitycraft:biomass_bee.name=Biomass Bee Spawn Egg
-item.spawn_egg.entity.utilitycraft:blue_banded_bee.name=Blue Banded Bee Spawn Egg
-item.spawn_egg.entity.utilitycraft:blue_mason_bee.name=Blue Mason Bee Spawn Egg
 item.spawn_egg.entity.utilitycraft:bone_bee.name=Bone Bee Spawn Egg
-item.spawn_egg.entity.utilitycraft:bumble_bee.name=Bumble Bee Spawn Egg
 item.spawn_egg.entity.utilitycraft:coal_bee.name=Coal Bee Spawn Egg
 item.spawn_egg.entity.utilitycraft:copper_bee.name=Copper Bee Spawn Egg
 item.spawn_egg.entity.utilitycraft:diamond_bee.name=Diamond Bee Spawn Egg
-item.spawn_egg.entity.utilitycraft:dirt_bee.name=Dirt Bee Spawn Egg
-item.spawn_egg.entity.utilitycraft:duranium_bee.name=Duranium Bee Spawn Egg
 item.spawn_egg.entity.utilitycraft:echo_bee.name=Echo Bee Spawn Egg
 item.spawn_egg.entity.utilitycraft:emerald_bee.name=Emerald Bee Spawn Egg
 item.spawn_egg.entity.utilitycraft:ender_bee.name=Ender Bee Spawn Egg
-item.spawn_egg.entity.utilitycraft:energized_iron_bee.name=Energized Iron Bee Spawn Egg
 item.spawn_egg.entity.utilitycraft:glowing_bee.name=Glowing Bee Spawn Egg
 item.spawn_egg.entity.utilitycraft:gold_bee.name=Gold Bee Spawn Egg
 item.spawn_egg.entity.utilitycraft:iron_bee.name=Iron Bee Spawn Egg
 item.spawn_egg.entity.utilitycraft:lapis_bee.name=Lapis Bee Spawn Egg
-item.spawn_egg.entity.utilitycraft:leaf_cutter_bee.name=Leaf Cutter Bee Spawn Egg
-item.spawn_egg.entity.utilitycraft:magmatic_bee.name=Magmatic Bee Spawn Egg
-item.spawn_egg.entity.utilitycraft:magnetic_bee.name=Magnetic Bee Spawn Egg
-item.spawn_egg.entity.utilitycraft:mining_bee.name=Mining Bee Spawn Egg
 item.spawn_egg.entity.utilitycraft:netherite_bee.name=Netherite Bee Spawn Egg
 item.spawn_egg.entity.utilitycraft:obsidian_bee.name=Obsidian Bee Spawn Egg
 item.spawn_egg.entity.utilitycraft:quartz_bee.name=Quartz Bee Spawn Egg
 item.spawn_egg.entity.utilitycraft:redstone_bee.name=Redstone Bee Spawn Egg
 item.spawn_egg.entity.utilitycraft:slime_bee.name=Slime Bee Spawn Egg
+
+## Base / nature bee spawn eggs
+item.spawn_egg.entity.utilitycraft:biomass_bee.name=Biomass Bee Spawn Egg
+item.spawn_egg.entity.utilitycraft:blue_banded_bee.name=Blue Banded Bee Spawn Egg
+item.spawn_egg.entity.utilitycraft:blue_mason_bee.name=Blue Mason Bee Spawn Egg
+item.spawn_egg.entity.utilitycraft:bumble_bee.name=Bumble Bee Spawn Egg
+item.spawn_egg.entity.utilitycraft:dirt_bee.name=Dirt Bee Spawn Egg
+item.spawn_egg.entity.utilitycraft:leaf_cutter_bee.name=Leaf Cutter Bee Spawn Egg
+item.spawn_egg.entity.utilitycraft:magmatic_bee.name=Magmatic Bee Spawn Egg
+item.spawn_egg.entity.utilitycraft:magnetic_bee.name=Magnetic Bee Spawn Egg
+item.spawn_egg.entity.utilitycraft:mining_bee.name=Mining Bee Spawn Egg
+
+## UC alloy bee spawn eggs
+item.spawn_egg.entity.utilitycraft:adamant_bee.name=Adamant Bee Spawn Egg
+item.spawn_egg.entity.utilitycraft:duranium_bee.name=Duranium Bee Spawn Egg
+item.spawn_egg.entity.utilitycraft:energized_iron_bee.name=Energized Iron Bee Spawn Egg
 item.spawn_egg.entity.utilitycraft:steel_bee.name=Steel Bee Spawn Egg
 item.spawn_egg.entity.utilitycraft:voltanium_bee.name=Voltanium Bee Spawn Egg
 
 ## ──────────────────────────────────────────────────────────────
-## CREATIVE GROUP NAMES
+## CREATIVE TAB / ITEM GROUP NAMES
 ## ──────────────────────────────────────────────────────────────
 
-itemGroup.name.projectbee:bee_eggs=Bee Eggs
 itemGroup.name.projectbee:beeupgrades=Bee Upgrades
 itemGroup.name.projectbee:comb_blocks=Comb Blocks
 itemGroup.name.projectbee:nests=Bee Nests
@@ -290,7 +316,7 @@ itemGroup.name.projectbee:machines=Machines
 itemGroup.name.projectbee:combs=Combs
 
 ## ──────────────────────────────────────────────────────────────
-## UI TITLES
+## UI SCREEN TITLES
 ## ──────────────────────────────────────────────────────────────
 
 projectbee.advance_beehive.ui=Advanced Beehive
@@ -304,7 +330,7 @@ projectbee.feeding_slab.ui=Feeding Slab
 projectbee.feeding_slab_double.ui=Feeding Slab (Double)
 
 ## ──────────────────────────────────────────────────────────────
-## UI INFO PANELS
+## UI INFO PANELS  (shown in machine info tab)
 ## ──────────────────────────────────────────────────────────────
 
 ui.projectbee:info.advance_beehive=§eAdvanced Beehive§r\nAn automated beehive that collects bee\nproducts and produces honeycombs.\n\n§bBee Input§r — Insert a filled bee cage\n§bBee Storage§r — Stores up to 5 working bees\n§bCatalyst Slot§r — Insert required catalyst\n§bOutput Grid§r — Collect produced items\n§bUpgrade Slots§r — Install machine upgrades\n\n§7Tip:§r Place an §fExtension Box§r above or\nbelow to expand bee storage to 7 slots.
@@ -312,12 +338,12 @@ ui.projectbee:info.advance_beehive_expanded=§eAdvanced Beehive (Expanded)§r\nE
 ui.projectbee:info.breeding_chamber=§eBreeding Chamber§r\nBreeds two compatible bees to produce\na new offspring species.\n\n§bCage Slots§r — Insert two filled bee cages\n§bFlower Slots§r — Insert matching flowers\n§bOutput§r — Collect baby bee cages\n\n§7Note:§r Cages are not consumed.\n§7One flower per slot is consumed each cycle.
 ui.projectbee:info.bee_incubator=§eBee Incubator§r\nGrows baby bees into adults using\nHoney Treats and energy.\n\n§bInput§r — Baby filled bee cage\n§bOutput§r — Adult filled bee cage\n§bHoney Treats§r — Consumed per process\n\n§7Treat cost by bee tier:§r\n §aCommon§r — 1 treat\n §aSemi-Rare§r — 2–3 treats\n §aRare§r — 4 treats\n §aLegendary§r — 5–6 treats
 ui.projectbee:info.centrifuge=§eCentrifuge§r\nProcesses honeycombs into raw materials.\n\n§bInput§r — Insert a honeycomb\n§bOutput Grid§r — Collect processed items
-ui.projectbee:info.powered_centrifuge=§ePowered Centrifuge§r\nEnergy-powered centrifuge with faster\nprocessing than the basic model.\n\n§bInput§r — Insert a honeycomb\n§bOutput Grid§r — Collect processed items\n\n§7Requires §aFE§7 per operation.
+ui.projectbee:info.powered_centrifuge=§ePowered Centrifuge§r\nEnergy-powered centrifuge with faster\nprocessing than the basic model.\n\n§bInput§r — Insert a honeycomb\n§bOutput Grid§r — Collect processed items\n\n§7Requires §aDE§7 per operation.
 ui.projectbee:info.feeding_slab=§eFeeding Slab§r\nHolds food items for the Advanced Beehive\nwhen a Simulator Upgrade is installed.\n\n§bSlots§r — Place food blocks or items\n\n§7Tip:§r Right-click with another Feeding Slab\nto double the storage capacity.
 ui.projectbee:info.feeding_slab_double=§eFeeding Slab (Double)§r\nExpanded feeding slab with 6 storage slots.\n\n§bSlots§r — Place food blocks or items
 
 ## ──────────────────────────────────────────────────────────────
-## IO MODE DESCRIPTIONS
+## UI IO MODE DESCRIPTIONS
 ## ──────────────────────────────────────────────────────────────
 
 ui.projectbee:io.advance_beehive.items=§7Input:§r Bee input, storage, catalyst, upgrade slots\n§7Output:§r 3×3 output grid
@@ -330,17 +356,84 @@ ui.projectbee:io.feeding_slab.items=§7Input:§r Food storage slots (3)
 ui.projectbee:io.feeding_slab_double.items=§7Input:§r Food storage slots (6)
 
 ## ──────────────────────────────────────────────────────────────
-## UPGRADE DESCRIPTIONS
+## HOW TO PLAY — SIDEBAR BUTTON LABELS
 ## ──────────────────────────────────────────────────────────────
 
-item.projectbee:speed_upgrade_1.desc=§7Reduces processing time by §a5 ticks§7.\n§7Up to §e4§7 can be installed at once.
-item.projectbee:speed_upgrade_2.desc=§7Reduces processing time by §a10 ticks§7.\n§7Up to §e4§7 can be installed at once.
-item.projectbee:speed_upgrade_3.desc=§7Reduces processing time by §a15 ticks§7.\n§7Up to §e4§7 can be installed at once.
-item.projectbee:speed_upgrade_4.desc=§7Reduces processing time by §a20 ticks§7.\n§7Up to §e4§7 can be installed at once.
-item.projectbee:speed_upgrade_5.desc=§7Reduces processing time by §a25 ticks§7.\n§7Up to §e4§7 can be installed at once.
+howtoplay.pb:introduction=Introduction
+howtoplay.pb:introduction.title=Project Bee - Introduction
+howtoplay.pb:bees=Bees
+howtoplay.pb:bees.title=Project Bee - Bees
+howtoplay.pb:machines=Machines
+howtoplay.pb:machines.title=Project Bee - Machines
 
 ## ──────────────────────────────────────────────────────────────
-## COMB CATALOG
+## HOW TO PLAY — INTRODUCTION SECTION
+## ──────────────────────────────────────────────────────────────
+
+howtoplay.pb.introduction.p1=§eProject Bee§r is a bee management and automation addon built as an extension of §6UtilityCraft§r.\n\nIt adds custom bee species, specialised machines, and a progression system that lets you collect resources passively through your bees.
+
+howtoplay.pb.introduction.h1=Getting Started
+
+howtoplay.pb.introduction.p2=To catch a bee you need a §bBee Cage§r. Right-click any bee with an empty cage to fill it. A §bSturdy Bee Cage§r is reusable — the cage returns to you when you release the bee.\n\nPlace a filled cage into the §bAdvanced Beehive§r to put the bee to work.
+
+howtoplay.pb.introduction.h2=Comb Processing
+
+howtoplay.pb.introduction.p3=Every bee produces a specific §bcomb§r type. Combs are collected from the Advanced Beehive's output grid and processed in the §bCentrifuge§r or §bPowered Centrifuge§r to extract raw materials such as ores, gems, ingots, and special drops.
+
+howtoplay.pb.introduction.h3=Upgrades
+
+howtoplay.pb.introduction.p4=The Advanced Beehive accepts §bSpeed Upgrade§r modules (Tiers I–V) in its upgrade slots to increase processing speed. Install a §bSimulator Upgrade§r to run the hive without live bees — feed it items via a §bFeeding Slab§r placed above or below.
+
+## ──────────────────────────────────────────────────────────────
+## HOW TO PLAY — BEES SECTION
+## ──────────────────────────────────────────────────────────────
+
+howtoplay.pb.bees.intro=Project Bee works with two groups of bees: §6UtilityCraft bees§r (custom species) and §aMinecraft bees§r (vanilla). Both can be caught, bred, and housed in the Advanced Beehive.
+
+howtoplay.pb.bees.h_uc_bees=UtilityCraft Bees
+
+howtoplay.pb.bees.p_uc_bees=These species are added by the UtilityCraft ecosystem and each produce a unique resource comb:\n\n§7Ore bees:§r Iron · Copper · Gold · Coal · Redstone · Lapis · Quartz · Netherite · Duranium\n§7Gem bees:§r Diamond · Emerald · Amethyst · Echo · Ender\n§7Special bees:§r Slime · Obsidian · Bone · Glowing · Magmatic · Biomass\n§7Alloy bees:§r Steel · Energized Iron · Voltanium · Adamant\n§7Nature bees:§r Bumble · Leaf Cutter · Blue Banded · Blue Mason · Magnetic · Mining · Dirt\n\n[Photo — UC bee showcase]
+
+howtoplay.pb.bees.h_mc_bees=Minecraft Bees
+
+howtoplay.pb.bees.p_mc_bees=The standard vanilla §eBee§r is fully compatible with Project Bee machines. Catch it with a Bee Cage, house it in the Advanced Beehive, and it produces regular §eHoneycomb§r.\n\n§7Centrifuge output:§r Honeycomb → §aWax§r (99%)\n\n[Photo — Minecraft bee]
+
+## ──────────────────────────────────────────────────────────────
+## HOW TO PLAY — MACHINES SECTION
+## ──────────────────────────────────────────────────────────────
+
+howtoplay.pb.machines.intro=All Project Bee machines are listed here. Energy machines run on §eDE (Dorios Energy)§r from the UtilityCraft energy system.
+
+howtoplay.pb.machines.h_advance_beehive=Advanced Beehive
+
+howtoplay.pb.machines.p_advance_beehive=The core machine of Project Bee. Houses up to §b5 working bees§r and automatically collects their comb output.\n\n§bBee Input§r — Insert a filled Bee Cage\n§bBee Storage§r — 5 bee slots (7 with Extension Box)\n§bCatalyst Slot§r — Insert the required catalyst for your bees\n§bOutput Grid§r — 3×3 grid; collect combs and other products here\n§bUpgrade Slots§r — Speed Upgrade I–V or Simulator Upgrade
+
+howtoplay.pb.machines.h_breeding_chamber=Breeding Chamber
+
+howtoplay.pb.machines.p_breeding_chamber=Combines two bee species to produce a §bbaby bee offspring§r.\n\n§bCage Slots§r — Insert two filled Bee Cages (cages are §lnot§r consumed)\n§bFlower Slots§r — Insert the matching flowers; §cone flower consumed per cycle§r\n§bOutput§r — Baby filled Bee Cage\n\n§7Compatibility depends on the two parent species.
+
+howtoplay.pb.machines.h_bee_incubator=Bee Incubator
+
+howtoplay.pb.machines.p_bee_incubator=Grows a §bbaby bee§r into an §badult§r using energy and Honey Treats.\n\n§bInput§r — Baby filled Bee Cage\n§bOutput§r — Adult filled Bee Cage\n§bHoney Treats§r — Consumed each cycle\n\n§7Treat cost by tier:§r Common §a1§r · Semi-Rare §a2–3§r · Rare §a4§r · Legendary §a5–6§r
+
+howtoplay.pb.machines.h_centrifuge=Centrifuge
+
+howtoplay.pb.machines.p_centrifuge=A manual centrifuge that processes §bhoneycombs§r into raw materials. No energy required — good for early-game use.\n\n§bInput§r — Insert a honeycomb\n§bOutput Grid§r — 3×3 result grid
+
+howtoplay.pb.machines.h_powered_centrifuge=Powered Centrifuge
+
+howtoplay.pb.machines.p_powered_centrifuge=An energy-powered centrifuge with faster processing than the basic model.\n\n§bInput§r — Insert a honeycomb\n§bOutput Grid§r — 3×3 result grid\n§eRequires DE§r per operation\n\n§7Each comb yields different outputs. Common drops: raw ores/ingots (50%), §aWax§r (99%).
+
+howtoplay.pb.machines.h_feeding_slab=Feeding Slab
+
+howtoplay.pb.machines.p_feeding_slab=Holds food items for the Advanced Beehive when a §bSimulator Upgrade§r is installed.\n\n§bSlots§r — 3 food storage slots\n§7Place directly above or below the Advanced Beehive.\n§7Tip:§r Right-click a placed Feeding Slab with another to merge into a §fDouble Feeding Slab§r (6 slots).
+
+howtoplay.pb.machines.h_extension_box=Extension Box
+
+howtoplay.pb.machines.p_extension_box=Expands the Advanced Beehive's bee storage from §b5 to 7 slots§r.\n\n§7Place directly §labove§r or §lbelow§r an Advanced Beehive to activate.\nNo energy or configuration required — links automatically.
+
+## ──────────────────────────────────────────────────────────────
+## COMB CATALOG  (used by in-game book or info item)
 ## ──────────────────────────────────────────────────────────────
 
 catalog.comb.title=§6=== Comb Catalog ===§r
@@ -364,31 +457,11 @@ catalog.comb.bone=§eBone Comb§r\n§7Source:§r Bone Bee\n§7Centrifuge:§r Bon
 catalog.comb.magmatic=§eMagmatic Comb§r\n§7Source:§r Magmatic Bee\n§7Centrifuge:§r Magma Cream (30%), Wax (99%)
 catalog.comb.glowing=§eGlowing Comb§r\n§7Source:§r Glowing Bee\n§7Centrifuge:§r Wax (99%)
 catalog.comb.biomass=§eBiomass Comb§r\n§7Source:§r Biomass Bee\n§7Centrifuge:§r Bio Fragment ×5 (70%), Wax (99%)
-
-## NEW BASE BEE COMBS
-item.utilitycraft:mining_comb.name=Mining Comb
-item.utilitycraft:mining_comb=Mining Comb
-item.utilitycraft:blue_banded_comb.name=Blue Banded Comb
-item.utilitycraft:blue_banded_comb=Blue Banded Comb
-item.utilitycraft:blue_mason_comb.name=Blue Mason Comb
-item.utilitycraft:blue_mason_comb=Blue Mason Comb
-item.utilitycraft:leaf_cutter_comb.name=Leaf Cutter Comb
-item.utilitycraft:leaf_cutter_comb=Leaf Cutter Comb
-item.utilitycraft:dirt_comb.name=Dirt Comb
-item.utilitycraft:dirt_comb=Dirt Comb
-item.utilitycraft:magnetic_comb.name=Magnetic Comb
-item.utilitycraft:magnetic_comb=Magnetic Comb
-item.utilitycraft:bumble_comb.name=Bumble Comb
-item.utilitycraft:bumble_comb=Bumble Comb
-
-## UC ALLOY BEE COMBS
-item.utilitycraft:steel_comb.name=Steel Comb
-item.utilitycraft:steel_comb=Steel Comb
-item.utilitycraft:energized_iron_comb.name=Energized Iron Comb
-item.utilitycraft:energized_iron_comb=Energized Iron Comb
-item.utilitycraft:duranium_comb.name=Duranium Comb
-item.utilitycraft:duranium_comb=Duranium Comb
-item.utilitycraft:voltanium_comb.name=Voltanium Comb
-item.utilitycraft:voltanium_comb=Voltanium Comb
-item.utilitycraft:adamant_comb.name=Adamant Comb
-item.utilitycraft:adamant_comb=Adamant Comb
+catalog.comb.mining=§eMining Comb§r\n§7Source:§r Mining Bee\n§7Centrifuge:§r Wax (99%)
+catalog.comb.leaf_cutter=§eLeaf Cutter Comb§r\n§7Source:§r Leaf Cutter Bee\n§7Centrifuge:§r Wax (99%)
+catalog.comb.dirt=§eDirt Comb§r\n§7Source:§r Dirt Bee\n§7Centrifuge:§r Wax (99%)
+catalog.comb.steel=§eSteel Comb§r\n§7Source:§r Steel Bee\n§7Centrifuge:§r Steel Ingot (50%), Wax (99%)
+catalog.comb.energized_iron=§eEnergized Iron Comb§r\n§7Source:§r Energized Iron Bee\n§7Centrifuge:§r Energized Iron Ingot (50%), Wax (99%)
+catalog.comb.duranium=§eDuranium Comb§r\n§7Source:§r Duranium Bee\n§7Centrifuge:§r Duranium Ingot (50%), Wax (99%)
+catalog.comb.voltanium=§eVoltanium Comb§r\n§7Source:§r Voltanium Bee\n§7Centrifuge:§r Voltanium Ingot (50%), Wax (99%)
+catalog.comb.adamant=§eAdamant Comb§r\n§7Source:§r Adamant Bee\n§7Centrifuge:§r Adamant Ingot (50%), Wax (99%)
