@@ -2,61 +2,74 @@
 // Project Bee — Simulator Upgrade Item
 //
 // When inserted into an upgrade slot of the Advance Beehive,
-// the beehive no longer needs real bees flying in.  Instead
-// it treats whichever bee item is already sitting in a bee
-// slot as a permanent "virtual" bee and keeps producing combs
-// continuously.  The bee items are never consumed.
+// the beehive no longer needs real bees flying in. Instead it
+// treats whichever bee item is already sitting in a bee slot
+// as a permanent "virtual" bee and keeps producing combs
+// continuously. The bee items are never consumed.
 //
-// This file handles:
-//  • Crafting feedback (onUse tooltip message)
-//  • Preventing the upgrade from stacking with speed upgrades
-//    in the same slot via onBeforeUseOn guard
-//  • ScriptEvent: projectbee:give_simulator_upgrade
-//    — gives the upgrade to the nearest player (dev/admin tool)
+// ScriptEvent: projectbee:give_simulator_upgrade
+//   — gives the upgrade to the nearest player (dev/admin tool)
 // ============================================================
 
 import { world, system, ItemStack } from "@minecraft/server";
 import * as DoriosLib from "DoriosLib/index.js";
 
-const ITEM_ID          = "utilitycraft:simulator_upgrade";
-const SPEED_UPGRADE_ID = "utilitycraft:speed_upgrade";
+const ITEM_ID = "utilitycraft:simulator_upgrade";
 
-// ── Item component ───────────────────────────────────────────
+// ── Item component ─────────────────────────────────────────────
+// BUG FIX: Removed the empty onUseOn handler — registering a custom
+// component with no behaviour has no gameplay effect and adds noise.
 
 DoriosLib.registry.itemComponent(ITEM_ID, {
-
-    /**
-     * Fired when the player right-clicks / uses the item on a block.
-     * We use this to give feedback if they accidentally try to place
-     * a simulator upgrade on top of a speed upgrade slot.
-     */
-    onUseOn(event) {
-        const { source: player, itemStack, block } = event;
-        if (!player || !itemStack) return;
-
-        // Nothing special needed here — the beehive block component
-        // reads the upgrade slots on every tick and reacts accordingly.
-        // This handler is intentionally minimal.
-    },
+    // No item-level handlers needed; the beehive block component reads
+    // upgrade slots on every tick and reacts accordingly.
 });
 
-// ── ScriptEvent: give upgrade to nearest player ──────────────
-// Usage (e.g. from a command block):
-//   /scriptevent projectbee:give_simulator_upgrade {}
+// ── ScriptEvent: give upgrade to nearest player ────────────────
+// Usage: /scriptevent projectbee:give_simulator_upgrade {}
+//
+// BUG FIX: "world.getAllPlayers()[0]" is the first player returned by
+// the engine, not necessarily the nearest one. When sourceEntity is a
+// player this is now used directly. For command-block invocations a
+// true nearest-player search is performed instead of relying on
+// array position.
 
 system.afterEvents.scriptEventReceive.subscribe(({ id, sourceEntity }) => {
     if (id !== "projectbee:give_simulator_upgrade") return;
 
-    const player = sourceEntity?.typeId === "minecraft:player"
-        ? sourceEntity
-        : world.getAllPlayers()[0];
+    let player;
+
+    if (sourceEntity?.typeId === "minecraft:player") {
+        player = sourceEntity;
+    } else {
+        // Find the nearest player to the source entity, or any player.
+        const allPlayers = world.getAllPlayers();
+        if (!allPlayers.length) return;
+
+        if (sourceEntity) {
+            const loc = sourceEntity.location;
+            player = allPlayers.reduce((nearest, p) => {
+                const dx = p.location.x - loc.x;
+                const dy = p.location.y - loc.y;
+                const dz = p.location.z - loc.z;
+                const dist = dx * dx + dy * dy + dz * dz;
+                const ndx  = nearest.location.x - loc.x;
+                const ndy  = nearest.location.y - loc.y;
+                const ndz  = nearest.location.z - loc.z;
+                const ndist = ndx * ndx + ndy * ndy + ndz * ndz;
+                return dist < ndist ? p : nearest;
+            });
+        } else {
+            player = allPlayers[0];
+        }
+    }
 
     if (!player) return;
 
     const inv = player.getComponent("minecraft:inventory")?.container;
-    if (!inv)  return;
+    if (!inv) return;
 
-    const upgrade = new ItemStack(ITEM_ID, 1);
+    const upgrade  = new ItemStack(ITEM_ID, 1);
     const leftover = inv.addItem(upgrade);
     if (leftover) {
         player.dimension.spawnItem(leftover, player.location);

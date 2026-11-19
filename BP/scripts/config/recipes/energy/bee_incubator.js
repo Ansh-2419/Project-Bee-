@@ -45,6 +45,8 @@ export const incubateCost = {
     "utilitycraft:energized_iron_bee": 50,
     "utilitycraft:duranium_bee": 60,
     "utilitycraft:voltanium_bee": 70,
-    "utilitycraft:adamant_bee": 80,
-}
-;
+    "utilitycraft:adamant_bee":   80,
+    "utilitycraft:tungsten_bee":  60,
+    "utilitycraft:titanium_bee":  70,
+    "utilitycraft:aetherium_bee": 90,
+};

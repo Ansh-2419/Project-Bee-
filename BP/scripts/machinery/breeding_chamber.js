@@ -21,6 +21,7 @@ import * as Utils from "DoriosCore/utils/entity.js";
 import { InterfaceManager } from "DoriosCore/interfaces/index.js";
 import { breedingRecipes } from "../config/recipes/breeding_chamber.js";
 import { beeCageType, BEE_DATA_PROP, BEE_BABY_PROP, applyBeeCageLore } from "../data/data.js";
+import { rollWeightedOutput } from "../core/recipes.js";
 
 const BLOCK_ID = "projectbee:breeding_chamber";
 const UI_TITLE = "projectbee.breeding_chamber.ui";
@@ -32,23 +33,25 @@ function heartItemId(frame) {
     return HEART_PREFIX + Math.max(0, Math.min(9, frame));
 }
 
-const PROGRESS_SLOT = 2;
-const CAGE_SLOT_1   = 3;
-const CAGE_SLOT_2   = 4;
-const FLOWER_SLOT_1 = 5;
-const FLOWER_SLOT_2 = 6;
-const OUTPUT_SLOTS  = [7, 8];
+const PROGRESS_SLOT  = 2;
+const CAGE_SLOT_1    = 3;
+const CAGE_SLOT_2    = 4;
+const FLOWER_SLOT_1  = 5;
+const FLOWER_SLOT_2  = 6;
+const OUTPUT_SLOTS   = [7, 8];
 const EMPTY_CAGE_SLOT = 9;
 
 const BASE_TICKS = 200;
 
-// ── State ─────────────────────────────────────────────────────
+// ── State ───────────────────────────────────────────────────────
+// BUG FIX: Include dimension ID in state key so chambers at the same
+// coordinates in different dimensions don't share state.
 
 const machineState = new Map();
 
 function stateKey(entity) {
     const { x, y, z } = entity.location;
-    return `${Math.floor(x)},${Math.floor(y)},${Math.floor(z)}`;
+    return `${Math.floor(x)},${Math.floor(y)},${Math.floor(z)},${entity.dimension.id}`;
 }
 
 function getState(key) {
@@ -56,8 +59,7 @@ function getState(key) {
     return machineState.get(key);
 }
 
-// ── Helpers ───────────────────────────────────────────────────
-
+// ── Helpers ─────────────────────────────────────────────────────
 
 function getInventory(entity) {
     return entity?.getComponent("minecraft:inventory")?.container;
@@ -97,10 +99,8 @@ function consumeOne(inv, slot) {
 function insertFilledCage(inv, beeId) {
     const emptyCage = inv.getItem(EMPTY_CAGE_SLOT);
     if (!emptyCage) return false;
-
     const emptyIdx = beeCageType.emptyCageIds.indexOf(emptyCage.typeId);
     if (emptyIdx === -1) return false;
-
     const target = OUTPUT_SLOTS.find(i => !inv.getItem(i));
     if (target === undefined) return false;
 
@@ -114,26 +114,38 @@ function insertFilledCage(inv, beeId) {
     return true;
 }
 
+// BUG FIX: Validate flowerTypes from the recipe.
+// Old code only checked that flower slots were occupied, never
+// that the flower types matched what the recipe requires.
+function flowerTypesValid(inv, recipe) {
+    if (!recipe.flowerTypes || recipe.flowerTypes.length === 0) return true;
+    const f1 = inv.getItem(FLOWER_SLOT_1)?.typeId;
+    const f2 = inv.getItem(FLOWER_SLOT_2)?.typeId;
+    return (
+        recipe.flowerTypes.includes(f1) &&
+        recipe.flowerTypes.includes(f2)
+    );
+}
+
+// BUG FIX: Return undefined (no match) instead of parent1 as fallback.
+// Old code returned parent1 when no recipe matched, producing an
+// unintended baby bee of the same species as parent1.
 function rollBabyBee(parent1, parent2) {
     const recipe = breedingRecipes.find(r =>
         (r.parent1 === parent1 && r.parent2 === parent2) ||
         (r.parent1 === parent2 && r.parent2 === parent1)
     );
-    if (!recipe) return parent1;
+    if (!recipe) return undefined; // no matching recipe — stop the cycle
 
     if (Array.isArray(recipe.outputs)) {
-        const total = recipe.outputs.reduce((s, o) => s + o.weight, 0);
-        let roll    = Math.random() * total;
-        for (const o of recipe.outputs) {
-            roll -= o.weight;
-            if (roll <= 0) return o.beeId;
-        }
-        return recipe.outputs[0].beeId;
+        // Use rollWeightedOutput from core/recipes.js
+        const chosen = rollWeightedOutput(recipe.outputs);
+        return chosen?.beeId ?? undefined;
     }
-    return recipe.output ?? parent1;
+    return recipe.output ?? undefined;
 }
 
-// ── BreedingChamber class ─────────────────────────────────────
+// ── BreedingChamber class ───────────────────────────────────────
 
 class BreedingChamber {
     constructor(block) {
@@ -179,7 +191,34 @@ class BreedingChamber {
     }
 
     breed(inv, bee1, bee2, state) {
-        insertFilledCage(inv, rollBabyBee(bee1, bee2));
+        // BUG FIX: Validate flower types before breeding.
+        // Also guard against no matching recipe.
+        const recipe = breedingRecipes.find(r =>
+            (r.parent1 === bee1 && r.parent2 === bee2) ||
+            (r.parent1 === bee2 && r.parent2 === bee1)
+        );
+
+        if (!recipe) {
+            // No recipe — reset progress instead of silently doing nothing.
+            state.tick = 0;
+            setProgressHeart(inv, 0, BASE_TICKS);
+            return;
+        }
+
+        if (!flowerTypesValid(inv, recipe)) {
+            state.tick = 0;
+            setProgressHeart(inv, 0, BASE_TICKS);
+            return;
+        }
+
+        const babyId = rollBabyBee(bee1, bee2);
+        if (!babyId) {
+            state.tick = 0;
+            setProgressHeart(inv, 0, BASE_TICKS);
+            return;
+        }
+
+        insertFilledCage(inv, babyId);
         consumeOne(inv, FLOWER_SLOT_1);
         consumeOne(inv, FLOWER_SLOT_2);
         state.tick = 0;
@@ -241,6 +280,8 @@ DoriosLib.registry.blockComponent(BLOCK_ID, {
 });
 
 // ── Block break ───────────────────────────────────────────────
+// BUG FIX: Drop items in system.run() to stay out of the beforeEvents
+// read-only context. Also clean up the helper entity after the break.
 
 world.beforeEvents.playerBreakBlock.subscribe(e => {
     if (e.block.typeId !== BLOCK_ID) return;
@@ -261,6 +302,10 @@ world.beforeEvents.playerBreakBlock.subscribe(e => {
     }
 
     system.run(() => {
-        for (const item of drops) e.block.dimension.spawnItem(item, e.block.location);
+        for (const item of drops) {
+            try { e.block.dimension.spawnItem(item, e.block.location); } catch { }
+        }
+        // BUG FIX: Clean up the helper entity after a confirmed block break.
+        try { if (entity.isValid) entity.kill(); } catch { }
     });
 });

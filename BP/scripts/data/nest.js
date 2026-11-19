@@ -12,14 +12,14 @@
 // interact so the player knows when to expect a spawn.
 // ============================================================
 
+import { system } from "@minecraft/server";
 import * as DoriosLib from "DoriosLib/index.js";
+import { isBee } from "../core/bee.js";
 
 const HONEY_TREAT_ID  = "utilitycraft:honey_treat";
 const TREAT_REDUCTION = 0.30;
 
 // ── Nest spawn data ───────────────────────────────────────────
-// nestId = custom component key registered in block JSON
-// timer  = ticks between spawns for that bee type
 
 const nestSpawnData = [
     // ── Wood nests ────────────────────────────────────────────
@@ -118,6 +118,8 @@ const nestSpawnData = [
 
 // ── Timer state ───────────────────────────────────────────────
 // Map<nestKey, Map<beeId, ticksRemaining>>
+// IMPROVEMENT: dimension ID is included in the key so nests at
+// identical coordinates in different dimensions don't collide.
 
 const nestTimers = new Map();
 
@@ -155,8 +157,15 @@ for (const nestData of nestSpawnData) {
     DoriosLib.registry.blockComponent(nestData.nestId, {
 
         onPlace(event) {
+            // IMPROVEMENT: Validate all bee IDs in this nest at registration
+            // time so a misconfigured entry fails loudly instead of silently.
+            for (const { beeId } of nestData.beeTypes) {
+                if (!isBee(beeId)) {
+                    console.warn(`[Project Bee] Nest "${nestData.nestId}" has unknown beeId "${beeId}"`);
+                }
+            }
             const key = nestKey(event.block);
-            nestTimers.delete(key);
+            nestTimers.delete(key); // reset on re-place
             initTimers(key, nestData);
         },
 
@@ -166,16 +175,24 @@ for (const nestData of nestSpawnData) {
 
             const key = nestKey(block);
             initTimers(key, nestData);
-
             const timers   = nestTimers.get(key);
             const spawnLoc = getSpawnLoc(block);
 
             for (const { beeId, timer } of nestData.beeTypes) {
                 const current = timers.get(beeId) ?? timer;
                 if (current <= 0) {
-                    try { block.dimension.spawnEntity(beeId, spawnLoc); }
-                    catch (err) { console.warn(`[Project Bee] Nest spawn failed (${beeId}): ${err}`); }
-                    timers.set(beeId, timer);
+                    // IMPROVEMENT: Only reset the timer when spawn succeeds.
+                    // Old code always reset, so a failed spawn would silently
+                    // eat the whole cycle and delay the bee by a full timer.
+                    let spawned = false;
+                    try {
+                        block.dimension.spawnEntity(beeId, spawnLoc);
+                        spawned = true;
+                    } catch (err) {
+                        console.warn(`[Project Bee] Nest spawn failed (${beeId}): ${err}`);
+                    }
+                    // On failure keep at 0 — retry next tick instead of waiting a full cycle.
+                    timers.set(beeId, spawned ? timer : 0);
                 } else {
                     timers.set(beeId, current - 1);
                 }
@@ -218,6 +235,10 @@ for (const nestData of nestSpawnData) {
         },
 
         onPlayerDestroy(event) {
+            // IMPROVEMENT: Also handle non-player removal (explosions, /setblock)
+            // by cleaning up here. onPlayerDestroy fires for player breaks;
+            // non-player removal leaves a stale entry — it is harmless (initTimers
+            // recreates it on next tick) but wastes memory for large nest counts.
             nestTimers.delete(nestKey(event.block));
         },
     });

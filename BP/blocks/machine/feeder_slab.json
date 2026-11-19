@@ -7,7 +7,10 @@
         "category": "construction"
       },
       "states": {
-        "utilitycraft:has_selection": [true, false],
+        "utilitycraft:has_selection": [
+          true,
+          false
+        ],
         "projectbee:double": [
           false,
           true
@@ -47,13 +50,6 @@
       "tag:dorios:machine": {},
       "tag:dorios:item": {},
       "tag:minecraft:is_pickaxe_item_destructible": {},
-      "projectbee:feeding_slab": {
-        "entity": {
-          "type": "container",
-          "inventory_size": 3,
-          "inventory_size_double": 6
-        }
-      },
       "minecraft:tick": {
         "interval_range": [
           1,
@@ -120,7 +116,12 @@
           }
         }
       },
-      {"condition":"!q.block_state('utilitycraft:has_selection')","components":{"minecraft:selection_box":false}}
+      {
+        "condition": "!q.block_state('utilitycraft:has_selection')",
+        "components": {
+          "minecraft:selection_box": false
+        }
+      }
     ]
   }
 }

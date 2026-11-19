@@ -2,144 +2,40 @@
  * Project Bee — Advanced Beehive Comb Recipes
  *
  * Each bee has a 99% chance to produce 3 combs.
+ *
+ * IMPROVEMENT: Recipes are derived from the BEES registry in data.js
+ * rather than being maintained as a parallel hand-written list.
+ * Adding a new bee to data.js automatically gives it a comb recipe —
+ * no need to touch this file. Exceptions (vanilla bee → honeycomb,
+ * utilitycraft:bee storage alias) are handled explicitly below.
  */
 
-export const advancedBeehive = [
-    {
-        input: { itemId: "utilitycraft:iron_bee" },
-        output: { itemId: "utilitycraft:iron_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:bone_bee" },
-        output: { itemId: "utilitycraft:bone_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:obsidian_bee" },
-        output: { itemId: "utilitycraft:obsidian_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:slime_bee" },
-        output: { itemId: "utilitycraft:slime_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:diamond_bee" },
-        output: { itemId: "utilitycraft:diamond_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:gold_bee" },
-        output: { itemId: "utilitycraft:gold_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:copper_bee" },
-        output: { itemId: "utilitycraft:copper_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:netherite_bee" },
-        output: { itemId: "utilitycraft:netherite_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:lapis_bee" },
-        output: { itemId: "utilitycraft:lapis_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:redstone_bee" },
-        output: { itemId: "utilitycraft:redstone_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:bee" },
-        output: { itemId: "minecraft:honeycomb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:quartz_bee" },
-        output: { itemId: "utilitycraft:quartz_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:glowing_bee" },
-        output: { itemId: "utilitycraft:glowing_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:ender_bee" },
-        output: { itemId: "utilitycraft:ender_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:coal_bee" },
-        output: { itemId: "utilitycraft:coal_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:emerald_bee" },
-        output: { itemId: "utilitycraft:emerald_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:magmatic_bee" },
-        output: { itemId: "utilitycraft:magmatic_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:echo_bee" },
-        output: { itemId: "utilitycraft:echo_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:amethyst_bee" },
-        output: { itemId: "utilitycraft:amethyst_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:biomass_bee" },
-        output: { itemId: "utilitycraft:biomass_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:mining_bee" },
-        output: { itemId: "utilitycraft:mining_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:blue_banded_bee" },
-        output: { itemId: "utilitycraft:blue_banded_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:blue_mason_bee" },
-        output: { itemId: "utilitycraft:blue_mason_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:leaf_cutter_bee" },
-        output: { itemId: "utilitycraft:leaf_cutter_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:dirt_bee" },
-        output: { itemId: "utilitycraft:dirt_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:magnetic_bee" },
-        output: { itemId: "utilitycraft:magnetic_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:bumble_bee" },
-        output: { itemId: "utilitycraft:bumble_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:steel_bee" },
-        output: { itemId: "utilitycraft:steel_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:energized_iron_bee" },
-        output: { itemId: "utilitycraft:energized_iron_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:duranium_bee" },
-        output: { itemId: "utilitycraft:duranium_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:voltanium_bee" },
-        output: { itemId: "utilitycraft:voltanium_comb", count: 3, chance: 99 }
-    },
-    {
-        input: { itemId: "utilitycraft:adamant_bee" },
-        output: { itemId: "utilitycraft:adamant_comb", count: 3, chance: 99 }
-    }
-];
+import { BEES } from "../../data/data.js";
+
+// Bees whose output diverges from the standard "<namespace>:<name>_comb" pattern.
+const OVERRIDES = {
+    "minecraft:bee":      "minecraft:honeycomb",
+    "utilitycraft:bee":   "minecraft:honeycomb", // internal storage alias for vanilla bee
+};
+
+// Bees intentionally excluded from comb production in the advance beehive.
+const EXCLUDED = new Set([]);
+
+function combIdForBee(beeId) {
+    if (OVERRIDES[beeId]) return OVERRIDES[beeId];
+    // "utilitycraft:iron_bee" → "utilitycraft:iron_comb"
+    return beeId.replace(/_bee$/, "_comb");
+}
+
+export const advancedBeehive = BEES
+    .filter(({ id }) => !EXCLUDED.has(id))
+    .map(({ id }) => ({
+        input:  { itemId: id },
+        output: { itemId: combIdForBee(id), count: 3, chance: 99 },
+    }));
 
 export default advancedBeehive;
-// Compatibility fix: prevents imports from failing.
-// Empty array disables the old machine-processing recipes.
-export const advanceBeehiveRecipes = [];
 
-export function getAdvanceBeehiveRecipes() {
-    return advanceBeehiveRecipes;
-}
+// Compatibility: other modules that imported these still compile.
+export const advanceBeehiveRecipes = [];
+export function getAdvanceBeehiveRecipes() { return advanceBeehiveRecipes; }

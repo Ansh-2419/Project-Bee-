@@ -2,6 +2,7 @@ import { ItemStack } from "@minecraft/server";
 import { Machine, registerIOInterface } from "DoriosCore/index.js";
 import * as DoriosLib from "DoriosLib/index.js";
 import { centrifugeRecipes } from "../config/recipes/energy/centrifuge.js";
+import { canFitAllOutputs, insertOutputs } from "../core/recipes.js";
 
 const PROGRESS_SLOT = 2;
 const INPUT_SLOT    = 3;
@@ -17,8 +18,8 @@ registerIOInterface(MACHINE_ID, {
         anyOutputSlots: OUTPUT_SLOTS,
         modes: [
             { id: "disabled" },
-            { id: "input_1",  inputSlots:  [INPUT_SLOT] },
-            { id: "output_1", outputSlots: OUTPUT_SLOTS },
+            { id: "input_1",  inputSlots:  [INPUT_SLOT]   },
+            { id: "output_1", outputSlots: OUTPUT_SLOTS   },
         ],
     },
 });
@@ -58,8 +59,15 @@ DoriosLib.registry.blockComponent(MACHINE_ID, {
             return;
         }
 
-        if (!hasOutputRoom(inv)) {
-            machine.showWarning("Output Full");
+        // BUG FIX: Pre-roll the full output list, then preflight ALL of them
+        // before consuming input. Old code checked only "any slot has space",
+        // so the second output could silently vanish when there was room for
+        // only one item.
+        const rolledOutputs = rollOutputs(recipe);
+
+        if (!canFitAllOutputs(inv, OUTPUT_SLOTS, rolledOutputs)) {
+            // BUG FIX: Preserve progress while output is full (don't reset).
+            machine.showWarning("Output Full", { resetProgress: false });
             return;
         }
 
@@ -74,18 +82,18 @@ DoriosLib.registry.blockComponent(MACHINE_ID, {
         const consumption = machine.boosts.consumption;
         let   progress    = machine.getProgress();
 
-        // ── Cycle complete ────────────────────────────────────
+        // ── Cycle complete ─────────────────────────────────────
         if (progress >= energyCost) {
             consumeInput(inv, INPUT_SLOT);
-            rollOutputs(inv, recipe);
+            insertOutputs(inv, OUTPUT_SLOTS, rolledOutputs);
             machine.setProgress(0, { display: true });
             machine.on();
             machine.displayEnergy();
             machine.showStatus("Running");
-            return; // start fresh next tick — prevents immediate re-fire
+            return;
         }
 
-        // ── Advance progress ──────────────────────────────────
+        // ── Advance progress ───────────────────────────────────
         const progressCapacity = Math.max(0, energyCost - progress);
         const energyToConsume  = Math.min(machine.energy.get(), machine.rate, progressCapacity * consumption);
 
@@ -106,37 +114,21 @@ DoriosLib.registry.blockComponent(MACHINE_ID, {
     },
 });
 
-function hasOutputRoom(inv) {
-    return OUTPUT_SLOTS.some(i => {
-        const item = inv.getItem(i);
-        return !item || (item.maxAmount ?? 64) - item.amount > 0;
-    });
-}
+// ── Helpers ────────────────────────────────────────────────────
 
-function rollOutputs(inv, recipe) {
+/**
+ * Rolls the probabilistic outputs for a recipe and returns only
+ * the items that passed their chance check.
+ * @returns {Array<{ typeId: string, count: number }>}
+ */
+function rollOutputs(recipe) {
+    const result = [];
     for (const out of recipe.output.items) {
         if (Math.random() * 100 < out.chance) {
-            insertOutput(inv, out.itemId, out.count);
+            result.push({ typeId: out.itemId, count: out.count });
         }
     }
-}
-
-function insertOutput(inv, typeId, count) {
-    for (const i of OUTPUT_SLOTS) {
-        const item = inv.getItem(i);
-        if (!item) {
-            inv.setItem(i, new ItemStack(typeId, count));
-            return;
-        }
-        if (item.typeId === typeId) {
-            const space = (item.maxAmount ?? 64) - item.amount;
-            if (space >= count) {
-                item.amount += count;
-                inv.setItem(i, item);
-                return;
-            }
-        }
-    }
+    return result;
 }
 
 function consumeInput(inv, slot) {

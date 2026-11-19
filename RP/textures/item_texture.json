@@ -178,6 +178,39 @@
     },
     "utilitycraft:adamant_comb": {
       "textures": "textures/items/honeycombs/adamant"
+    },
+    "utilitycraft:tungsten_comb": {
+      "textures": "textures/items/honeycombs/tungsten"
+    },
+    "utilitycraft:titanium_comb": {
+      "textures": "textures/items/honeycombs/titanium"
+    },
+    "utilitycraft:aetherium_comb": {
+      "textures": "textures/items/honeycombs/aetherium"
+    },
+    "utilitycraft:steel_bee": {
+      "textures": "textures/entity/bee/steel/bee"
+    },
+    "utilitycraft:energized_iron_bee": {
+      "textures": "textures/entity/bee/energized_iron/bee"
+    },
+    "utilitycraft:duranium_bee": {
+      "textures": "textures/entity/bee/duranium/bee"
+    },
+    "utilitycraft:voltanium_bee": {
+      "textures": "textures/entity/bee/voltanium/bee"
+    },
+    "utilitycraft:adamant_bee": {
+      "textures": "textures/entity/bee/adamant/bee"
+    },
+    "utilitycraft:tungsten_bee": {
+      "textures": "textures/entity/bee/tungsten/bee"
+    },
+    "utilitycraft:titanium_bee": {
+      "textures": "textures/entity/bee/titanium/bee"
+    },
+    "utilitycraft:aetherium_bee": {
+      "textures": "textures/entity/bee/aetherium/bee"
     }
   }
 }

@@ -15,7 +15,10 @@
         }
       },
       "states": {
-        "utilitycraft:has_selection": [true, false],
+        "utilitycraft:has_selection": [
+          true,
+          false
+        ],
         "projectbee:on": [
           false,
           true
@@ -70,16 +73,7 @@
       "minecraft:light_dampening": 0,
       "tag:dorios:machine": {},
       "tag:dorios:item": {},
-      "tag:minecraft:is_pickaxe_item_destructible": {},
-      "projectbee:advance_beehive": {
-        "entity": {
-          "type": "container",
-          "inventory_size": 32
-        },
-        "machine": {
-          "ticks_per_operation": 100
-        }
-      }
+      "tag:minecraft:is_pickaxe_item_destructible": {}
     },
     "permutations": [
       {
@@ -166,7 +160,12 @@
           }
         }
       },
-      {"condition":"!q.block_state('utilitycraft:has_selection')","components":{"minecraft:selection_box":false}}
+      {
+        "condition": "!q.block_state('utilitycraft:has_selection')",
+        "components": {
+          "minecraft:selection_box": false
+        }
+      }
     ]
   }
 }

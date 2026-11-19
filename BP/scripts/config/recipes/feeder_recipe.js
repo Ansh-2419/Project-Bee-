@@ -222,4 +222,22 @@ export const feederBlocks = [
             "utilitycraft:adamant_block"
         ]
     },
+    {
+        beeId: "utilitycraft:tungsten_bee",
+        feederBlocks: [
+            "utilitycraft:tungsten_block"
+        ]
+    },
+    {
+        beeId: "utilitycraft:titanium_bee",
+        feederBlocks: [
+            "utilitycraft:titanium_block"
+        ]
+    },
+    {
+        beeId: "utilitycraft:aetherium_bee",
+        feederBlocks: [
+            "utilitycraft:aetherium_block"
+        ]
+    },
 ];

@@ -1,5 +1,10 @@
 {
   "format_version": 2,
+  "capabilities": ["pbr"],
+  "metadata": {
+    "product_type": "addon",
+    "authors": ["Dorios Studios"]
+  },
   "header": {
     "name": "Project Bee RP",
     "description": "Project Bee Resource Pack",

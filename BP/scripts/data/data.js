@@ -39,6 +39,9 @@ export const BEES = [
     { id: "utilitycraft:duranium_bee",       displayName: "Duranium Bee"      },
     { id: "utilitycraft:voltanium_bee",      displayName: "Voltanium Bee"     },
     { id: "utilitycraft:adamant_bee",        displayName: "Adamant Bee"       },
+    { id: "utilitycraft:tungsten_bee",      displayName: "Tungsten Bee"      },
+    { id: "utilitycraft:titanium_bee",      displayName: "Titanium Bee"      },
+    { id: "utilitycraft:aetherium_bee",     displayName: "Aetherium Bee"     },
 ];
 
 export const beesIds           = BEES.map(b => b.id);

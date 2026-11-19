@@ -333,6 +333,30 @@
     },
     "end_stone": {
       "textures": "textures/blocks/end_stone"
+    },
+    "utilitycraft:tungsten_bee": {
+      "textures": "textures/entity/bee/tungsten/bee"
+    },
+    "utilitycraft:titanium_bee": {
+      "textures": "textures/entity/bee/titanium/bee"
+    },
+    "utilitycraft:aetherium_bee": {
+      "textures": "textures/entity/bee/aetherium/bee"
+    },
+    "utilitycraft:steel_bee": {
+      "textures": "textures/entity/bee/steel/bee"
+    },
+    "utilitycraft:energized_iron_bee": {
+      "textures": "textures/entity/bee/energized_iron/bee"
+    },
+    "utilitycraft:duranium_bee": {
+      "textures": "textures/entity/bee/duranium/bee"
+    },
+    "utilitycraft:voltanium_bee": {
+      "textures": "textures/entity/bee/voltanium/bee"
+    },
+    "utilitycraft:adamant_bee": {
+      "textures": "textures/entity/bee/adamant/bee"
     }
   }
 }

@@ -6,4 +6,3 @@ import "./feeding_slab.js";
 import "./centrifuge.js";
 import "./breeding_chamber.js";
 import "./bee_incubator.js";
-import "./nest.js";

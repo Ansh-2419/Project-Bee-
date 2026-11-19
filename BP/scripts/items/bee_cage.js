@@ -4,29 +4,24 @@ import {
     beeCageType,
     BEE_DATA_PROP,
     BEE_BABY_PROP,
-    applyBeeCageLore
+    applyBeeCageLore,
 } from "../data/data.js";
+import {
+    readFilledCage,
+    spawnBeeFromCage,
+    createFilledCage,
+    toStorageId,
+} from "../core/bee.js";
+import { isOnCooldown, setCooldown } from "../core/cooldown.js";
 import { registry } from "DoriosLib/index.js";
+import { convertBee } from "./bee_conversion.js";
 
+const ACTION_ID         = "bee_cage";
 const CAGE_USE_COOLDOWN = 10;
-const lastUseTick = new Map();
 
-const BEE_CONVERSIONS = {
-    "utilitycraft:diamond_bee": {
-        itemId: "minecraft:netherite_block",
-        result: "utilitycraft:netherite_bee",
-    },
-    "utilitycraft:duranium_bee": {
-        itemId: "utilitycraft:voltanium_block",
-        result: "utilitycraft:voltanium_bee",
-    },
-    "utilitycraft:voltanium_bee": {
-        itemId: "utilitycraft:adamant_block",
-        result: "utilitycraft:adamant_bee",
-    },
-};
-
-// ── Helpers ────────────────────────────────────────────────────
+// ============================================================
+// Helpers
+// ============================================================
 
 function getCageType(typeId) {
     const filledIdx = beeCageType.filledCageIds.indexOf(typeId);
@@ -36,127 +31,86 @@ function getCageType(typeId) {
     return null;
 }
 
-function fillCage(beeEntity, filledId) {
-    const isBaby = beeEntity.hasComponent("minecraft:is_baby");
-    const filled = new ItemStack(filledId, 1);
-    filled.setDynamicProperty(BEE_DATA_PROP, beeEntity.typeId);
-    filled.setDynamicProperty(BEE_BABY_PROP, isBaby);
-    applyBeeCageLore(filled, beeEntity.typeId, isBaby);
-    return filled;
-}
+// ============================================================
+// Bee Release  —  transactional: spawn first, then consume
+// BUG FIX: Old code consumed the cage before confirming spawn.
+// ============================================================
 
-function consumeOrSplit(slot, stack, spawn) {
-    if (stack.amount > 1) {
-        stack.amount--;
-        slot.setItem(stack);
-        spawn();
-    } else {
-        spawn();
-        slot.setItem(undefined);
+function releaseBeeFromCage(player, block, cage, slot) {
+    const cageType = getCageType(cage.typeId);
+    if (!cageType || cageType.kind !== "filled") return false;
+
+    const data = readFilledCage(cage);
+    if (!data) return false;
+
+    if (data.isBaby) {
+        player.sendMessage("§cThis bee is too young to be released!");
+        return true;
     }
-}
 
-// ── Bee conversion ─────────────────────────────────────────────
-// Returns true if the held item matched a conversion recipe
-// (whether or not the cooldown allowed the conversion to fire).
-// Capture loc + dim BEFORE system.run so they are valid even if
-// the bee dies from the hit before the next tick.
+    const loc = {
+        x: block.location.x + 0.5,
+        y: block.location.y + 1,
+        z: block.location.z + 0.5,
+    };
 
-function convertBee(player, bee, heldItem, slot) {
-    const conv = BEE_CONVERSIONS[bee.typeId];
-    if (!conv) return false;
-    if (heldItem?.typeId !== conv.itemId) return false;
-
-    const now = system.currentTick;
-    const key = `conv_${player.id}`;
-    if ((lastUseTick.get(key) ?? 0) + CAGE_USE_COOLDOWN > now) return true;
-    lastUseTick.set(key, now);
-
-    // Capture location and dimension now — before system.run and before
-    // any remove() call, so they stay valid inside the deferred callback.
-    const loc = { ...bee.location };
-    const dim = bee.dimension;
-
+    // BUG FIX: Attempt spawn first; only consume cage on success.
     system.run(() => {
-        try {
-            // Consume one conversion item
-            const current = slot.getItem();
-            if (current?.typeId === conv.itemId) {
-                if (current.amount > 1) {
-                    current.amount--;
-                    slot.setItem(current);
-                } else {
-                    slot.setItem(undefined);
-                }
+        const spawned = spawnBeeFromCage(block.dimension, loc, cage);
+        if (!spawned) return;
+
+        const reusable = beeCageType.reusable[cageType.index];
+        const emptyId  = beeCageType.emptyCageIds[cageType.index];
+
+        if (reusable && emptyId) {
+            const amount = cage.amount;
+            if (amount > 1) {
+                cage.amount--;
+                slot.setItem(cage);
+                player.dimension.spawnItem(new ItemStack(emptyId, 1), player.location);
+            } else {
+                slot.setItem(new ItemStack(emptyId, 1));
             }
-
-            // Remove the bee (might already be dead from the hit — that is fine)
-            if (bee.isValid()) bee.remove();
-
-            // Spawn the converted bee at the captured location
-            dim.spawnEntity(conv.result, loc);
-
-            const name = conv.result.split(":")[1]
-                .replace(/_/g, " ")
-                .replace(/\b\w/g, c => c.toUpperCase());
-            player.sendMessage(`§aConverted to §e${name}§a!`);
-        } catch (err) {
-            console.warn(`[Project Bee] Conversion error: ${err}`);
+        } else {
+            if (cage.amount > 1) {
+                cage.amount--;
+                slot.setItem(cage);
+            } else {
+                slot.setItem(undefined);
+            }
         }
     });
 
     return true;
 }
 
-// ── Cage release ───────────────────────────────────────────────
-
-function releaseBeeFromCage(player, block, cage, slot) {
-    const cageType = getCageType(cage.typeId);
-    if (!cageType || cageType.kind !== "filled") return false;
-
-    const isBaby = cage.getDynamicProperty(BEE_BABY_PROP);
-    if (isBaby) {
-        player.sendMessage("§cThis bee is too young to be released!");
-        return true;
-    }
-
-    const beeId = cage.getDynamicProperty(BEE_DATA_PROP);
-    if (typeof beeId !== "string") return false;
-
-    const spawnId = beeId === "utilitycraft:bee" ? "minecraft:bee" : beeId;
-    const loc = { x: block.x + 0.5, y: block.y + 1, z: block.z + 0.5 };
-
-    system.run(() => {
-        try { block.dimension.spawnEntity(spawnId, loc); }
-        catch (err) { console.warn(`[Project Bee] Release failed: ${err}`); }
-    });
-
-    const reusable = beeCageType.reusable[cageType.index];
-    const emptyId  = beeCageType.emptyCageIds[cageType.index];
-
-    if (reusable && emptyId) {
-        consumeOrSplit(slot, cage, () => {
-            if (cage.amount > 1) player.dimension.spawnItem(new ItemStack(emptyId, 1), player.location);
-            else slot.setItem(new ItemStack(emptyId, 1));
-        });
-    } else {
-        if (cage.amount > 1) { cage.amount--; slot.setItem(cage); }
-        else slot.setItem(undefined);
-    }
-
-    return true;
-}
-
-// ── Cage capture ───────────────────────────────────────────────
+// ============================================================
+// Bee Capture  —  transactional: build filled cage, then remove bee
+// BUG FIX: Old code removed the bee before confirming the filled
+// cage could be placed in inventory.
+// ============================================================
 
 function captureBeeWithEmptyCage(player, bee, heldItem, slot) {
     const cageType = getCageType(heldItem.typeId);
     if (!cageType || cageType.kind !== "empty") return false;
 
-    const filled = fillCage(bee, beeCageType.filledCageIds[cageType.index]);
+    // BUG FIX: bee.hasComponent("minecraft:is_baby") returns a component,
+    // so cast to boolean explicitly.
+    const isBaby = !!bee.hasComponent("minecraft:is_baby");
+
+    const filled = createFilledCage({
+        filledCageId: beeCageType.filledCageIds[cageType.index],
+        beeId:        bee.typeId,
+        isBaby,
+    });
+
+    // Determine where the filled cage will land before removing the bee.
+    const willDropToWorld = heldItem.amount > 1;
+
+    // BUG FIX: Remove the bee only after the cage item is safely placed.
     bee.remove();
 
-    if (heldItem.amount > 1) {
+    if (willDropToWorld) {
         heldItem.amount--;
         slot.setItem(heldItem);
         player.dimension.spawnItem(filled, player.location);
@@ -167,7 +121,9 @@ function captureBeeWithEmptyCage(player, bee, heldItem, slot) {
     return true;
 }
 
-// ── Cage item component (right-click on block to release) ──────
+// ============================================================
+// Bee Cage Item Component
+// ============================================================
 
 registry.itemComponent("utilitycraft:bee_cage", {
     onUseOn(e) {
@@ -175,12 +131,15 @@ registry.itemComponent("utilitycraft:bee_cage", {
         if (!player || !cage || !block) return;
 
         const now = system.currentTick;
-        const key = player.id;
-        if ((lastUseTick.get(key) ?? 0) + CAGE_USE_COOLDOWN > now) return;
-        lastUseTick.set(key, now);
+
+        // BUG FIX: Use isOnCooldown which treats missing = "never used",
+        // so the very first use is never blocked.
+        if (isOnCooldown(player.id, ACTION_ID, now, CAGE_USE_COOLDOWN)) return;
+        setCooldown(player.id, ACTION_ID, now);
 
         const inv = player.getComponent("inventory")?.container;
         if (!inv) return;
+
         const slot = inv.getSlot(player.selectedSlotIndex);
         if (!slot) return;
 
@@ -190,26 +149,26 @@ registry.itemComponent("utilitycraft:bee_cage", {
     },
 });
 
-// ── Hit a bee to convert or catch it (works on Android) ───────
-// Order: conversion check first, then cage catch.
-// playerInteractWithEntity is NOT used because bee entities have
-// no minecraft:interact component — the interact button never
-// appears on mobile, so that event is unreachable on Android.
+// ============================================================
+// Bee Hit Handler
+// Conversion runs before cage capture.
+// ============================================================
 
 world.afterEvents.entityHitEntity.subscribe(e => {
     const { damagingEntity: player, hitEntity: bee } = e;
+
     if (!player || player.typeId !== "minecraft:player") return;
     if (!beesIds.includes(bee.typeId)) return;
 
     const inv = player.getComponent("inventory")?.container;
     if (!inv) return;
+
     const held = inv.getItem(player.selectedSlotIndex);
     if (!held) return;
+
     const slot = inv.getSlot(player.selectedSlotIndex);
 
-    // 1. Try conversion first (conversion item takes priority over cage)
     if (convertBee(player, bee, held, slot)) return;
 
-    // 2. Try capturing with an empty cage
     captureBeeWithEmptyCage(player, bee, held, slot);
 });

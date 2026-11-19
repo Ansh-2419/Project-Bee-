@@ -39,7 +39,7 @@
         "controller.render.my_bee"
       ],
       "spawn_egg": {
-        "base_color": "#FFD600",
+        "base_color": "#FFD500",
         "overlay_color": "#1565C0"
       }
     }

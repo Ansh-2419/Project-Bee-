@@ -15,7 +15,10 @@
         }
       },
       "states": {
-        "utilitycraft:has_selection": [true, false],
+        "utilitycraft:has_selection": [
+          true,
+          false
+        ],
         "utilitycraft:on": [
           false,
           true
@@ -47,18 +50,7 @@
       "tag:dorios:machine": {},
       "tag:dorios:energy": {},
       "tag:dorios:item": {},
-      "tag:minecraft:is_pickaxe_item_destructible": {},
-      "projectbee:bee_incubator": {
-        "entity": {
-          "type": "machine",
-          "inventory_size": 12
-        },
-        "machine": {
-          "energy_cap": 10000,
-          "energy_cost": 2000,
-          "rate_speed_base": 20
-        }
-      }
+      "tag:minecraft:is_pickaxe_item_destructible": {}
     },
     "permutations": [
       {
@@ -115,7 +107,12 @@
           }
         }
       },
-      {"condition":"!q.block_state('utilitycraft:has_selection')","components":{"minecraft:selection_box":false}}
+      {
+        "condition": "!q.block_state('utilitycraft:has_selection')",
+        "components": {
+          "minecraft:selection_box": false
+        }
+      }
     ]
   }
 }

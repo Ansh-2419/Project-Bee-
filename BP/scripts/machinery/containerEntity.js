@@ -1,6 +1,13 @@
 import { DEFAULT_ENTITY_ID } from "DoriosCore/index.js";
 
-/** Resolve the owning cell of a shared UC inventory, excluding outlines and bees. */
+/**
+ * Resolve the owning block of a shared UC inventory entity.
+ * Returns undefined when the entity is invalid, the wrong type,
+ * or its chunk is not loaded.
+ *
+ * @param {import("@minecraft/server").Entity} entity
+ * @returns {import("@minecraft/server").Block | undefined}
+ */
 export function getEntityBlock(entity) {
     if (!entity?.isValid || entity.typeId !== DEFAULT_ENTITY_ID) return undefined;
     const { x, y, z } = entity.location;
@@ -9,13 +16,30 @@ export function getEntityBlock(entity) {
     return entity.dimension.getBlock(location);
 }
 
-/** The exact type and owning cell prevent nearby entities from becoming the inventory. */
+/**
+ * Find the helper entity associated with a block.
+ * Uses exact type and floored-coordinate matching to avoid
+ * accidentally returning a nearby entity.
+ *
+ * IMPROVEMENT: Added an early isChunkLoaded guard on the block side
+ * (not just the entity side) so callers don't need to guard separately.
+ *
+ * @param {import("@minecraft/server").Block} block
+ * @returns {import("@minecraft/server").Entity | undefined}
+ */
 export function getBlockEntity(block) {
-    if (!block?.isValid || !block.dimension.isChunkLoaded(block.location)) return undefined;
+    if (!block?.isValid) return undefined;
+    if (!block.dimension.isChunkLoaded(block.location)) return undefined;
     const { x, y, z } = block.location;
-    return block.dimension.getEntitiesAtBlockLocation(block.location).find(entity => {
-        if (!entity.isValid || entity.typeId !== DEFAULT_ENTITY_ID) return false;
-        const location = entity.location;
-        return Math.floor(location.x) === x && Math.floor(location.y) === y && Math.floor(location.z) === z;
-    });
+    return block.dimension
+        .getEntitiesAtBlockLocation(block.location)
+        .find(entity => {
+            if (!entity.isValid || entity.typeId !== DEFAULT_ENTITY_ID) return false;
+            const loc = entity.location;
+            return (
+                Math.floor(loc.x) === x &&
+                Math.floor(loc.y) === y &&
+                Math.floor(loc.z) === z
+            );
+        });
 }

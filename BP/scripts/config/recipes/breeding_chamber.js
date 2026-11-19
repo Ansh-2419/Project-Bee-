@@ -136,7 +136,6 @@ export const breedingRecipes = [
     },
 
     // ── Alloy bees ────────────────────────────────────────────
-    // Iron Bee + Coal Bee → 45 % Steel Bee, 55 % Coal Bee
     {
         parent1: "utilitycraft:iron_bee",
         parent2: "utilitycraft:coal_bee",
@@ -146,7 +145,6 @@ export const breedingRecipes = [
             { beeId: "utilitycraft:coal_bee",  weight: 55 },
         ]
     },
-    // Steel Bee + Quartz Bee → 45 % Duranium Bee, 55 % Steel Bee
     {
         parent1: "utilitycraft:steel_bee",
         parent2: "utilitycraft:quartz_bee",
@@ -156,13 +154,44 @@ export const breedingRecipes = [
             { beeId: "utilitycraft:steel_bee",    weight: 55 },
         ]
     },
-    // Iron Bee + Redstone Bee → Energized Iron Bee (any flower)
     {
         parent1: "utilitycraft:iron_bee",
         parent2: "utilitycraft:redstone_bee",
         flowerTypes: ALL_FLOWERS,
         outputs: [
             { beeId: "utilitycraft:energized_iron_bee", weight: 100 },
+        ]
+    },
+
+    // ── Tungsten / Titanium / Aetherium bees ─────────────────
+    // Iron Bee + Steel Bee → Tungsten Bee
+    {
+        parent1: "utilitycraft:iron_bee",
+        parent2: "utilitycraft:steel_bee",
+        flowerTypes: ALL_FLOWERS,
+        outputs: [
+            { beeId: "utilitycraft:tungsten_bee", weight: 40 },
+            { beeId: "utilitycraft:steel_bee",    weight: 60 },
+        ]
+    },
+    // Tungsten Bee + Diamond Bee → Titanium Bee
+    {
+        parent1: "utilitycraft:tungsten_bee",
+        parent2: "utilitycraft:diamond_bee",
+        flowerTypes: ALL_FLOWERS,
+        outputs: [
+            { beeId: "utilitycraft:titanium_bee",  weight: 40 },
+            { beeId: "utilitycraft:tungsten_bee",   weight: 60 },
+        ]
+    },
+    // Titanium Bee + Amethyst Bee → Aetherium Bee
+    {
+        parent1: "utilitycraft:titanium_bee",
+        parent2: "utilitycraft:amethyst_bee",
+        flowerTypes: [ "minecraft:allium", "minecraft:cornflower" ],
+        outputs: [
+            { beeId: "utilitycraft:aetherium_bee", weight: 35 },
+            { beeId: "utilitycraft:titanium_bee",  weight: 65 },
         ]
     },
 ];
